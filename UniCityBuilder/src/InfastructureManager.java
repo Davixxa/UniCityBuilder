@@ -1,27 +1,43 @@
 public class InfastructureManager {
 
     //Variables
-    public int level = 1;
+    public int level;
     public int upgradeCost;
     public int repairCost;
     public boolean isDamaged;
 
     //Constructor
-    public InfastructureManager(){
-
+    public InfastructureManager() {
+        level = 1;
+        upgradeCost = 100;
+        repairCost = 50;
+        isDamaged = false;
     }
 
     //Methods
-    public void upgrade(int upgradeCost){
-        this.upgradeCost = upgradeCost;
+    public void upgrade() {
+        level ++;
+        upgradeCost *= 2;
+        repairCost *= 2;
     }
 
-    public void damage(boolean isDamaged){
-        this.isDamaged = isDamaged;
+    public void damage() {
+        isDamaged = true;
     }
 
-    public void repair(int repairCost){
-        this.repairCost = repairCost;
+    public void repair(MoneyManager moneyManager) {
+        if (isDamaged == true){
+            moneyManager.setCurrentMoney(moneyManager.getCurrentMoney() - repairCost);
+        }
+    }
+
+    //Get methods
+    public int getLevel(){
+        return level;
+    }
+
+    public boolean getIsDamaged(){
+        return false;
     }
 
 }

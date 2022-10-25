@@ -7,7 +7,7 @@ import java.util.Map;
 
 
 // Main class
-class HAP {
+class BuildingManager {
 
 	// Main driver method
 	public void BuildingManager() 

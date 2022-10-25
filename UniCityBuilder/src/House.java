@@ -1,7 +1,7 @@
 public class House extends Building {
 
     public House() {
-        this.buildingType = buildingTypes.HOUSE;
+        this.buildingType = BuildingTypes.HOUSE;
     }
 
     @Override

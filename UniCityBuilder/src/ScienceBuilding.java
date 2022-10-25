@@ -12,7 +12,7 @@ public class ScienceBuilding extends Building {
         this.destroyed = false;
         this.displayName = "The earth is flat, right?";
 
-        this.buildingType = buildingTypes.SCIENCE;
+        this.buildingType = BuildingTypes.SCIENCE;
 
     }
 

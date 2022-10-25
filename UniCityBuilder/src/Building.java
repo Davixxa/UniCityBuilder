@@ -1,7 +1,7 @@
 abstract class Building {
 
 
-    buildingTypes buildingType;
+    BuildingTypes buildingType;
 
     int buildingCost;
     int upgradeCost;

@@ -1,10 +1,7 @@
 abstract class Building {
-    public enum buildingType {
-        MONEY,
-        SCIENCE,
-        ENERGY,
-        HOUSE
-    }
+
+
+    buildingTypes buildingType;
 
     int buildingCost;
     int upgradeCost;

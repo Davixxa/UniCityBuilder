@@ -12,6 +12,8 @@ public class ScienceBuilding extends Building {
         this.destroyed = false;
         this.displayName = "The earth is flat, right?";
 
+        this.buildingType = buildingTypes.SCIENCE;
+
     }
 
     public void setRange(int range) {

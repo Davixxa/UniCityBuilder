@@ -13,6 +13,7 @@ public class MoneyBuilding extends Building {
         this.destroyed = false;
         this.displayName = "Why don't we seize the memes of production already? :^)";
         this.pollution = 1048596;
+        this.buildingType = buildingTypes.MONEY;
 
     }
 

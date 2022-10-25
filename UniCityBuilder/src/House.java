@@ -1,7 +1,8 @@
 public class House extends Building {
 
-    public House() {
+    public House(int coordinate) {
         this.buildingType = BuildingTypes.HOUSE;
+        this.coordinate = coordinate;
     }
 
     @Override

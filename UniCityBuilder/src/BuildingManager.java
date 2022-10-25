@@ -13,14 +13,13 @@ class BuildingManager {
 	public void BuildingManager() 
 	{
 
-        Map<Integer, Enum<?>> Map = new HashMap<Integer, Enum<?>>();
+        Map<Integer, Building> Map = new HashMap<Integer, Building>();
 		// Adding elements to the Map
 		// using standard put() method
-		Map.put(1, Building.MONEY);
-        Map.put(2, Building.SCIENCE);
-		Map.put(3, Building.Energy);
-        Map.put(4, Building.House);
-        Map.put(5, Building.None);
+		Map.put(1, new MoneyBuilding(1));
+        Map.put(2, new ScienceBuilding(2));
+		Map.put(3, new EnergyBuilding(3));
+        Map.put(4, new House(4));
 		// Print size and content of the Map
 		System.out.println("Size of map is:- "
 						+ Map.size());

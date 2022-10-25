@@ -5,11 +5,14 @@ public class MoneyManager {
     private int currentMoney;
     private int moneyUpkeep;
 
+    BuildingManager buildingManager;
 
-    public MoneyManager(int moneyGain, int currentMoney, int moneyUpkeep) {
+
+    public MoneyManager(int moneyGain, int currentMoney, int moneyUpkeep, BuildingManager buildingmanager) {
         this.moneyGain = moneyGain;
         this.currentMoney = currentMoney;
         this.moneyUpkeep = moneyUpkeep;
+        this.buildingManager = buildingmanager;
     }
 
     public int getCurrentMoney() {
@@ -52,7 +55,7 @@ public class MoneyManager {
 
     public void calcMoneyGain() {
         this.moneyGain = 0;
-        for (Building i; BuildingManager.Map.values()) {
+        for (Building i : buildingManager.map.values()) {
             switch (i.getBuildingType) {
 
                 case BuildingTypes.MONEY:
@@ -87,7 +90,7 @@ public class MoneyManager {
                     // code block
             }
 
-            if (i.getBuildingType == BuildingTypes.MONEY) {
+            if (i.getBuildingType() == BuildingTypes.MONEY) {
                 if (i.getdestroyed() == false) {
                     this.moneyGain += i.getYield();
                 }

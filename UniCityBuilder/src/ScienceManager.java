@@ -17,6 +17,8 @@ public class ScienceManager {
         this.currentScience = currentScience;
     }
 
+
+    
     public int getScienceGain() {
         return scienceGain;
     }

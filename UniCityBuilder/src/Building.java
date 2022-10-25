@@ -3,15 +3,6 @@ abstract class Building {
 
     BuildingTypes buildingType;
 
-
-    public BuildingTypes getBuildingType() {
-        return buildingType;
-    }
-
-    public void setBuildingType(BuildingTypes buildingType) {
-        this.buildingType = buildingType;
-    }
-
     int buildingCost;
     int upgradeCost;
     boolean destroyed;
@@ -20,6 +11,14 @@ abstract class Building {
     int yield;
 
     String displayName;
+
+    public BuildingTypes getBuildingType() {
+        return buildingType;
+    }
+
+    public void setBuildingType(BuildingTypes buildingType) {
+        this.buildingType = buildingType;
+    }
 
     public String getDisplayName() {
         return displayName;

@@ -50,5 +50,52 @@ public class MoneyManager {
     }
  */
 
+    public void calcMoneyGain() {
+        this.moneyGain = 0;
+        for (Building i; BuildingManager.Map.values()) {
+            switch (i.getBuildingType) {
+
+                case BuildingTypes.MONEY:
+                    // code block
+                    // Hvor meget det koster at holde en bygning up. 10.
+                    this.moneyUpkeep += 10;
+
+                    break;
+
+                case BuildingTypes.ENERGY:
+                    // code block
+                    // Hvor meget det koster at holde en bygning up. 10.
+                    this.moneyUpkeep += 10;
+
+                    break;
+
+                case BuildingTypes.HOUSE:
+                    // code block
+                    // Hvor meget det koster at holde en bygning up. 10.
+                    this.moneyUpkeep += 10;
+
+                    break;
+
+                case BuildingTypes.SCIENCE:
+                    // code block
+                    // Hvor meget det koster at holde en bygning up. 10.
+                    this.moneyUpkeep += 10;
+
+                    break;
+
+                default:
+                    // code block
+            }
+
+            if (i.getBuildingType == BuildingTypes.MONEY) {
+                if (i.getdestroyed() == false) {
+                    this.moneyGain += i.getYield();
+                }
+            }
+        }
+        this.moneyGain -= this.moneyUpkeep;
+        this.currentMoney += this.moneyGain;
+    }
+
 
 }

@@ -35,4 +35,23 @@ public class ScienceManager {
         this.scienceToLevel = scienceToLevel;
     }
 
+
+    public void calcScienceGain() {
+        this.scienceGain = 0;
+        for (Building i; BuildingManager.Map.values()) {
+            if (i.getBuildingType == BuildingTypes.SCIENCE) {
+                if (i.getdestroyed()==false) {
+                    this.scienceGain += i.getYield();
+                }
+            }
+        }
+        this.currentScience += this.scienceGain;
+
+
+    }
+
+
+
+
+
 }

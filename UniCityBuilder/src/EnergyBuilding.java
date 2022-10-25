@@ -1,4 +1,4 @@
-public class EnergyBuilding extends Building{
+public class EnergyBuilding extends Building {
 
 
     private int pollution;

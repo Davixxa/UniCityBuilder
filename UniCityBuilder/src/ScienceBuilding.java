@@ -1,4 +1,4 @@
-public class ScienceBuilding extends Building{
+public class ScienceBuilding extends Building {
 
     int range;
 

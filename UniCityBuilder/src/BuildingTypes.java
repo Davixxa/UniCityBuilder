@@ -1,4 +1,4 @@
-public enum buildingTypes {
+public enum BuildingTypes {
     MONEY,
     SCIENCE,
     ENERGY,

@@ -20,5 +20,19 @@ public class EnergyManager {
         this.currentEnergy = currentEnergy;
     }
 
+    public int getEnergyDecay() {
+        return energyDecay;
+    }
 
+    public void setEnergyDecay(int energyDecay) {
+        this.energyDecay = energyDecay;
+    }
+
+    public int getEnergyGain() {
+        return energyGain;
+    }
+
+    public void setEnergyGain(int energyGain) {
+        this.energyGain = energyGain;
+    }
 }

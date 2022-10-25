@@ -17,6 +17,20 @@ public class ScienceManager {
         this.currentScience = currentScience;
     }
 
+    public int getScienceGain() {
+        return scienceGain;
+    }
 
+    public void setScienceGain(int scienceGain) {
+        this.scienceGain = scienceGain;
+    }
+
+    public int getScienceToLevel() {
+        return scienceToLevel;
+    }
+
+    public void setScienceToLevel(int scienceToLevel) {
+        this.scienceToLevel = scienceToLevel;
+    }
 
 }

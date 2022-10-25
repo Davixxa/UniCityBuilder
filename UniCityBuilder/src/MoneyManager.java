@@ -20,8 +20,24 @@ public class MoneyManager {
         this.currentMoney = currentMoney;
     }
 
+    public int getMoneyGain() {
+        return moneyGain;
+    }
 
-/*
+    public void setMoneyGain(int moneyGain) {
+        this.moneyGain = moneyGain;
+    }
+
+    public int getMoneyUpkeep() {
+        return moneyUpkeep;
+    }
+
+    public void setMoneyUpkeep(int moneyUpkeep) {
+        this.moneyUpkeep = moneyUpkeep;
+    }
+
+
+    /*
     public void setMoneyGain(){
         this.moneyGain = 0;
         for(int i = 0; i<HashMap.size(); i++ ){

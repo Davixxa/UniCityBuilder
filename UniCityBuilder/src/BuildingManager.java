@@ -3,6 +3,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Map.Entry;
 
 
 
@@ -13,7 +14,7 @@ class BuildingManager {
 	public void BuildingManager() 
 	{
 
-        Map<Integer, Building> map = new HashMap<Integer, Building>();
+        Map<Integer, Building> map = new HashMap<Integer, Building>(9);
 		// Adding elements to the Map
 		// using standard put() method
 		map.put(1, new MoneyBuilding(1));
@@ -22,26 +23,40 @@ class BuildingManager {
         map.put(4, new House(4));
 	}
 
-	public void buildBuilding()
+	public void buildBuilding(Map<Integer, Building> map)
 	{
 		Scanner scan = new Scanner(System.in);
 
-		do{
-			//Asks user for input on which tile they want to acess/place
-			System.out.print("Enter Tile:");
-			Integer key = Integer.parseInt(scan.nextLine());
+		System.out.print("Enter tile:");
+		Integer tile = Integer.parseInt(scan.nextLine());
 
-			//Ask user which type of building they want to place
-			System.out.println(BuildingTypes.ENERGY, BuildingTypes.HOUSE, BuildingTypes.MONEY, BuildingTypes.SCIENCE );
-			String type = scan.nextLine();
-			
-
-			Building oldvalue = map.put(key, type);
-		}
+		System.out.println("What type of building do you want:");
+		String nameType =  scan.nextLine();
+		Building type = Building.valueOf(nameType);
+		
+	
+		Building bValue = (Building) map.put(tile, type);
 	}
 
-	public void select() 
+	public void select(Map<Integer, Building> map) 
 	{
+		
+		Scanner scan = new Scanner(System.in);
 
+		System.out.print("What tile do you want to select  ");
+		Integer tileKey = Integer.parseInt(scan.nextLine());
+
+
+		for(Entry<Integer, Building> Entry: map.entrySet())
+		{
+			if(Entry.getKey() == tileKey)
+			{
+				System.out.print("On tile: " + tileKey + " Is " + Entry.getValue());
+			}
+			else if(tileKey > map.size())
+			{
+			System.out.print("Tile does not exist");
+			}
+	}
 	}
 }

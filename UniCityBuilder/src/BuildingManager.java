@@ -20,7 +20,7 @@ class BuildingManager {
 	public void BuildingManager() 
 	{
 
-        //Map<Integer, Building> map = new HashMap<Integer, Building>(9);
+		map = new HashMap<Integer, Building>(9);
 		// Adding elements to the Map
 		// using standard put() method
 		map.put(1, new MoneyBuilding(1));

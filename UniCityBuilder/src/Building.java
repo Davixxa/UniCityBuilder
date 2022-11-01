@@ -10,6 +10,12 @@ abstract class Building {
     int currentLevel;
     int yield;
 
+    // upKeepCost herinde, derved kan man kalde den på objektet direkte og gøre det nemt med lvls osv. (Oliver Larsen)
+    int moneyUpKeepCost;
+
+    int energyUpKeepCost;
+
+
     String displayName;
 
     public BuildingTypes getBuildingType() {
@@ -60,8 +66,21 @@ abstract class Building {
         return destroyed;
     }
 
+    public int getMoneyUpKeepCost() {
+        return moneyUpKeepCost;
+    }
+
+    public void setMoneyUpKeepCost(int moneyUpKeepCost) {
+        this.moneyUpKeepCost = moneyUpKeepCost;
+    }
+
+    public int getEnergyUpKeepCost() {
+        return energyUpKeepCost;
+    }
+
     // Make upgrade cost more expensive, increase yield, level++
     public abstract void upgrade();
+    // Upgrade gør også at den koster mere at i upKeepCost. (Oliver Larsen)
 
     // Concrete - Doesn't immediately make sense to have
     //public abstract void remove();

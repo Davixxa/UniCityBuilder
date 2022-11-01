@@ -8,10 +8,10 @@ public class MoneyManager {
     BuildingManager buildingManager;
 
 
-    public MoneyManager(int moneyGain, int currentMoney, int moneyUpkeep, BuildingManager buildingmanager) {
-        this.moneyGain = moneyGain;
-        this.currentMoney = currentMoney;
-        this.moneyUpkeep = moneyUpkeep;
+    public MoneyManager(BuildingManager buildingmanager) {
+        this.moneyGain = 0;
+        this.currentMoney = 100;
+        this.moneyUpkeep = 0;
         this.buildingManager = buildingmanager;
     }
 
@@ -56,30 +56,33 @@ public class MoneyManager {
     public void calcMoneyGain() {
         this.moneyGain = 0;
         for (Building i : buildingManager.map.values()) {
-            switch (i.getBuildingType) {
+            this.moneyUpkeep += i.moneyUpKeepCost;
 
-                case BuildingTypes.MONEY:
+            /*
+            switch (i.getBuildingType()) {
+
+                case MONEY:
                     // code block
                     // Hvor meget det koster at holde en bygning up. 10.
                     this.moneyUpkeep += 10;
 
                     break;
 
-                case BuildingTypes.ENERGY:
+                case ENERGY:
                     // code block
                     // Hvor meget det koster at holde en bygning up. 10.
                     this.moneyUpkeep += 10;
 
                     break;
 
-                case BuildingTypes.HOUSE:
+                case HOUSE:
                     // code block
                     // Hvor meget det koster at holde en bygning up. 10.
                     this.moneyUpkeep += 10;
 
                     break;
 
-                case BuildingTypes.SCIENCE:
+                case SCIENCE:
                     // code block
                     // Hvor meget det koster at holde en bygning up. 10.
                     this.moneyUpkeep += 10;
@@ -89,9 +92,10 @@ public class MoneyManager {
                 default:
                     // code block
             }
+             */
 
             if (i.getBuildingType() == BuildingTypes.MONEY) {
-                if (i.getdestroyed() == false) {
+                if (i.isDestroyed() == false) {
                     this.moneyGain += i.getYield();
                 }
             }

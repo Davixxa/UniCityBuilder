@@ -7,11 +7,11 @@ public class EnergyManager {
     BuildingManager buildingManager;
 
 
-    public EnergyManager(int energyGain, int currentEnergy, int energyDecay, int energyUpkeep, BuildingManager buildingManager){
-        this.energyGain = energyGain;
-        this.currentEnergy = currentEnergy;
-        this.energyDecay = energyDecay;
-        this.energyUpkeep = energyUpkeep;
+    public EnergyManager(BuildingManager buildingManager){
+        this.energyGain = 0;
+        this.currentEnergy = 100;
+        this.energyDecay = 0;
+        this.energyUpkeep = 0;
         this.buildingManager = buildingManager;
     }
 
@@ -44,7 +44,10 @@ public class EnergyManager {
     public void calcMoneyGain() {
         this.energyGain = 0;
         for (Building i : buildingManager.map.values()) {
-            switch (i.getBuildingType) {
+            this.energyUpkeep += i.energyUpKeepCost;
+            
+            /*
+            switch (i.getBuildingType()) {
 
                 case BuildingTypes.MONEY:
                     // code block
@@ -78,8 +81,10 @@ public class EnergyManager {
                     // code block
             }
 
+             */
+
             if (i.getBuildingType() == BuildingTypes.ENERGY) {
-                if (i.getdestroyed() == false) {
+                if (i.isDestroyed() == false) {
                     this.energyGain += i.getYield();
                 }
             }

@@ -5,10 +5,10 @@ public class ScienceManager {
 
     BuildingManager buildingManager;
 
-    public ScienceManager(int scienceGain, int currentScience, int scienceToLevel, BuildingManager buildingManager){
-        this.scienceGain = scienceGain;
-        this.currentScience = currentScience;
-        this.scienceToLevel = scienceToLevel;
+    public ScienceManager(BuildingManager buildingManager){
+        this.scienceGain = 0;
+        this.currentScience = 100;
+        this.scienceToLevel = 10;
         this.buildingManager = buildingManager;
 
     }
@@ -44,7 +44,7 @@ public class ScienceManager {
         this.scienceGain = 0;
         for (Building i : buildingManager.map.values()) {
             if (i.getBuildingType() == BuildingTypes.SCIENCE) {
-                if (i.getdestroyed()==false) {
+                if (i.isDestroyed()==false) {
                     this.scienceGain += i.getYield();
                 }
             }

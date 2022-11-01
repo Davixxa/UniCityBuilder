@@ -44,7 +44,7 @@ public class EnergyManager {
 
 
 
-    public void calcMoneyGain() {
+    public void calcEnergyGain() {
         this.energyGain = 0;
         for (Building i : buildingManager.map.values()) {
             this.energyUpkeep += i.energyUpKeepCost;

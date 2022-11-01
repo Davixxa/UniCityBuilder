@@ -18,6 +18,9 @@ public class Main {
         EnergyManager energyManager = new EnergyManager(buildingManager);
         ScienceManager scienceManager = new ScienceManager(buildingManager);
         DisasterManager disasterManager = new DisasterManager(buildingManager);
+
+        Scanner scan = new Scanner(System.in);
+
     }
 }
 

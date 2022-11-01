@@ -1,9 +1,15 @@
 import java.security.cert.PolicyQualifierInfo;
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class Main {
 
+
+
     public static void main(String[] args) {
+
+
         // Initial program
         // Aleksander
         System.out.println("**** Start apprication ****");
@@ -20,6 +26,11 @@ public class Main {
         DisasterManager disasterManager = new DisasterManager(buildingManager);
 
         Scanner scan = new Scanner(System.in);
+
+
+
+        buildingManager.printMap();
+
 
     }
 }

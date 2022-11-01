@@ -10,6 +10,10 @@ import java.util.Map.Entry;
 // Main class
 class BuildingManager {
 
+	int size = 3;
+	int count = 0;
+
+
 	public Map<Integer, Building> map;
 
 	// Main driver method
@@ -88,6 +92,21 @@ class BuildingManager {
 	public void printMap(){
 		System.out.println("this is a map of your current city");
 
-		for (int row = 0; row < )
+		for(int i=1; i<=size; i++){
+			System.out.println();
+			for(int j=1; j<=size; j++){
+				if(map.get(j+count)==null){
+					System.out.println("NEJ"+" ");
+				}else {
+					System.out.print(map.get(j + count).buildingType + " ");
+				}
+			}
+			count +=size;
+		}
+
+
+		//for (int row = 0; row < )
+
+
 	}
 }

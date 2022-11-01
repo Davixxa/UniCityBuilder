@@ -97,11 +97,17 @@ class BuildingManager {
 		}
 
 		System.out.println("this is a map of your current city");
+
+
+		// Placing stuff in the map
 		map.put(1, new MoneyBuilding(1));
 		map.put(2, new ScienceBuilding(2));
 		map.put(3, new EnergyBuilding(3));
 		map.put(4, new House(4));
 
+		
+
+		// Printing the map
 		for(int i=1; i<=size; i++){
 			System.out.println();
 			for(int j=1; j<=size; j++){

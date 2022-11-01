@@ -59,6 +59,11 @@ class BuildingManager {
 			{
 			System.out.print("Tile does not exist");
 			}
+		}
 	}
+	public void printMap(){
+		System.out.println("this is a map of your current city");
+
+		for (int row = 0; row < )
 	}
 }

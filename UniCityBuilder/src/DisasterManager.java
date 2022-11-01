@@ -1,6 +1,3 @@
-import java.util.Map;
-import java.util.Map.Entry;
-
 public class DisasterManager{
     private int Pollution = 0;
 
@@ -9,20 +6,25 @@ public class DisasterManager{
         return Pollution;
     }
 
+    //Picks a random integer between 2000 and 10000 (eventTrigger).
+    //if the pollution level is higher than the random number a disaster happens.
+    //Otherwise a popup meassage appears about the pollution level.
     public void runDisaster(){
         int eventTrigger =2000 + (int)(Math.random()*(8001));
-        //Picks a random integer between 2000 and 10000 (eventTrigger).
-        //if the pollution level is higher than the random number a disaster happens.
 
+            //If the pollution is higher than the eventTrigger,
+            //an event/disaster happens on 5 random tiles.
         if (eventTrigger<Pollution){
             for(int i=0; i<5; i++){
             int eventTile = (int)(Math.random()*(16));
-            //Picks 5 different tiles where the event is impacting.
-            Hvis building on eventTile --> Destroy;
+            //Hvis building on eventTile --> Destroy;
+            //////////
+            //////////
+            //////////
             }
-        //If the pollution is higher than the eventTrigger,
-        //an event/disaster happens on 5 random tiles.
+
         }
+        //Sends different messages depending on the pollution level.
         else{
             if(Pollution>=10000){
                 System.out.println("It's almost impossible to breath because of the pollution.");
@@ -39,7 +41,7 @@ public class DisasterManager{
             else if(Pollution>=2000){
                 System.out.println("The air is starting to get polluted.");
             }
-            //Sends different messages depending on the pollution level.
+            else{}
         }
     }
 }

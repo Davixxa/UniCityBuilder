@@ -1,6 +1,11 @@
 public class DisasterManager{
     private int Pollution = 0;
 
+    BuildingManager buildingManager;
+    public DisasterManager(BuildingManager buildingManager) {
+        this.buildingManager = buildingManager;
+    }
+
     public int setPollution(){
         Pollution += setPollution();
         return Pollution;

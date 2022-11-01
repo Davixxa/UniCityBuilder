@@ -111,6 +111,6 @@ class BuildingManager {
 
 		//for (int row = 0; row < )
 
-
+		//kris er grim
 	}
 }

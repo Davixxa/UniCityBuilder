@@ -14,13 +14,13 @@ class BuildingManager {
 	int count = 0;
 
 
-	public Map<Integer, Building> map;
+	public Map<Integer, Building> map = new HashMap<Integer, Building>(9);
 
 	// Main driver method
 	public void BuildingManager() 
 	{
 
-        Map<Integer, Building> map = new HashMap<Integer, Building>(9);
+        //Map<Integer, Building> map = new HashMap<Integer, Building>(9);
 		// Adding elements to the Map
 		// using standard put() method
 		map.put(1, new MoneyBuilding(1));

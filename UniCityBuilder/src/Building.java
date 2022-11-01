@@ -80,7 +80,7 @@ abstract class Building {
 
     // Make upgrade cost more expensive, increase yield, level++
     public abstract void upgrade();
-    // Upgrade gør også at den koster mere at i upKeepCost. (Oliver Larsen)
+    // Upgrade gør også at den koster mere i upKeepCost. (Oliver Larsen)
 
     // Concrete - Doesn't immediately make sense to have
     //public abstract void remove();

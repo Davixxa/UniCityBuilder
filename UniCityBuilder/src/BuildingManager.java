@@ -32,12 +32,36 @@ class BuildingManager {
 		System.out.print("Enter tile:");
 		Integer tile = Integer.parseInt(scan.nextLine());
 
-		System.out.println("What type of building do you want:");
-		String nameType =  scan.nextLine();
-		Building type = Building.valueOf(nameType);
-		
-	
-		Building bValue = (Building) map.put(tile, type);
+		System.out.println("Enter the number corresponding to the building you want to build:");
+		System.out.println("1. Energy Building\n2. Money Building\n3. Science Building\n4. House\n5. Cancel");
+		int buildingType =  Integer.parseInt(scan.nextLine());
+
+		switch(buildingType) {
+			case 1:
+				EnergyBuilding eBuilding = new EnergyBuilding(tile);
+				map.put(tile, eBuilding);
+				break;
+			case 2:
+				MoneyBuilding mBuilding = new MoneyBuilding(tile);
+				map.put(tile, mBuilding);
+				break;
+			case 3:
+				ScienceBuilding sBuilding = new ScienceBuilding(tile);
+				map.put(tile, sBuilding);
+				break;
+			case 4:
+				// House extends Building, despite seeming illogical from the name, therefore it will go into the Map just fine.
+				House house = new House(tile);
+				map.put(tile, house);
+				break;
+			case 5:
+				break;
+
+			default:
+				System.out.println("Error: Invalid building type. Cancelling.");
+				break;
+		}
+
 	}
 
 	public void select(Map<Integer, Building> map) 

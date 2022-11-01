@@ -1,7 +1,10 @@
+import java.lang.Math;
+
+
 public class EnergyManager {
     private int energyGain;
     private int currentEnergy;
-    private int energyDecay;
+    private float energyDecay;
     private int energyUpkeep;
 
     BuildingManager buildingManager;
@@ -10,7 +13,7 @@ public class EnergyManager {
     public EnergyManager(BuildingManager buildingManager){
         this.energyGain = 0;
         this.currentEnergy = 100;
-        this.energyDecay = 0;
+        this.energyDecay = 0.9f;
         this.energyUpkeep = 0;
         this.buildingManager = buildingManager;
     }
@@ -23,11 +26,11 @@ public class EnergyManager {
         this.currentEnergy = currentEnergy;
     }
 
-    public int getEnergyDecay() {
+    public double getEnergyDecay() {
         return energyDecay;
     }
 
-    public void setEnergyDecay(int energyDecay) {
+    public void setEnergyDecay(float energyDecay) {
         this.energyDecay = energyDecay;
     }
 
@@ -45,7 +48,7 @@ public class EnergyManager {
         this.energyGain = 0;
         for (Building i : buildingManager.map.values()) {
             this.energyUpkeep += i.energyUpKeepCost;
-            
+
             /*
             switch (i.getBuildingType()) {
 
@@ -91,6 +94,8 @@ public class EnergyManager {
         }
         this.energyGain -= this.energyUpkeep;
         this.currentEnergy += this.energyGain;
+        this.currentEnergy = Math.round(this.currentEnergy * energyDecay);
+
     }
 
 

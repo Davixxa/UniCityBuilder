@@ -89,7 +89,11 @@ class BuildingManager {
 			}
 		}
 	}
-	public void printMap(){
+	public void printMap(String array[][]){
+		for (Building i : map.values()){
+
+		}
+
 		System.out.println("this is a map of your current city");
 
 		for(int i=1; i<=size; i++){

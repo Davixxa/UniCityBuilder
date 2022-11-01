@@ -27,17 +27,11 @@ public class MoneyManager {
         return moneyGain;
     }
 
-    public void setMoneyGain(int moneyGain) {
-        this.moneyGain = moneyGain;
-    }
 
     public int getMoneyUpkeep() {
         return moneyUpkeep;
     }
 
-    public void setMoneyUpkeep(int moneyUpkeep) {
-        this.moneyUpkeep = moneyUpkeep;
-    }
 
 /*
     public void setMoneyGain() {
@@ -103,6 +97,5 @@ public class MoneyManager {
         this.moneyGain -= this.moneyUpkeep;
         this.currentMoney += this.moneyGain;
     }
-
 
 }

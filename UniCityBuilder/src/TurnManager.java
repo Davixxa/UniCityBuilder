@@ -1,17 +1,18 @@
 public class TurnManager {
     private int currentTurn;
 
-    TurnManager(){
-        currentTurn = 0;
-    }
-
-    private void endTurn(ScienceManager scienceManager, EnergyManager energyManager, MoneyManager moneyManager, InfastructureManager infastructureManager, EventManager eventManager, BuildingManager buildingManager){
+    //Runs all methods that needs to be run at the end of the turn.
+    private void endTurn(PolutionManager polutionManager, ScienceManager scienceManager, EnergyManager energyManager, MoneyManager moneyManager, InfastructureManager infastructureManager, EventManager eventManager, BuildingManager buildingManager){
         currentTurn++;
         int tempPolution;
-        scienceManager.setCurrentScience(scienceManager.getCurrentScience()+scienceManager.getScienceGain);
-        energyManager.setCurrentEnergy(energyManager.getCurrentEnergy()+energyManager.getEnergyGain());
-        moneyManager.setCurrentMoney(moneyManager.getCurrentMoney()+moneyManager.getMoneyGain());
-        eventManager.runEvent();
-        //eventManager.setPolution(tempPolution);
+        scienceManager.calcScienceGain();
+        energyManager.calcEnergyGain();
+        moneyManager.calcMoney();
+        eventManager.runDisaster();
+        polutionManager.setCurrentPolution(polutionManager.getCurrentPolution()+polutionManager.getPolutionYield());
+    }
+
+    public int getCurrentTurn() {
+        return currentTurn;
     }
 }

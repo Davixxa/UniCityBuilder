@@ -24,17 +24,14 @@ public class DisasterManager{
             //If the pollution is higher than the eventTrigger,
             //an event/disaster happens on 2 random tiles if there is a building.
         if (eventTrigger<Pollution){
+            System.out.println("A disaster has happend.");
             for(int i=0; i<2; i++){
             int eventTile = (int)(Math.random()*(buildingManager.map.size()));
                 if(buildingManager.map.containsKey(eventTile)){
                     buildingManager.map.get(eventTile).setDestroyed(true);
+                    System.out.println("The building at cordinates " + eventTile + " has been destroyed and needs to be repaired.");
                 }
             }
-            //Hvis building on eventTile --> Destroy;
-            //////////
-            //////////
-            //////////
-        
 
         }
         //Sends different messages depending on the pollution level.

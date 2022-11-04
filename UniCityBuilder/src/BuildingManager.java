@@ -77,7 +77,7 @@ class BuildingManager {
 		{
 			if(Entry.getKey() == tileKey)
 			{
-				System.out.print("On tile: " + tileKey + " Is " + Entry.getValue());
+				System.out.print("On tile: " + tileKey + " Is " + Entry.getValue().getDisplayName());
 
 				return Entry.getValue();
 			}

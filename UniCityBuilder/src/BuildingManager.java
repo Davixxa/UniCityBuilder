@@ -21,14 +21,7 @@ class BuildingManager {
 	// Main driver method
 	public void BuildingManager() 
 	{
-
-		map = new HashMap<Integer, Building>(9);
-		// Adding elements to the Map
-		// using standard put() method
-		map.put(1, new MoneyBuilding(1));
-        map.put(2, new ScienceBuilding(2));
-		map.put(3, new EnergyBuilding(3));
-        map.put(4, new House(4));
+		
 	}
 
 	public void buildBuilding(Map<Integer, Building> map)
@@ -97,10 +90,6 @@ class BuildingManager {
 		}
 
 		System.out.println("this is a map of your current city");
-		map.put(1, new MoneyBuilding(1));
-		map.put(2, new ScienceBuilding(2));
-		map.put(3, new EnergyBuilding(3));
-		map.put(4, new House(4));
 
 		for(int i=1; i<=size; i++){
 			System.out.println();

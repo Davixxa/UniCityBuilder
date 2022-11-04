@@ -5,6 +5,11 @@ public class DisasterManager{
     public DisasterManager(BuildingManager buildingManager) {
         this.buildingManager = buildingManager;
     }
+    
+    Building building;
+    public DisasterManager(Building building) {
+        this.building = building;
+    }
 
     public int setPollution(){
         Pollution += setPollution();
@@ -16,16 +21,16 @@ public class DisasterManager{
     //Otherwise a popup meassage appears about the pollution level.
     public void runDisaster(){
         int eventTrigger =2000 + (int)(Math.random()*(8001));
-
             //If the pollution is higher than the eventTrigger,
-            //an event/disaster happens on 5 random tiles.
+            //an event/disaster happens on 2 random tiles if there is a building.
         if (eventTrigger<Pollution){
-            for(int i=0; i<5; i++){
-            int eventTile = (int)(Math.random()*(16));
-            //Hvis building on eventTile --> Destroy;
-            //////////
-            //////////
-            //////////
+            System.out.println("A disaster has happend.");
+            for(int i=0; i<2; i++){
+            int eventTile = (int)(Math.random()*(buildingManager.map.size()));
+                if(buildingManager.map.containsKey(eventTile)){
+                    buildingManager.map.get(eventTile).setDestroyed(true);
+                    System.out.println("The building at cordinates " + eventTile + " has been destroyed and needs to be repaired.");
+                }
             }
 
         }

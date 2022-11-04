@@ -16,11 +16,13 @@ class BuildingManager {
 
 	public Map<Integer, Building> map = new HashMap<Integer, Building>(9);
 
+
+
 	// Main driver method
 	public void BuildingManager() 
 	{
 
-        //Map<Integer, Building> map = new HashMap<Integer, Building>(9);
+		map = new HashMap<Integer, Building>(9);
 		// Adding elements to the Map
 		// using standard put() method
 		map.put(1, new MoneyBuilding(1));
@@ -89,24 +91,65 @@ class BuildingManager {
 			}
 		}
 	}
-	public void printMap(String array[][]){
+	public void printMap(){
 		for (Building i : map.values()){
 
 		}
 
 		System.out.println("this is a map of your current city");
+		map.put(1, new MoneyBuilding(1));
+		map.put(2, new ScienceBuilding(2));
+		map.put(3, new EnergyBuilding(3));
+		map.put(4, new House(4));
 
 		for(int i=1; i<=size; i++){
 			System.out.println();
 			for(int j=1; j<=size; j++){
 				if(map.get(j+count)==null){
-					System.out.println("NEJ"+" ");
+					System.out.print("N"+" ");
 				}else {
-					System.out.print(map.get(j + count).buildingType + " ");
+					switch (map.get(j + count).buildingType) {
+
+						case MONEY:
+							// code block
+							// Hvor meget det koster at holde en bygning up. 10.
+							System.out.print("M" + " ");
+
+							break;
+
+						case ENERGY:
+							// code block
+							// Hvor meget det koster at holde en bygning up. 10.
+							System.out.print("E" + " ");
+
+							break;
+
+						case HOUSE:
+							// code block
+							// Hvor meget det koster at holde en bygning up. 10.
+							System.out.print("H" + " ");
+
+							break;
+
+						case SCIENCE:
+							// code block
+							// Hvor meget det koster at holde en bygning up. 10.
+							System.out.print("S" + " ");
+
+							break;
+
+						default:
+							// code block
+					}
+					//System.out.print(map.get(j + count).buildingType + " ");
 				}
 			}
 			count +=size;
 		}
+
+		System.out.println();
+
+		System.out.println(map.size());
 
 
 		//for (int row = 0; row < )

@@ -66,6 +66,17 @@ abstract class Building {
         return destroyed;
     }
 
+    public void repair(MoneyManager moneyManager) {
+        int newMoney = moneyManager.getCurrentMoney() - upgradeCost;
+        if (newMoney < 0) {
+            System.out.println("Error: Insufficient funds");
+        } else {
+            moneyManager.setCurrentMoney(newMoney);
+            this.destroyed = false;
+        }
+
+    }
+
     public int getMoneyUpKeepCost() {
         return moneyUpKeepCost;
     }

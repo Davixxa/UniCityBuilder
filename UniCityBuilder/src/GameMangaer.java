@@ -34,20 +34,33 @@ public class GameMangaer {
                 if (selectedBuilding == null){
                     System.out.println("There is no selected building");
                     displayMainMenu();
-                }
-                if (selectedBuilding.isDestroyed()){
-                    System.out.println("do you want to repair this building (Y/N)");
-                    String input = scan.nextLine().toLowerCase();
-                    if (input.equals("y")){
-                        selectedBuilding.repair(moneyManager);
-                    } else if (input.equals("n")) {
-                        displayMainMenu();
+                    break;
+                }else {
+                    if (selectedBuilding.isDestroyed()){
+                        System.out.println("do you want to repair this building (Y/N)");
+                        String input = scan.nextLine().toLowerCase();
+                        if (input.equals("y")){
+                            selectedBuilding.repair(moneyManager);
+                        } else if (input.equals("n")) {
+                            displayMainMenu();
+                        }else {
+                            System.out.println("Error: Invalid input");
+                        }
+
                     }else {
-                        System.out.println("Error: Invalid input");
+                        System.out.println("do you want to upgrade this building (Y/N)");
+                        String input = scan.nextLine().toLowerCase();
+                        if (input.equals("y")){
+                            selectedBuilding.upgrade(/*moneyManager*/);
+                        } else if (input.equals("n")) {
+                            displayMainMenu();
+                        }else {
+                            System.out.println("Error: Invalid input");
+                        }
                     }
-                    
+                    displayMainMenu();
+                    break;
                 }
-                break;
             case 3:
                 turnManager.endTurn(polutionManager, scienceManager, energyManager, moneyManager, infastructureManager, disasterManager, buildingManager);
                 break;

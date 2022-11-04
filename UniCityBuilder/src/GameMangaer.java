@@ -39,12 +39,13 @@ public class GameMangaer {
                     System.out.println("do you want to repair this building (Y/N)");
                     String input = scan.nextLine().toLowerCase();
                     if (input.equals("y")){
-                        //selectedBuilding.repair(moneyManager);
+                        selectedBuilding.repair(moneyManager);
                     } else if (input.equals("n")) {
                         displayMainMenu();
                     }else {
                         System.out.println("Error: Invalid input");
                     }
+                    
                 }
                 break;
             case 3:

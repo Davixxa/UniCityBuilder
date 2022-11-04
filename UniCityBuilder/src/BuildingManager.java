@@ -24,7 +24,7 @@ class BuildingManager {
 		
 	}
 
-	public void buildBuilding(Map<Integer, Building> map)
+	public void buildBuilding(Map<Integer, Building> map, GameMangaer gameMangaer)
 	{
 		Scanner scan = new Scanner(System.in);
 
@@ -60,10 +60,11 @@ class BuildingManager {
 				System.out.println("Error: Invalid building type. Cancelling.");
 				break;
 		}
+		gameMangaer.displayMainMenu();
 
 	}
 
-	public void select(Map<Integer, Building> map) 
+	public Building select(Map<Integer, Building> map)
 	{
 		
 		Scanner scan = new Scanner(System.in);
@@ -77,12 +78,15 @@ class BuildingManager {
 			if(Entry.getKey() == tileKey)
 			{
 				System.out.print("On tile: " + tileKey + " Is " + Entry.getValue());
+
+				return Entry.getValue();
 			}
 			else if(tileKey > map.size())
 			{
 			System.out.print("Tile does not exist");
 			}
 		}
+		return null;
 	}
 	public void printMap(){
 		for (Building i : map.values()){
@@ -91,7 +95,7 @@ class BuildingManager {
 
 		System.out.println("this is a map of your current city");
 
-		for(int i=1; i<=size; i++){
+		for(int i=1; i<=size; i++) {
 			System.out.println();
 			for(int j=1; j<=size; j++){
 				if(map.get(j+count)==null){
@@ -133,7 +137,7 @@ class BuildingManager {
 					//System.out.print(map.get(j + count).buildingType + " ");
 				}
 			}
-			count +=size;
+			count += size;
 		}
 
 		System.out.println();

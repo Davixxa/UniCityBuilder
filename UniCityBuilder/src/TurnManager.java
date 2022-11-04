@@ -2,7 +2,7 @@ public class TurnManager {
     private int currentTurn;
 
     //Runs all methods that needs to be run at the end of the turn.
-    private void endTurn(PolutionManager polutionManager, ScienceManager scienceManager, EnergyManager energyManager, MoneyManager moneyManager, InfastructureManager infastructureManager, DisasterManager disasterManager, BuildingManager buildingManager){
+    public void endTurn(PolutionManager polutionManager, ScienceManager scienceManager, EnergyManager energyManager, MoneyManager moneyManager, InfastructureManager infastructureManager, DisasterManager disasterManager, BuildingManager buildingManager){
         currentTurn++;
         int tempPolution;
         scienceManager.calcScienceGain();

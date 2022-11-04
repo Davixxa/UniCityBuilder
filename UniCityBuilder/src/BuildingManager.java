@@ -93,56 +93,45 @@ class BuildingManager {
 
 		}
 
-		System.out.println("this is a map of your current city");
-
-		for(int i=1; i<=size; i++) {
+		System.out.println("City Map: ");
+		int line = 0;
+		for (int i = 1; i <= size; i++) {
 			System.out.println();
-			for(int j=1; j<=size; j++){
-				if(map.get(j+count)==null){
-					System.out.print("N"+" ");
-				}else {
+			for(int j = 1; j <= size; j++) {
+				if (map.get(j+line)==null) {
+					System.out.print("[N] ");
+				} else {
+					// This changes in every row. Why?
 					switch (map.get(j + count).buildingType) {
 
 						case MONEY:
-							// code block
-							// Hvor meget det koster at holde en bygning up. 10.
-							System.out.print("M" + " ");
-
+							System.out.print("[M] ");
 							break;
 
 						case ENERGY:
-							// code block
-							// Hvor meget det koster at holde en bygning up. 10.
-							System.out.print("E" + " ");
-
+							System.out.print("[E] ");
 							break;
 
 						case HOUSE:
-							// code block
-							// Hvor meget det koster at holde en bygning up. 10.
-							System.out.print("H" + " ");
-
+							System.out.print("[H] ");
 							break;
 
 						case SCIENCE:
-							// code block
-							// Hvor meget det koster at holde en bygning up. 10.
-							System.out.print("S" + " ");
-
+							// No. I'm not dealing with Danish.
+							System.out.print("[S] ");
 							break;
 
 						default:
 							// code block
 					}
-					//System.out.print(map.get(j + count).buildingType + " ");
 				}
 			}
-			count += size;
+			line++;
 		}
 
 		System.out.println();
 
-		System.out.println(map.size());
+		System.out.println("Current amount of buildings placed: " + map.size());
 
 
 		//for (int row = 0; row < )

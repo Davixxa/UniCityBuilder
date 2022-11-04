@@ -18,9 +18,10 @@ public class GameMangaer {
     public void displayMainMenu(){
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Intro text");
-        System.out.println("1: Build a new building \n 2: Select a building to upgrade or repair \n 3: End turn");
         buildingManager.printMap();
+        System.out.println("What would you like to do?");
+        System.out.println("1. Build a new building \n2. Select a building to upgrade or repair \n3. End turn");
+
 
         String playerInput = scan.nextLine();
 

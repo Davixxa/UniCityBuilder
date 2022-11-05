@@ -21,17 +21,10 @@ class BuildingManager {
 	// Main driver method
 	public void BuildingManager() 
 	{
-
-		map = new HashMap<Integer, Building>(9);
-		// Adding elements to the Map
-		// using standard put() method
-		map.put(1, new MoneyBuilding(1));
-        map.put(2, new ScienceBuilding(2));
-		map.put(3, new EnergyBuilding(3));
-        map.put(4, new House(4));
+		
 	}
 
-	public void buildBuilding(Map<Integer, Building> map)
+	public void buildBuilding(Map<Integer, Building> map, GameMangaer gameMangaer)
 	{
 		Scanner scan = new Scanner(System.in);
 
@@ -67,10 +60,11 @@ class BuildingManager {
 				System.out.println("Error: Invalid building type. Cancelling.");
 				break;
 		}
+		gameMangaer.displayMainMenu();
 
 	}
 
-	public void select(Map<Integer, Building> map) 
+	public Building select(Map<Integer, Building> map)
 	{
 		
 		Scanner scan = new Scanner(System.in);
@@ -83,79 +77,61 @@ class BuildingManager {
 		{
 			if(Entry.getKey() == tileKey)
 			{
-				System.out.print("On tile: " + tileKey + " Is " + Entry.getValue());
+				System.out.print("On tile: " + tileKey + " Is " + Entry.getValue().getDisplayName());
+
+				return Entry.getValue();
 			}
 			else if(tileKey > map.size())
 			{
 			System.out.print("Tile does not exist");
 			}
 		}
+		return null;
 	}
 	public void printMap(){
 		for (Building i : map.values()){
 
 		}
 
-		System.out.println("this is a map of your current city");
-
-
-		// Placing stuff in the map
-		map.put(1, new MoneyBuilding(1));
-		map.put(2, new ScienceBuilding(2));
-		map.put(3, new EnergyBuilding(3));
-		map.put(4, new House(4));
-
-		
-
-		// Printing the map
-		for(int i=1; i<=size; i++){
+		System.out.println("City Map: ");
+		int line = 0;
+		for (int i = 1; i <= size; i++) {
 			System.out.println();
-			for(int j=1; j<=size; j++){
-				if(map.get(j+count)==null){
-					System.out.print("N"+" ");
-				}else {
+			for(int j = 1; j <= size; j++) {
+				if (map.get(j+line)==null) {
+					System.out.print("[N] ");
+				} else {
+					// This changes in every row. Why?
 					switch (map.get(j + count).buildingType) {
 
 						case MONEY:
-							// code block
-							// Hvor meget det koster at holde en bygning up. 10.
-							System.out.print("M" + " ");
-
+							System.out.print("[M] ");
 							break;
 
 						case ENERGY:
-							// code block
-							// Hvor meget det koster at holde en bygning up. 10.
-							System.out.print("E" + " ");
-
+							System.out.print("[E] ");
 							break;
 
 						case HOUSE:
-							// code block
-							// Hvor meget det koster at holde en bygning up. 10.
-							System.out.print("H" + " ");
-
+							System.out.print("[H] ");
 							break;
 
 						case SCIENCE:
-							// code block
-							// Hvor meget det koster at holde en bygning up. 10.
-							System.out.print("S" + " ");
-
+							// No. I'm not dealing with Danish.
+							System.out.print("[S] ");
 							break;
 
 						default:
 							// code block
 					}
-					//System.out.print(map.get(j + count).buildingType + " ");
 				}
 			}
-			count +=size;
+			line++;
 		}
 
 		System.out.println();
 
-		System.out.println(map.size());
+		System.out.println("Current amount of buildings placed: " + map.size());
 
 
 		//for (int row = 0; row < )

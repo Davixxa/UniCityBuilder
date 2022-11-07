@@ -8,7 +8,7 @@ public class TurnManager {
         scienceManager.calcScienceGain();
         energyManager.calcEnergyGain();
         moneyManager.calcMoneyGain();
-        disasterManager.runDisaster();
+        disasterManager.runDisaster(polutionManager);
         polutionManager.setCurrentPolution(polutionManager.getCurrentPolution()+polutionManager.getPolutionYield());
     }
 

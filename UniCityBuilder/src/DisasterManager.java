@@ -1,5 +1,4 @@
 public class DisasterManager{
-    private int Pollution = 0;
 
     BuildingManager buildingManager;
     public DisasterManager(BuildingManager buildingManager) {
@@ -11,19 +10,14 @@ public class DisasterManager{
         this.building = building;
     }
 
-    public int setPollution(){
-        Pollution += setPollution();
-        return Pollution;
-    }
-
     //Picks a random integer between 2000 and 10000 (eventTrigger).
     //if the pollution level is higher than the random number a disaster happens.
     //Otherwise a popup meassage appears about the pollution level.
-    public void runDisaster(){
+    public void runDisaster(PolutionManager polutionManager){
         int eventTrigger =2000 + (int)(Math.random()*(8001));
             //If the pollution is higher than the eventTrigger,
             //an event/disaster happens on 2 random tiles if there is a building.
-        if (eventTrigger<Pollution){
+        if (eventTrigger<polutionManager.getCurrentPolution()){
             System.out.println("A disaster has happend.");
             for(int i=0; i<2; i++){
             int eventTile = (int)(Math.random()*(buildingManager.map.size()));
@@ -36,20 +30,21 @@ public class DisasterManager{
         }
         //Sends different messages depending on the pollution level.
         else{
-            if(Pollution>=10000){
-                System.out.println("It's almost impossible to breath because of the pollution.");
+            if(polutionManager.getCurrentPolution()>=10000){
+                System.out.println("The pollution level is very hazardous.");
+                System.out.println("It's almost impossible to breathe.");
             }
-            else if(Pollution>=8000){
-                System.out.println("The smog is getting worse.");
+            else if(polutionManager.getCurrentPolution()>=8000){
+                System.out.println("The pollution level is hazardous.");
             }
-            else if(Pollution>=6000){
-                System.out.println("There is a lot of smog.");
+            else if(polutionManager.getCurrentPolution()>=6000){
+                System.out.println("The pollution level is very unhealthy.");
             }
-            else if(Pollution>=4000){
-                System.out.println("The air pollution is getting worse.");
+            else if(polutionManager.getCurrentPolution()>=4000){
+                System.out.println("The pollution level is unhealthy.");
             }
-            else if(Pollution>=2000){
-                System.out.println("The air is starting to get polluted.");
+            else if(polutionManager.getCurrentPolution()>=2000){
+                System.out.println("The pollution level is moderate");
             }
             else{}
         }

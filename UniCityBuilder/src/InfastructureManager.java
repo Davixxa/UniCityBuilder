@@ -16,7 +16,7 @@ public class InfastructureManager {
 
     //Methods
     public void upgrade() {
-        level ++;
+        level++;
         upgradeCost *= 2;
         repairCost *= 2;
     }
@@ -26,17 +26,17 @@ public class InfastructureManager {
     }
 
     public void repair(MoneyManager moneyManager) {
-        if (isDamaged == true){
+        if (isDamaged == true) {
             moneyManager.setCurrentMoney(moneyManager.getCurrentMoney() - repairCost);
         }
     }
 
     //Get methods
-    public int getLevel(){
+    public int getLevel() {
         return level;
     }
 
-    public boolean getIsDamaged(){
+    public boolean getIsDamaged() {
         return false;
     }
 

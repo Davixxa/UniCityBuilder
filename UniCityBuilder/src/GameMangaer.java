@@ -39,7 +39,7 @@ public class GameMangaer {
                 }else {
                     if (selectedBuilding.isDestroyed()){
                         System.out.println("do you want to repair this building (Y/N)");
-                        String input = scan.nextLine().toLowerCase();
+                        String input = scan.next().toLowerCase();
                         if (input.equals("y")){
                             selectedBuilding.repair(moneyManager);
                         } else if (input.equals("n")) {
@@ -50,7 +50,7 @@ public class GameMangaer {
 
                     }else {
                         System.out.println("do you want to upgrade this building (Y/N)");
-                        String input = scan.nextLine().toLowerCase();
+                        String input = scan.next().toLowerCase();
                         if (input.equals("y")){
                             selectedBuilding.upgrade(/*moneyManager*/);
                         } else if (input.equals("n")) {

@@ -49,7 +49,8 @@ abstract class Building {
     public int getUpgradeCost() {
         return upgradeCost;
     }
-    public int getBuildingCost(){
+
+    public int getBuildingCost() {
         return buildingCost;
     }
 
@@ -95,8 +96,6 @@ abstract class Building {
 
     // Concrete - Doesn't immediately make sense to have
     //public abstract void remove();
-
-
 
 
 }

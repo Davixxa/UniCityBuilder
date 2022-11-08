@@ -4,28 +4,9 @@ import java.util.ArrayList;
 
 
 public class Main {
-
-
-
     public static void main(String[] args) {
-
-        /*
-        // Initial program
-        // Aleksander
-        System.out.println("**** Start apprication ****");
-        System.out.println("Enter name: ");
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        System.out.println("Name: " + name);*/
-        
-
-        Scanner scan = new Scanner(System.in);
         GameMangaer gameMangaer = new GameMangaer();
         gameMangaer.setupGame();
-
-
-
-
     }
 }
 

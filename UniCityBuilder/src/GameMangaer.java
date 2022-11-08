@@ -23,10 +23,10 @@ public class GameMangaer {
         System.out.println("1. Build a new building \n2. Select a building to upgrade or repair \n3. End turn");
 
 
-        String playerInput = scan.nextLine();
+        int playerInput = scan.nextInt();
 
         //1 = build,     2 = select building to upgrade/rapair,      3 = next turn
-        switch(Integer.parseInt(playerInput)) {
+        switch(playerInput) {
             case 1:
                 buildingManager.buildBuilding(buildingManager.map, this);
                 break;

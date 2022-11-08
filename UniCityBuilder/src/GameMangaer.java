@@ -63,7 +63,7 @@ public class GameMangaer {
                     break;
                 }
             case 3:
-                turnManager.endTurn(polutionManager, scienceManager, energyManager, moneyManager, infastructureManager, disasterManager, buildingManager);
+                turnManager.endTurn(polutionManager, scienceManager, energyManager, moneyManager, infastructureManager, disasterManager, buildingManager, this);
                 break;
 
             default:

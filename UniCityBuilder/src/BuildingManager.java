@@ -102,7 +102,7 @@ class BuildingManager {
 					System.out.print("[N] ");
 				} else {
 					// This changes in every row. Why?
-					switch (map.get(j + count).buildingType) {
+					switch (map.get(j+line).buildingType) {
 
 						case MONEY:
 							System.out.print("[M] ");
@@ -126,7 +126,7 @@ class BuildingManager {
 					}
 				}
 			}
-			line++;
+			line+=size;
 		}
 
 		System.out.println();

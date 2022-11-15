@@ -26,12 +26,18 @@ public class EnergyBuilding extends Building {
     }
 
     @Override
-    public void upgrade() {
+    public void upgrade(MoneyManager moneyManager) {
 
-        this.currentLevel++;
-        this.yield += 5; // Placeholder
-        this.displayName = "So what it isn't a myth? Doesn't matter. A few degrees warmer summer never hurt anyone!";
-        this.upgradeCost += 5; // Another placeholder.
+        int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
+        if (newMoney < 0) {
+            System.out.println("Error: Insufficient funds");
+        } else {
+            this.currentLevel++;
+            this.yield += 5; // Placeholder
+            this.displayName = "So what it isn't a myth? Doesn't matter. A few degrees warmer summer never hurt anyone!";
+            this.upgradeCost += 5; // Another placeholder.
+        }
+
 
     }
 }

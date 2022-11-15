@@ -52,7 +52,7 @@ public class GameMangaer {
                         System.out.println("do you want to upgrade this building (Y/N)");
                         String input = scan.next().toLowerCase();
                         if (input.equals("y")){
-                            selectedBuilding.upgrade(/*moneyManager*/);
+                            selectedBuilding.upgrade(moneyManager);
                         } else if (input.equals("n")) {
                             displayMainMenu();
                         }else {

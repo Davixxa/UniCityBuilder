@@ -6,7 +6,7 @@ public class House extends Building {
     }
 
     @Override
-    public void upgrade() {
+    public void upgrade(MoneyManager manager) {
         // Houses can't be upgraded, dummy method
     }
 }

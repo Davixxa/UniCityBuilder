@@ -1,4 +1,4 @@
-// Java program to illustrate HashMap class of java.util
+package com.example.javafxbuilder;// Java program to illustrate HashMap class of java.util
 // package
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 class BuildingManager {
 
 
-	int size = 4;
+	int size = 3;
 	int count = 0;
 
 

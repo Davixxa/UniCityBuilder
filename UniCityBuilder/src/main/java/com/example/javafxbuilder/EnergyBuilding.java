@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 public class EnergyBuilding extends Building {
 
 

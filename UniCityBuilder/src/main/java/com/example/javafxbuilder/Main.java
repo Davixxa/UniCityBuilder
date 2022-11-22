@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 import java.security.cert.PolicyQualifierInfo;
 import java.util.Scanner;
 import java.util.ArrayList;

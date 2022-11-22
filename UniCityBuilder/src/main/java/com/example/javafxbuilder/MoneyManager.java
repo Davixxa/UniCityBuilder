@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 import java.util.HashMap;
 
 public class MoneyManager {
@@ -31,13 +33,12 @@ public class MoneyManager {
         return moneyUpkeep;
     }
 
-    
+
 
     public void calcMoneyGain() {
         this.moneyGain = 0;
         for (Building i : buildingManager.map.values()) {
             this.moneyUpkeep += i.moneyUpKeepCost;
-
 
             if (i.getBuildingType() == BuildingTypes.MONEY) {
                 if (i.isDestroyed() == false) {

@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 public class ScienceManager {
     private int scienceGain;
     private int currentScience;

@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 public class ScienceBuilding extends Building {
 
     int range;

@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 public class MoneyBuilding extends Building {
 
     // The placeholder names in this class may or may not have various commie jokes in it.

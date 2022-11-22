@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 public class TurnManager {
     private int currentTurn;
 
@@ -17,3 +19,4 @@ public class TurnManager {
         return currentTurn;
     }
 }
+

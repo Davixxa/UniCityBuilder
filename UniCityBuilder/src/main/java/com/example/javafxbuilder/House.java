@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 public class House extends Building {
 
     public House(int coordinate) {

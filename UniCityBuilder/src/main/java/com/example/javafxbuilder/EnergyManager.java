@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 import java.lang.Math;
 
 

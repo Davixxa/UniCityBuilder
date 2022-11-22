@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 public class PolutionManager {
     private int currentPolution;
     private  int polutionYield;

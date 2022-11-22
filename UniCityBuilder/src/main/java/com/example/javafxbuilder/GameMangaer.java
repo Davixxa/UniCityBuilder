@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 import java.util.Scanner;
 
 public class GameMangaer {
@@ -55,7 +57,7 @@ public class GameMangaer {
                             selectedBuilding.upgrade(moneyManager);
                         } else if (input.equals("n")) {
                             displayMainMenu();
-                        }else {
+                        } else {
                             System.out.println("Error: Invalid input");
                         }
                     }

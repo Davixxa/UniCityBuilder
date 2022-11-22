@@ -1,3 +1,5 @@
+package com.example.javafxbuilder;
+
 abstract class Building {
 
 
@@ -10,11 +12,9 @@ abstract class Building {
     int currentLevel;
     int yield;
 
-    // upKeepCost herinde, derved kan man kalde den på objektet direkte og gøre det nemt med lvls osv. (Oliver Larsen)
     int moneyUpKeepCost;
 
     int energyUpKeepCost;
-
 
     String displayName;
 

@@ -1,3 +1,4 @@
+package com.example.javafxbuilder;
 public class InfastructureManager {
 
     //Variables

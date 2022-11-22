@@ -25,25 +25,60 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" prefHeight="333.0" prefWidth="546.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <center>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
-      <Button mnemonicParsing="false" prefHeight="372.0" prefWidth="510.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="333.0" prefWidth="546.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <center>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
-      <Button mnemonicParsing="false" prefHeight="488.0" prefWidth="413.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="365.0" prefWidth="449.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="317.0" prefWidth="484.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="423.0" prefWidth="425.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" prefHeight="216.0" prefWidth="388.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="216.0" prefWidth="389.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Button mnemonicParsing="false" prefHeight="216.0" prefWidth="431.0" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="372.0" prefWidth="510.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <center>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="488.0" prefWidth="413.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <center>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="365.0" prefWidth="449.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <center>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="317.0" prefWidth="484.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <center>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="423.0" prefWidth="425.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <center>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="216.0" prefWidth="388.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <center>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="216.0" prefWidth="389.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <center>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <Button mnemonicParsing="false" opacity="0.2" prefHeight="216.0" prefWidth="431.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
       <BorderPane prefHeight="133.0" prefWidth="160.0" GridPane.rowIndex="2">
          <center>
             <ImageView accessibleRole="BUTTON" fitHeight="83.0" fitWidth="81.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" rotate="180.0" BorderPane.alignment="CENTER">
@@ -95,6 +130,6 @@
             </ImageView>
          </center>
       </BorderPane>
-      <Button mnemonicParsing="false" opacity="0.2" prefHeight="340.0" prefWidth="420.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <Button fx:id="buttonRight1" mnemonicParsing="false" onMouseClicked="#moveRight1" opacity="0.2" prefHeight="340.0" prefWidth="420.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
    </children>
 </GridPane>

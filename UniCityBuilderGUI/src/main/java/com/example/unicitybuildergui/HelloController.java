@@ -9,6 +9,13 @@ import javafx.scene.input.MouseEvent;
 
 public class HelloController {
 
+    void selectTile(int num) {
+        System.out.println(num);
+    }
+
+    @FXML
+    private Button button01;
+
     @FXML
     private Button button1;
 
@@ -21,6 +28,51 @@ public class HelloController {
     @FXML
     void moveRight1(MouseEvent event) {
 
+    }
+
+    @FXML
+    void selectTile1(MouseEvent event) {
+        selectTile(1);
+    }
+
+    @FXML
+    void selectTile2(MouseEvent event) {
+        selectTile(2);
+    }
+
+    @FXML
+    void selectTile3(MouseEvent event) {
+        selectTile(3);
+    }
+
+    @FXML
+    void selectTile4(MouseEvent event) {
+        selectTile(4);
+    }
+
+    @FXML
+    void selectTile5(MouseEvent event) {
+        selectTile(5);
+    }
+
+    @FXML
+    void selectTile6(MouseEvent event) {
+        selectTile(6);
+    }
+
+    @FXML
+    void selectTile7(MouseEvent event) {
+        selectTile(7);
+    }
+
+    @FXML
+    void selectTile8(MouseEvent event) {
+        selectTile(8);
+    }
+
+    @FXML
+    void selectTile9(MouseEvent event) {
+        selectTile(9);
     }
 
 

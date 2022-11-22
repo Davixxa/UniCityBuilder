@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 class BuildingManager {
 
 
-	int size = 3;
+	int size = 4;
 	int count = 0;
 
 

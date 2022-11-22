@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class HelloController {
 
@@ -13,6 +14,16 @@ public class HelloController {
 
     @FXML
     private ImageView imageView;
+
+    @FXML
+    private Button buttonRight1;
+
+    @FXML
+    void moveRight1(MouseEvent event) {
+
+    }
+
+
 
     @FXML
     public void initialize() {

@@ -31,8 +31,17 @@ public class HelloController {
     }
 
     @FXML
-    void selectTile1(MouseEvent event) {
+    void selectTile1(MouseEvent event, BuildingManager buildingManager, Building building) {
         selectTile(1);
+        if(building.isDestroyed()){
+            //Show repair menu
+        }
+        else if(buildingManager.map.containsKey(1)){
+            //Show upgrade menu
+        }
+        else {
+            //Show build menu
+        }
     }
 
     @FXML

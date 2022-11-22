@@ -31,8 +31,9 @@ public class HelloController {
     }
 
     @FXML
-    void selectTile1(MouseEvent event, BuildingManager buildingManager, Building building) {
+    void selectTile1(MouseEvent event) {
         selectTile(1);
+
     }
 
     @FXML

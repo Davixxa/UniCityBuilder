@@ -1,4 +1,4 @@
-package main.java.com.example.javafxbuilder;
+package com.example.unicitybuildergui;
 
 public class TurnManager {
     private int currentTurn;

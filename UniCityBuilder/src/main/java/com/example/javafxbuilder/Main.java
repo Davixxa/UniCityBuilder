@@ -1,4 +1,4 @@
-package com.example.javafxbuilder;
+package main.java.com.example.javafxbuilder;
 
 import java.security.cert.PolicyQualifierInfo;
 import java.util.Scanner;

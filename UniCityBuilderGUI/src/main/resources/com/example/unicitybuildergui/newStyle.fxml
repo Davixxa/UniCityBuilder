@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.unicitybuildergui.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.unicitybuildergui.HelloController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutY="399.0" prefHeight="117.0" prefWidth="399.0">
         <items>
@@ -44,7 +44,7 @@
                   </GridPane>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="281.0">
                <children>
                   <Button fx:id="cancelButton" layoutX="112.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#goToMainMenu" text="Cancel" />
                   <HBox fx:id="buildingOptionsMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
@@ -73,6 +73,7 @@
         </items>
       </SplitPane>
       <ImageView fx:id="background" fitHeight="400.0" fitWidth="570.0" pickOnBounds="true" preserveRatio="true">
+
          <image>
             <Image url="@Backgroung.png" />
          </image>

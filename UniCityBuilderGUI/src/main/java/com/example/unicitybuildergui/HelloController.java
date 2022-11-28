@@ -125,6 +125,7 @@ public class HelloController {
 
     void updateBackground(){
     }
+
     private void goToBuildingOptionsMenu(){
         buildMenu.setDisable(true);
         buildMenu.setOpacity(0);
@@ -151,12 +152,23 @@ public class HelloController {
 
 
 
+
     void selectTile(int num) {
         selectedTile = num;
         System.out.println(selectedTile);
         updateBackground();
         // This is how you can change the background image in the imageview
         // background.setImage();`
+
+
+        //Update menu
+        Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
+        if(tempBuilding == null){
+            goToBuildMenu();
+        }else {
+            goToBuildingOptionsMenu();
+        }
+
     }
 
     @FXML

@@ -13,6 +13,7 @@ public class HelloController {
     // Value from 1-9
     int selectedTile;
     GameMangaer gameMangaer;
+    /*
     Image backgroundImage = new Image("Backgroung.png");
     Image factory1 = new Image("Factory.png");
     Image factory2 = new Image("Factory2.png");
@@ -20,6 +21,8 @@ public class HelloController {
     Image energy2;
     Image science1;
     Image science2;
+
+     */
 
 
     @FXML
@@ -163,8 +166,10 @@ public class HelloController {
     void updateBackground(){
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         if (tempBuilding==null || tempBuilding.buildingType == BuildingTypes.HOUSE){
-            background.setImage(backgroundImage);
+            //background.setImage(backgroundImage);
         }
+
+        /*
         switch (tempBuilding.buildingType){
             case MONEY:
                 switch (tempBuilding.getCurrentLevel()){
@@ -198,6 +203,8 @@ public class HelloController {
                         break;
                 }
         }
+
+         */
     }
 
 
@@ -219,6 +226,31 @@ public class HelloController {
         }
 
     }
+
+
+
+    @FXML
+    void buildEnergyBuilding(MouseEvent event) {
+        //Code that happends when clicking the button
+    }
+
+    @FXML
+    void buildHouseBuilding(MouseEvent event) {
+        //Code that happends when clicking the button
+    }
+
+    @FXML
+    void buildMoneyBuilding(MouseEvent event) {
+        //Code that happends when clicking the button
+    }
+
+    @FXML
+    void buildScienceBuilding(MouseEvent event) {
+        //Code that happends when clicking the button
+    }
+
+
+
 
     @FXML
     private Button button01;

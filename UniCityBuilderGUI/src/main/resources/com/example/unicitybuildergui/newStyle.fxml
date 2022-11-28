@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.unicitybuildergui.HelloController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutY="399.0" prefHeight="117.0" prefWidth="399.0">
@@ -32,15 +31,15 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" />
-                        <Button mnemonicParsing="false" GridPane.columnIndex="1" />
-                        <Button mnemonicParsing="false" GridPane.columnIndex="2" />
-                        <Button mnemonicParsing="false" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Button fx:id="selectTile1" mnemonicParsing="false" onMouseClicked="#selectTile1" />
+                        <Button fx:id="selectTile2" mnemonicParsing="false" onMouseClicked="#selectTile2" GridPane.columnIndex="1" />
+                        <Button fx:id="selectTile3" mnemonicParsing="false" onMouseClicked="#selectTile3" GridPane.columnIndex="2" />
+                        <Button fx:id="selectTile4" mnemonicParsing="false" onMouseClicked="#selectTile4" GridPane.rowIndex="1" />
+                        <Button fx:id="selectTile5" mnemonicParsing="false" onMouseClicked="#selectTile5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button fx:id="selectTile6" mnemonicParsing="false" onMouseClicked="#selectTile6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button fx:id="selectTile7" mnemonicParsing="false" onMouseClicked="#selectTile7" GridPane.rowIndex="2" />
+                        <Button fx:id="selectTile8" mnemonicParsing="false" onMouseClicked="#selectTile8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button fx:id="selectTile9" mnemonicParsing="false" onMouseClicked="#selectTile9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>
@@ -73,7 +72,7 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <ImageView fitHeight="400.0" fitWidth="570.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="background" fitHeight="400.0" fitWidth="570.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Backgroung.png" />
          </image>

@@ -48,9 +48,9 @@
                <children>
                   <HBox fx:id="buildingOptionsMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
                      <children>
-                        <Button fx:id="upgradeButton" mnemonicParsing="false" text="Upgrade" />
-                        <Button fx:id="repairButton" mnemonicParsing="false" text="Repair" />
-                        <Button fx:id="destroyButton" mnemonicParsing="false" text="Destroy" />
+                        <Button fx:id="upgradeButton" mnemonicParsing="false" onMouseClicked="#upgradeBuilding" text="Upgrade" />
+                        <Button fx:id="repairButton" mnemonicParsing="false" onMouseClicked="#repairBuilding" text="Repair" />
+                        <Button fx:id="destroyButton" mnemonicParsing="false" onMouseClicked="#destroyBuilding" text="Destroy" />
                      </children>
                   </HBox>
                   <HBox fx:id="buildMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">

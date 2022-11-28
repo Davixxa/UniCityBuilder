@@ -247,6 +247,37 @@ public class HelloController {
     }
 
 
+    @FXML
+    void upgradeBuilding(MouseEvent event) {
+        Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
+        MoneyManager tempMoney = HelloApplication.gm.moneyManager;
+        tempBuilding.upgrade(tempMoney);
+
+        //Set image to a higher upgrade building
+        updateBackground();
+    }
+
+    @FXML
+    void destroyBuilding(MouseEvent event) {
+        Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
+        tempBuilding.setDestroyed(true);
+
+        //Set image to a destroyed building
+        updateBackground();
+    }
+
+    @FXML
+    void repairBuilding(MouseEvent event) {
+        Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
+        MoneyManager tempMoney = HelloApplication.gm.moneyManager;
+        tempBuilding.repair(tempMoney);
+
+        //Set image to a repaired building
+        updateBackground();
+    }
+
+
+
 
 
     @FXML

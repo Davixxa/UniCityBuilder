@@ -63,6 +63,31 @@ public class HelloController {
         mainMenu.setOpacity(1);
     }
 
+    @FXML
+    void goToBuildMenu(MouseEvent event) {
+        buildMenu.setDisable(false);
+        buildMenu.setOpacity(1);
+
+        buildingOptionsMenu.setDisable(true);
+        buildingOptionsMenu.setOpacity(0);
+
+        mainMenu.setDisable(true);
+        mainMenu.setOpacity(0);
+    }
+
+    @FXML
+    void goToBuildingOptionsMenu(MouseEvent event) {
+        buildMenu.setDisable(true);
+        buildMenu.setOpacity(0);
+
+        buildingOptionsMenu.setDisable(false);
+        buildingOptionsMenu.setOpacity(1);
+
+        mainMenu.setDisable(true);
+        mainMenu.setOpacity(0);
+    }
+
+
 
 
 
@@ -137,7 +162,14 @@ public class HelloController {
 
     @FXML
     public void initialize() {
+        buildMenu.setDisable(true);
+        buildMenu.setOpacity(0);
 
+        buildingOptionsMenu.setDisable(true);
+        buildingOptionsMenu.setOpacity(0);
+
+        mainMenu.setDisable(false);
+        mainMenu.setOpacity(1);
     }
 
 }

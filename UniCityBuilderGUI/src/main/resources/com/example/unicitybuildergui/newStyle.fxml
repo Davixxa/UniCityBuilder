@@ -65,8 +65,8 @@
                   </HBox>
                   <HBox fx:id="mainMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
                      <children>
-                        <Button fx:id="buildButton" mnemonicParsing="false" text="Build" />
-                        <Button fx:id="buildingOptionsButton" mnemonicParsing="false" text="Building options" />
+                        <Button fx:id="buildButton" mnemonicParsing="false" onMouseClicked="#goToBuildMenu" text="Build" />
+                        <Button fx:id="buildingOptionsButton" mnemonicParsing="false" onMouseClicked="#goToBuildingOptionsMenu" text="Building options" />
                      </children>
                   </HBox>
                </children>

@@ -229,15 +229,6 @@ public class HelloController {
 
 
 
-    @FXML
-    void buildEnergyBuilding(MouseEvent event) {
-        //Code that happends when clicking the button
-
-    }
-
-
-
-
 
     @FXML
     private Button button01;

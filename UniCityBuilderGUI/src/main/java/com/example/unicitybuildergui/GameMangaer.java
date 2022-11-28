@@ -14,6 +14,16 @@ public class GameMangaer {
     TurnManager turnManager = new TurnManager();
     PolutionManager polutionManager = new PolutionManager();
 
+
+    public Building getBuilding (int tile) {
+        if (buildingManager.map.get(tile) != null) {
+            return buildingManager.map.get(tile);
+        }
+      else {
+          return null;
+      }
+    };
+
     public  void setupGame(){
         displayMainMenu();
     }

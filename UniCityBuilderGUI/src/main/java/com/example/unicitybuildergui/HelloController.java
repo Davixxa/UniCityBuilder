@@ -98,6 +98,7 @@ public class HelloController {
         mainMenu.setOpacity(1);
     }
 
+
     @FXML
     void goToBuildMenu(MouseEvent event) {
         buildMenu.setDisable(false);

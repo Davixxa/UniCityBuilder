@@ -25,6 +25,8 @@ class BuildingManager {
 		
 	}
 
+
+
 	public void buildBuilding(Map<Integer, Building> map, GameMangaer gameMangaer)
 	{
 		Scanner scan = new Scanner(System.in);

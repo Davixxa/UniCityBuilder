@@ -55,10 +55,10 @@
                   </HBox>
                   <HBox fx:id="buildMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
                      <children>
-                        <Button fx:id="energyButton" mnemonicParsing="false" text="Energy" />
-                        <Button fx:id="moneyButton" mnemonicParsing="false" text="Money" />
-                        <Button fx:id="scienceButton" mnemonicParsing="false" text="Science" />
-                        <Button fx:id="houseButton" mnemonicParsing="false" text="House" />
+                        <Button fx:id="energyButton" mnemonicParsing="false" onMouseClicked="#buildEnergy" text="Energy" />
+                        <Button fx:id="moneyButton" mnemonicParsing="false" onMouseClicked="#buildMoney" text="Money" />
+                        <Button fx:id="scienceButton" mnemonicParsing="false" onMouseClicked="#buildScience" text="Science" />
+                        <Button fx:id="houseButton" mnemonicParsing="false" onMouseClicked="#buildHouse" text="House" />
                      </children>
                   </HBox>
                </children>

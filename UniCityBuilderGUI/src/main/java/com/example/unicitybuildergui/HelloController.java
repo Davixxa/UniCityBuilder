@@ -13,7 +13,13 @@ public class HelloController {
     // Value from 1-9
     int selectedTile;
     GameMangaer gameMangaer;
-
+    Image backgroundImage = new Image("Backgroung.png");
+    Image factory1 = new Image("Factory.png");
+    Image factory2 = new Image("Factory2.png");
+    Image energy1;
+    Image energy2;
+    Image science1;
+    Image science2;
 
 
     @FXML
@@ -123,8 +129,7 @@ public class HelloController {
         mainMenu.setOpacity(0);
     }
 
-    void updateBackground(){
-    }
+
     private void goToBuildingOptionsMenu(){
         buildMenu.setDisable(true);
         buildMenu.setOpacity(0);
@@ -148,7 +153,45 @@ public class HelloController {
     }
 
 
-
+    void updateBackground(){
+        Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
+        if (tempBuilding==null || tempBuilding.buildingType == BuildingTypes.HOUSE){
+            background.setImage(backgroundImage);
+        }
+        switch (tempBuilding.buildingType){
+            case MONEY:
+                switch (tempBuilding.getCurrentLevel()){
+                    case 1:
+                        background.setImage(factory1);
+                        break;
+                    case 2:
+                        background.setImage(factory2);
+                        break;
+                }
+                break;
+            case ENERGY:
+                switch (tempBuilding.getCurrentLevel()){
+                    case 1:
+                        //setImage energy1
+                        background.setImage(energy1);
+                        break;
+                    case 2:
+                        //setImage energy2
+                        background.setImage(energy2);
+                        break;
+                }
+                break;
+            case SCIENCE:
+                switch (tempBuilding.getCurrentLevel()){
+                    case 1:
+                        background.setImage(science1);
+                        break;
+                    case 2:
+                        background.setImage(science2);
+                        break;
+                }
+        }
+    }
 
 
     void selectTile(int num) {

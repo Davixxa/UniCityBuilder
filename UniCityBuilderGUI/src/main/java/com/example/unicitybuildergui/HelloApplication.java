@@ -20,7 +20,6 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         GameMangaer gameMangaer = new GameMangaer();
-        gameMangaer.setupGame();
         gm = gameMangaer;
         launch();
     }

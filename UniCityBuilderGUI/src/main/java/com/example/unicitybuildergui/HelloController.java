@@ -123,8 +123,30 @@ public class HelloController {
     }
 
     void updateBackground(){
-
     }
+    private void goToBuildingOptionsMenu(){
+        buildMenu.setDisable(true);
+        buildMenu.setOpacity(0);
+
+        buildingOptionsMenu.setDisable(false);
+        buildingOptionsMenu.setOpacity(1);
+
+        mainMenu.setDisable(true);
+        mainMenu.setOpacity(0);
+    }
+
+    private void goToBuildMenu() {
+        buildMenu.setDisable(false);
+        buildMenu.setOpacity(1);
+
+        buildingOptionsMenu.setDisable(true);
+        buildingOptionsMenu.setOpacity(0);
+
+        mainMenu.setDisable(true);
+        mainMenu.setOpacity(0);
+    }
+
+
 
 
 
@@ -212,6 +234,8 @@ public class HelloController {
 
         mainMenu.setDisable(false);
         mainMenu.setOpacity(1);
+
+
     }
 
 }

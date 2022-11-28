@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutY="399.0" prefHeight="117.0" prefWidth="399.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <GridPane layoutX="2.0" prefHeight="115.0" prefWidth="115.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" />
+                        <Button mnemonicParsing="false" GridPane.columnIndex="1" />
+                        <Button mnemonicParsing="false" GridPane.columnIndex="2" />
+                        <Button mnemonicParsing="false" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="cancelButton" layoutX="112.0" layoutY="89.0" mnemonicParsing="false" text="Cancel" />
+                  <HBox alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="upgradeButton" mnemonicParsing="false" text="Upgrade" />
+                        <Button fx:id="repairButton" mnemonicParsing="false" text="Repair" />
+                        <Button fx:id="destroyButton" mnemonicParsing="false" text="Destroy" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="energyButton" mnemonicParsing="false" text="Energy" />
+                        <Button fx:id="moneyButton" mnemonicParsing="false" text="Money" />
+                        <Button fx:id="scienceButton" mnemonicParsing="false" text="Science" />
+                        <Button fx:id="houseButton" mnemonicParsing="false" text="House" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutY="45.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="buildButton" mnemonicParsing="false" text="Build" />
+                        <Button fx:id="buildingOptionsButton" mnemonicParsing="false" text="Building options" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <ImageView fitHeight="400.0" fitWidth="570.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Backgroung.png" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="117.0" prefWidth="103.0" spacing="5.0">
+         <children>
+            <Label text="Money: " />
+            <Label text="Science: " />
+            <Label text="Energy: " />
+         </children>
+      </VBox>
+   </children>
+</Pane>

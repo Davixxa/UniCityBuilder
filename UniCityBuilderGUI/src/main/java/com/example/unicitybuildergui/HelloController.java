@@ -10,6 +10,11 @@ import javafx.scene.layout.HBox;
 
 public class HelloController {
 
+    // Value from 1-9
+    int selectedTile;
+
+    @FXML
+    private ImageView background;
 
     @FXML
     private Button buildButton;
@@ -49,6 +54,33 @@ public class HelloController {
 
     @FXML
     private Button upgradeButton;
+
+    @FXML
+    private Button selectTile1;
+
+    @FXML
+    private Button selectTile2;
+
+    @FXML
+    private Button selectTile3;
+
+    @FXML
+    private Button selectTile4;
+
+    @FXML
+    private Button selectTile5;
+
+    @FXML
+    private Button selectTile6;
+
+    @FXML
+    private Button selectTile7;
+
+    @FXML
+    private Button selectTile8;
+
+    @FXML
+    private Button selectTile9;
 
 
     @FXML
@@ -92,7 +124,10 @@ public class HelloController {
 
 
     void selectTile(int num) {
-        System.out.println(num);
+        selectedTile = num;
+        System.out.println(selectedTile);
+        // This is how you can change the background image in the imageview
+        // background.setImage();`
     }
 
     @FXML

@@ -48,14 +48,14 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Button fx:id="cancelButton" layoutX="112.0" layoutY="89.0" mnemonicParsing="false" text="Cancel" />
-                  <HBox alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
+                  <HBox fx:id="buildingOptionsMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
                      <children>
                         <Button fx:id="upgradeButton" mnemonicParsing="false" text="Upgrade" />
                         <Button fx:id="repairButton" mnemonicParsing="false" text="Repair" />
                         <Button fx:id="destroyButton" mnemonicParsing="false" text="Destroy" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
+                  <HBox fx:id="buildMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
                      <children>
                         <Button fx:id="energyButton" mnemonicParsing="false" text="Energy" />
                         <Button fx:id="moneyButton" mnemonicParsing="false" text="Money" />
@@ -63,7 +63,7 @@
                         <Button fx:id="houseButton" mnemonicParsing="false" text="House" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutY="45.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
+                  <HBox fx:id="mainMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
                      <children>
                         <Button fx:id="buildButton" mnemonicParsing="false" text="Build" />
                         <Button fx:id="buildingOptionsButton" mnemonicParsing="false" text="Building options" />

@@ -6,8 +6,51 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 
 public class HelloController {
+
+
+    @FXML
+    private Button buildButton;
+
+    @FXML
+    private HBox buildMenu;
+
+    @FXML
+    private Button buildingOptionsButton;
+
+    @FXML
+    private HBox buildingOptionsMenu;
+
+    @FXML
+    private Button cancelButton;
+
+    @FXML
+    private Button destroyButton;
+
+    @FXML
+    private Button energyButton;
+
+    @FXML
+    private Button houseButton;
+
+    @FXML
+    private HBox mainMenu;
+
+    @FXML
+    private Button moneyButton;
+
+    @FXML
+    private Button repairButton;
+
+    @FXML
+    private Button scienceButton;
+
+    @FXML
+    private Button upgradeButton;
+
+
 
     void selectTile(int num) {
         System.out.println(num);

@@ -86,6 +86,38 @@ public class HelloController {
     private Button selectTile9;
 
 
+    @FXML
+    void buildEnergy(MouseEvent event) {
+        HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.ENERGY);
+    }
+
+    @FXML
+    void buildHouse(MouseEvent event) {
+        HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.HOUSE);
+    }
+
+    @FXML
+    void buildMoney(MouseEvent event) {
+        HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.MONEY);
+    }
+
+    @FXML
+    void buildScience(MouseEvent event) {
+        HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.SCIENCE);
+    }
+
+
+
+    @FXML
+    void goToMainMenu(MouseEvent event) {
+        buildMenu.setDisable(true);
+        buildMenu.setOpacity(0);
+
+        buildingOptionsMenu.setDisable(true);
+        buildingOptionsMenu.setOpacity(0);
+
+    }
+
 
     @FXML
     void goToBuildMenu(MouseEvent event) {

@@ -27,43 +27,35 @@ class BuildingManager {
 
 
 
-	public void buildBuilding(Map<Integer, Building> map, GameMangaer gameMangaer)
+	public void buildBuilding(Map<Integer, Building> map, GameMangaer gameMangaer, int tile, BuildingTypes buildingType)
 	{
-		Scanner scan = new Scanner(System.in);
-
-		System.out.print("Enter tile:");
-		Integer tile = Integer.parseInt(scan.nextLine());
-
-		System.out.println("Enter the number corresponding to the building you want to build:");
-		System.out.println("1. Energy Building\n2. Money Building\n3. Science Building\n4. House\n5. Cancel");
-		int buildingType =  Integer.parseInt(scan.nextLine());
-
 		switch(buildingType) {
-			case 1:
+			case ENERGY:
 				EnergyBuilding eBuilding = new EnergyBuilding(tile);
 				map.put(tile, eBuilding);
+				System.out.println("Built " + buildingType.toString() + " on tile " + tile  + ".");
 				break;
-			case 2:
+			case MONEY:
 				MoneyBuilding mBuilding = new MoneyBuilding(tile);
 				map.put(tile, mBuilding);
+				System.out.println("Built " + buildingType.toString() + " on tile " + tile  + ".");
 				break;
-			case 3:
+			case SCIENCE:
 				ScienceBuilding sBuilding = new ScienceBuilding(tile);
 				map.put(tile, sBuilding);
+				System.out.println("Built " + buildingType.toString() + " on tile " + tile  + ".");
 				break;
-			case 4:
+			case HOUSE:
 				// House extends Building, despite seeming illogical from the name, therefore it will go into the Map just fine.
 				House house = new House(tile);
 				map.put(tile, house);
+				System.out.println("Built " + buildingType.toString() + " on tile " + tile  + ".");
 				break;
-			case 5:
-				break;
-
 			default:
 				System.out.println("Error: Invalid building type. Cancelling.");
 				break;
 		}
-		gameMangaer.displayMainMenu();
+		//gameMangaer.displayMainMenu();
 
 	}
 

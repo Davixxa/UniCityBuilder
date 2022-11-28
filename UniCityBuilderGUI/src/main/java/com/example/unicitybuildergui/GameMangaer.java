@@ -40,7 +40,7 @@ public class GameMangaer {
         //1 = build,     2 = select building to upgrade/rapair,      3 = next turn
         switch(playerInput) {
             case 1:
-                buildingManager.buildBuilding(buildingManager.map, this);
+                //buildingManager.buildBuilding(buildingManager.map, this);
                 break;
             case 2:
                 Building selectedBuilding = buildingManager.select(buildingManager.map);

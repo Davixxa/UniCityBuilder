@@ -12,6 +12,9 @@ public class HelloController {
 
     // Value from 1-9
     int selectedTile;
+    GameMangaer gameMangaer;
+
+
 
     @FXML
     private ImageView background;
@@ -119,13 +122,16 @@ public class HelloController {
         mainMenu.setOpacity(0);
     }
 
-
+    void updateBackground(){
+        
+    }
 
 
 
     void selectTile(int num) {
         selectedTile = num;
         System.out.println(selectedTile);
+        updateBackground();
         // This is how you can change the background image in the imageview
         // background.setImage();`
     }
@@ -197,6 +203,7 @@ public class HelloController {
 
     @FXML
     public void initialize() {
+
         buildMenu.setDisable(true);
         buildMenu.setOpacity(0);
 

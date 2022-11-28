@@ -51,6 +51,20 @@ public class HelloController {
     private Button upgradeButton;
 
 
+    @FXML
+    void goToMainMenu(MouseEvent event) {
+        buildMenu.setDisable(true);
+        buildMenu.setOpacity(0);
+
+        buildingOptionsMenu.setDisable(true);
+        buildingOptionsMenu.setOpacity(0);
+
+        mainMenu.setDisable(false);
+        mainMenu.setOpacity(1);
+    }
+
+
+
 
     void selectTile(int num) {
         System.out.println(num);
@@ -123,8 +137,6 @@ public class HelloController {
 
     @FXML
     public void initialize() {
-        //imageView = new ImageView(getClass().getResource("Arrow.png").toExternalForm());
-        //button1.setGraphic(imageView);
 
     }
 

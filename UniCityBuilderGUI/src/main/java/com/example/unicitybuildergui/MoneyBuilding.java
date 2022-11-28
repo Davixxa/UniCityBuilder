@@ -7,14 +7,14 @@ public class MoneyBuilding extends Building {
     private int pollution;
 
     public MoneyBuilding(int coordinate) {
-        this.buildingCost = 1048596;
+        this.buildingCost = 50;
         this.currentLevel = 1;
-        this.upgradeCost = 10848596;
+        this.upgradeCost = 62;
         this.coordinate = coordinate;
-        this.yield = 1048596;
+        this.yield = 150;
         this.destroyed = false;
         this.displayName = "Why don't we seize the memes of production already? :^)";
-        this.pollution = 1048596;
+        this.pollution = 50;
         this.buildingType = BuildingTypes.MONEY;
         this.moneyUpKeepCost = 100;
 

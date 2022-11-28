@@ -5,12 +5,12 @@ public class ScienceBuilding extends Building {
     int range;
 
     public ScienceBuilding(int coordinate) {
-        this.buildingCost = 1048596;
+        this.buildingCost = 50;
         this.currentLevel = 1;
-        this.upgradeCost = 10848596;
+        this.upgradeCost = 62;
         this.coordinate = coordinate;
-        this.yield = 1048596;
-        this.range = 1048596;
+        this.yield = 10;
+        this.range = 10;
         this.destroyed = false;
         this.displayName = "The earth is flat, right?";
 

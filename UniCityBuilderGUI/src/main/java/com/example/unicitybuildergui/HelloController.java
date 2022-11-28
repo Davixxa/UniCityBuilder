@@ -10,20 +10,34 @@ import javafx.scene.layout.HBox;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class HelloController {
 
     // Value from 1-9
     int selectedTile;
     GameMangaer gameMangaer;
-    Image backgroundImage = new Image(new FileInputStream("src/resources/com.example.unicitybuildergui/Backgroung.png"));
-    Image factory1 = new Image(new FileInputStream("src/resources/com.example.unicitybuildergui/Factory.png"));
-    Image factory2 = new Image(new FileInputStream("src/resources/com.example.unicitybuildergui/Factory2.png"));
+
+    Path currentWorkingDir = Paths.get("").toAbsolutePath();
+    Image backgroundImage = new Image(new FileInputStream("/src/resources/com.example.unicitybuildergui/Backgroung.png"));
+    Image factory1 = new Image(new FileInputStream("/src/resources/com.example.unicitybuildergui/Factory.png"));
+    Image factory2 = new Image(new FileInputStream("/src/resources/com.example.unicitybuildergui/Factory2.png"));
     Image energy1;
     Image energy2;
     Image science1;
     Image science2;
 
+
+
+    @FXML
+    private Label energyLabel;
+
+    @FXML
+    private Label moneyLabel;
+
+    @FXML
+    private Label scienceLabel;
 
 
 
@@ -308,6 +322,12 @@ public class HelloController {
 
         buildingOptionsMenu.setDisable(true);
         buildingOptionsMenu.setOpacity(0);
+
+        moneyLabel.setText("Money: " + HelloApplication.gm.moneyManager.getCurrentMoney());
+        scienceLabel.setText("Science: " + HelloApplication.gm.scienceManager.getCurrentScience());
+        energyLabel.setText("Energy: " + HelloApplication.gm.energyManager.getCurrentEnergy());
+
+
 
 
 

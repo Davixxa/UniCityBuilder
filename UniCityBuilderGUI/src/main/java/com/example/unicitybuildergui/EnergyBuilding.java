@@ -6,12 +6,12 @@ public class EnergyBuilding extends Building {
     private int pollution;
 
     public EnergyBuilding(int coordinate) {
-        this.buildingCost = 1048596;
+        this.buildingCost = 50;
         this.currentLevel = 1;
-        this.upgradeCost = 10848596;
+        this.upgradeCost = 62;
         this.coordinate = coordinate;
-        this.yield = 1048596;
-        this.pollution = 1048596;
+        this.yield = 5;
+        this.pollution = 10;
         this.destroyed = false;
         this.displayName = "Global warming is a myth, obviously.";
         this.buildingType = BuildingTypes.ENERGY;

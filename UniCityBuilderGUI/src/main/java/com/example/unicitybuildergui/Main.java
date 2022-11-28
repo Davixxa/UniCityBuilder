@@ -11,6 +11,7 @@ public class Main {
         GameMangaer gameMangaer = new GameMangaer();
         gameMangaer.setupGame();
         gm = gameMangaer;
+        gm.moneyManager.setCurrentMoney(1000);
     }
 }
 

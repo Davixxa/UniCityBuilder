@@ -73,9 +73,9 @@
       </ImageView>
       <VBox prefHeight="117.0" prefWidth="103.0" spacing="5.0">
          <children>
-            <Label text="Money: " />
-            <Label text="Science: " />
-            <Label text="Energy: " />
+            <Label fx:id="moneyLabel" text="Money: " />
+            <Label fx:id="scienceLabel" text="Science: " />
+            <Label fx:id="energyLabel" text="Energy: " />
          </children>
       </VBox>
    </children>

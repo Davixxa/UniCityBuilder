@@ -46,7 +46,6 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="281.0">
                <children>
-                  <Button fx:id="cancelButton" layoutX="112.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#goToMainMenu" text="Cancel" />
                   <HBox fx:id="buildingOptionsMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
                      <children>
                         <Button fx:id="upgradeButton" mnemonicParsing="false" text="Upgrade" />
@@ -60,12 +59,6 @@
                         <Button fx:id="moneyButton" mnemonicParsing="false" text="Money" />
                         <Button fx:id="scienceButton" mnemonicParsing="false" text="Science" />
                         <Button fx:id="houseButton" mnemonicParsing="false" text="House" />
-                     </children>
-                  </HBox>
-                  <HBox fx:id="mainMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
-                     <children>
-                        <Button fx:id="buildButton" mnemonicParsing="false" onMouseClicked="#goToBuildMenu" text="Build" />
-                        <Button fx:id="buildingOptionsButton" mnemonicParsing="false" onMouseClicked="#goToBuildingOptionsMenu" text="Building options" />
                      </children>
                   </HBox>
                </children>

@@ -32,9 +32,6 @@ public class HelloController {
     private HBox buildingOptionsMenu;
 
     @FXML
-    private Button cancelButton;
-
-    @FXML
     private Button destroyButton;
 
     @FXML
@@ -42,9 +39,6 @@ public class HelloController {
 
     @FXML
     private Button houseButton;
-
-    @FXML
-    private HBox mainMenu;
 
     @FXML
     private Button moneyButton;
@@ -86,18 +80,6 @@ public class HelloController {
     private Button selectTile9;
 
 
-    @FXML
-    void goToMainMenu(MouseEvent event) {
-        buildMenu.setDisable(true);
-        buildMenu.setOpacity(0);
-
-        buildingOptionsMenu.setDisable(true);
-        buildingOptionsMenu.setOpacity(0);
-
-        mainMenu.setDisable(false);
-        mainMenu.setOpacity(1);
-    }
-
 
     @FXML
     void goToBuildMenu(MouseEvent event) {
@@ -107,8 +89,6 @@ public class HelloController {
         buildingOptionsMenu.setDisable(true);
         buildingOptionsMenu.setOpacity(0);
 
-        mainMenu.setDisable(true);
-        mainMenu.setOpacity(0);
     }
 
     @FXML
@@ -119,8 +99,6 @@ public class HelloController {
         buildingOptionsMenu.setDisable(false);
         buildingOptionsMenu.setOpacity(1);
 
-        mainMenu.setDisable(true);
-        mainMenu.setOpacity(0);
     }
 
     void updateBackground(){
@@ -133,8 +111,6 @@ public class HelloController {
         buildingOptionsMenu.setDisable(false);
         buildingOptionsMenu.setOpacity(1);
 
-        mainMenu.setDisable(true);
-        mainMenu.setOpacity(0);
     }
 
     private void goToBuildMenu() {
@@ -144,8 +120,6 @@ public class HelloController {
         buildingOptionsMenu.setDisable(true);
         buildingOptionsMenu.setOpacity(0);
 
-        mainMenu.setDisable(true);
-        mainMenu.setOpacity(0);
     }
 
 
@@ -245,8 +219,6 @@ public class HelloController {
         buildingOptionsMenu.setDisable(true);
         buildingOptionsMenu.setOpacity(0);
 
-        mainMenu.setDisable(false);
-        mainMenu.setOpacity(1);
 
 
     }

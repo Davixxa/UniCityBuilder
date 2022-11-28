@@ -232,22 +232,9 @@ public class HelloController {
     @FXML
     void buildEnergyBuilding(MouseEvent event) {
         //Code that happends when clicking the button
+
     }
 
-    @FXML
-    void buildHouseBuilding(MouseEvent event) {
-        //Code that happends when clicking the button
-    }
-
-    @FXML
-    void buildMoneyBuilding(MouseEvent event) {
-        //Code that happends when clicking the button
-    }
-
-    @FXML
-    void buildScienceBuilding(MouseEvent event) {
-        //Code that happends when clicking the button
-    }
 
 
 

@@ -24,7 +24,7 @@ public class HelloController {
     Image science1;
     Image science2;
 
-     */
+
 
 
     @FXML
@@ -173,7 +173,7 @@ public class HelloController {
             //background.setImage(backgroundImage);
         }
 
-        /*
+
         switch (tempBuilding.buildingType){
             case MONEY:
                 switch (tempBuilding.getCurrentLevel()){
@@ -209,7 +209,7 @@ public class HelloController {
                 break;
         }
 
-         */
+
     }
 
 

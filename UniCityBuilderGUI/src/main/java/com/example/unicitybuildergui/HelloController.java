@@ -8,15 +8,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class HelloController {
 
     // Value from 1-9
     int selectedTile;
     GameMangaer gameMangaer;
-    /*
-    Image backgroundImage = new Image("Backgroung.png");
-    Image factory1 = new Image("Factory.png");
-    Image factory2 = new Image("Factory2.png");
+    Image backgroundImage = new Image(new FileInputStream("src/resources/com.example.unicitybuildergui/Backgroung.png"));
+    Image factory1 = new Image(new FileInputStream("src/resources/com.example.unicitybuildergui/Factory.png"));
+    Image factory2 = new Image(new FileInputStream("src/resources/com.example.unicitybuildergui/Factory2.png"));
     Image energy1;
     Image energy2;
     Image science1;
@@ -88,6 +90,8 @@ public class HelloController {
     @FXML
     private Button selectTile9;
 
+    public HelloController() throws FileNotFoundException {
+    }
 
     @FXML
     void buildEnergy(MouseEvent event) {
@@ -202,6 +206,7 @@ public class HelloController {
                         background.setImage(science2);
                         break;
                 }
+                break;
         }
 
          */

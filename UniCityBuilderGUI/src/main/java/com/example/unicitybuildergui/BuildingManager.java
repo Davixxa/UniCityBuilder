@@ -29,31 +29,35 @@ class BuildingManager {
 
 	public void buildBuilding(Map<Integer, Building> map, GameMangaer gameMangaer, int tile, BuildingTypes buildingType)
 	{
-		switch(buildingType) {
-			case ENERGY:
-				EnergyBuilding eBuilding = new EnergyBuilding(tile);
-				map.put(tile, eBuilding);
-				System.out.println("Built " + buildingType.toString() + " on tile " + tile  + ".");
-				break;
-			case MONEY:
-				MoneyBuilding mBuilding = new MoneyBuilding(tile);
-				map.put(tile, mBuilding);
-				System.out.println("Built " + buildingType.toString() + " on tile " + tile  + ".");
-				break;
-			case SCIENCE:
-				ScienceBuilding sBuilding = new ScienceBuilding(tile);
-				map.put(tile, sBuilding);
-				System.out.println("Built " + buildingType.toString() + " on tile " + tile  + ".");
-				break;
-			case HOUSE:
-				// House extends Building, despite seeming illogical from the name, therefore it will go into the Map just fine.
-				House house = new House(tile);
-				map.put(tile, house);
-				System.out.println("Built " + buildingType.toString() + " on tile " + tile  + ".");
-				break;
-			default:
-				System.out.println("Error: Invalid building type. Cancelling.");
-				break;
+		if (map.get(tile) != null) {
+			System.out.println("ERROR: There's already a building on this tile");
+		} else {
+			switch (buildingType) {
+				case ENERGY:
+					EnergyBuilding eBuilding = new EnergyBuilding(tile);
+					map.put(tile, eBuilding);
+					System.out.println("Built " + buildingType.toString() + " on tile " + tile + ".");
+					break;
+				case MONEY:
+					MoneyBuilding mBuilding = new MoneyBuilding(tile);
+					map.put(tile, mBuilding);
+					System.out.println("Built " + buildingType.toString() + " on tile " + tile + ".");
+					break;
+				case SCIENCE:
+					ScienceBuilding sBuilding = new ScienceBuilding(tile);
+					map.put(tile, sBuilding);
+					System.out.println("Built " + buildingType.toString() + " on tile " + tile + ".");
+					break;
+				case HOUSE:
+					// House extends Building, despite seeming illogical from the name, therefore it will go into the Map just fine.
+					House house = new House(tile);
+					map.put(tile, house);
+					System.out.println("Built " + buildingType.toString() + " on tile " + tile + ".");
+					break;
+				default:
+					System.out.println("Error: Invalid building type. Cancelling.");
+					break;
+			}
 		}
 		//gameMangaer.displayMainMenu();
 

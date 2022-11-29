@@ -63,7 +63,7 @@
                      </children>
                   </HBox>
                   <Button fx:id="endTurnButton" layoutX="111.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#endTurn" text="End turn" />
-                  <Button fx:id="infoButton" layoutX="237.0" layoutY="89.0" mnemonicParsing="false" text="Info" />
+                  <Button fx:id="infoButton" layoutX="237.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#showInfoTxt" text="Info" />
                </children>
             </AnchorPane>
         </items>

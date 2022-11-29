@@ -526,6 +526,10 @@ public class HelloController {
         scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());
         energyLabel.setText(""+HelloApplication.gm.energyManager.getCurrentEnergy());
 
+
+        selectTile(1);
+
+
     }
 
 }

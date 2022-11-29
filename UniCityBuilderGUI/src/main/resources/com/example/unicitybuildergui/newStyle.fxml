@@ -61,6 +61,7 @@
                         <Button fx:id="houseButton" mnemonicParsing="false" onMouseClicked="#buildHouse" text="House" />
                      </children>
                   </HBox>
+                  <Button fx:id="endTurnButton" layoutX="111.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#endTurn" text="End turn" />
                </children>
             </AnchorPane>
         </items>
@@ -68,14 +69,35 @@
       <ImageView fx:id="background" fitHeight="400.0" fitWidth="570.0" pickOnBounds="true" preserveRatio="true">
 
          <image>
-            <Image url="@Backgroung.png" />
+            <Image url="@../../../../java/com/example/unicitybuildergui/Backgroung.png" />
          </image>
       </ImageView>
       <VBox prefHeight="117.0" prefWidth="103.0" spacing="5.0">
          <children>
-            <Label fx:id="moneyLabel" text="Money: " />
-            <Label fx:id="scienceLabel" text="Science: " />
-            <Label fx:id="energyLabel" text="Energy: " />
+            <Label fx:id="moneyLabel" text="Money: ">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@MoneyIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+            <Label fx:id="scienceLabel" text="Science: ">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ScienceIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+            <Label fx:id="energyLabel" text="Energy: ">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@EnergyIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
          </children>
       </VBox>
    </children>

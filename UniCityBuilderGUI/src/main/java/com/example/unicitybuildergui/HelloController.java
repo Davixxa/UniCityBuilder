@@ -21,9 +21,9 @@ public class HelloController {
     GameMangaer gameMangaer;
 
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
-    Image backgroundImage = new Image(new FileInputStream("/src/resources/com.example.unicitybuildergui/Backgroung.png"));
-    Image factory1 = new Image(new FileInputStream("/src/resources/com.example.unicitybuildergui/Factory.png"));
-    Image factory2 = new Image(new FileInputStream("/src/resources/com.example.unicitybuildergui/Factory2.png"));
+    Image backgroundImage = new Image("file:src/resources/com.example.unicitybuildergui/Backgroung.png");
+    Image factory1 = new Image("file:src/resources/com.example.unicitybuildergui/Factory.png");
+    Image factory2 = new Image("file:src/resources/com.example.unicitybuildergui/Factory2.png");
     Image energy1;
     Image energy2;
     Image science1;
@@ -184,8 +184,15 @@ public class HelloController {
 
     void updateBackground(){
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
-        if (tempBuilding==null || tempBuilding.buildingType == BuildingTypes.HOUSE){
-            //background.setImage(backgroundImage);
+        if (tempBuilding==null) {
+            background.setImage(backgroundImage);
+            return;
+        }
+        else if (tempBuilding != null) {
+            if (tempBuilding.buildingType == BuildingTypes.HOUSE) {
+                background.setImage(backgroundImage);
+                return;
+            }
         }
 
 
@@ -240,7 +247,9 @@ public class HelloController {
         //Update menu
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         if(tempBuilding == null){
+            System.out.println("tempB is null");
             goToBuildMenu();
+            showBuildMenu();
         }else {
             goToBuildingOptionsMenu();
         }
@@ -299,20 +308,6 @@ public class HelloController {
     @FXML
     private Button button1_1;
 
-    @FXML
-    private Button moneyButton;
-
-    @FXML
-    private Button scienceButton;
-
-    @FXML
-    private Button cancelButton;
-
-    @FXML
-    private Button energyButton;
-
-    @FXML
-    private Button houseButton;
 
 
 
@@ -325,7 +320,6 @@ public class HelloController {
     @FXML
     void selectTile1(MouseEvent event) {
         selectTile(1);
-        showBuildMenu();
         /*
         if (building.isDestroyed()) {
             //Show repair menu
@@ -416,7 +410,7 @@ public class HelloController {
         moneyButton.setOpacity(1.0);
         scienceButton.setOpacity(1.0);
         energyButton.setOpacity(1.0);
-        cancelButton.setOpacity(1.0);
+
     }
 
 
@@ -443,7 +437,7 @@ public class HelloController {
         moneyButton.setOpacity(0.0);
         scienceButton.setOpacity(0.0);
         energyButton.setOpacity(0.0);
-        cancelButton.setOpacity(0.0);
+
     }
 
 }

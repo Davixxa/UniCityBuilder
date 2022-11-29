@@ -19,7 +19,7 @@ public class HelloController {
     // Value from 1-9
     int selectedTile;
     GameMangaer gameMangaer;
-
+    //Oliver du er træls
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
     Image backgroundImage = new Image("file:src/resources/com.example.unicitybuildergui/Backgroung.png");
     Image factory1 = new Image("file:src/resources/com.example.unicitybuildergui/Factory.png");

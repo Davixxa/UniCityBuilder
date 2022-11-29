@@ -30,7 +30,6 @@ public class HelloController {
     Image science2;
 
 
-
     @FXML
     private Label energyLabel;
 
@@ -39,7 +38,6 @@ public class HelloController {
 
     @FXML
     private Label scienceLabel;
-
 
 
     @FXML
@@ -129,7 +127,6 @@ public class HelloController {
     }
 
 
-
     @FXML
     void goToMainMenu(MouseEvent event) {
         buildMenu.setDisable(true);
@@ -162,8 +159,7 @@ public class HelloController {
     }
 
 
-
-    private void goToBuildingOptionsMenu(){
+    private void goToBuildingOptionsMenu() {
         buildMenu.setDisable(true);
         buildMenu.setOpacity(0);
 
@@ -182,7 +178,7 @@ public class HelloController {
     }
 
 
-    void updateBackground(){
+    void updateBackground() {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         if (tempBuilding==null) {
             background.setImage(backgroundImage);
@@ -196,9 +192,9 @@ public class HelloController {
         }
 
 
-        switch (tempBuilding.buildingType){
+        switch (tempBuilding.buildingType) {
             case MONEY:
-                switch (tempBuilding.getCurrentLevel()){
+                switch (tempBuilding.getCurrentLevel()) {
                     case 1:
                         background.setImage(factory1);
                         break;
@@ -208,7 +204,7 @@ public class HelloController {
                 }
                 break;
             case ENERGY:
-                switch (tempBuilding.getCurrentLevel()){
+                switch (tempBuilding.getCurrentLevel()) {
                     case 1:
                         //setImage energy1
                         background.setImage(energy1);
@@ -220,7 +216,7 @@ public class HelloController {
                 }
                 break;
             case SCIENCE:
-                switch (tempBuilding.getCurrentLevel()){
+                switch (tempBuilding.getCurrentLevel()) {
                     case 1:
                         background.setImage(science1);
                         break;
@@ -230,10 +226,7 @@ public class HelloController {
                 }
                 break;
         }
-
-
     }
-
 
 
     void selectTile(int num) {
@@ -246,11 +239,9 @@ public class HelloController {
 
         //Update menu
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
-        if(tempBuilding == null){
-            System.out.println("tempB is null");
+        if (tempBuilding == null) {
             goToBuildMenu();
-            showBuildMenu();
-        }else {
+        } else {
             goToBuildingOptionsMenu();
         }
 
@@ -285,9 +276,6 @@ public class HelloController {
         //Set image to a repaired building
         updateBackground();
     }
-
-
-
 
 
     @FXML
@@ -338,8 +326,6 @@ public class HelloController {
     void selectTile2(MouseEvent event) {
         selectTile(2);
     }
-
-
 
 
     @FXML
@@ -404,16 +390,7 @@ public class HelloController {
 
     }
 
-
-    public void showBuildMenu(){
-        houseButton.setOpacity(1.0);
-        moneyButton.setOpacity(1.0);
-        scienceButton.setOpacity(1.0);
-        energyButton.setOpacity(1.0);
-
-    }
-
-
+    
 
 
     @FXML
@@ -429,14 +406,13 @@ public class HelloController {
         scienceLabel.setText("Science: " + HelloApplication.gm.scienceManager.getCurrentScience());
         energyLabel.setText("Energy: " + HelloApplication.gm.energyManager.getCurrentEnergy());
 
-
-
-
-
+/*
         houseButton.setOpacity(0.0);
         moneyButton.setOpacity(0.0);
         scienceButton.setOpacity(0.0);
         energyButton.setOpacity(0.0);
+
+ */
 
     }
 

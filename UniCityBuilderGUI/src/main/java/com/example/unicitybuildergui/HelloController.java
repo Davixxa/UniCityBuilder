@@ -405,14 +405,7 @@ public class HelloController {
         moneyLabel.setText("Money: " + HelloApplication.gm.moneyManager.getCurrentMoney());
         scienceLabel.setText("Science: " + HelloApplication.gm.scienceManager.getCurrentScience());
         energyLabel.setText("Energy: " + HelloApplication.gm.energyManager.getCurrentEnergy());
-
-/*
-        houseButton.setOpacity(0.0);
-        moneyButton.setOpacity(0.0);
-        scienceButton.setOpacity(0.0);
-        energyButton.setOpacity(0.0);
-
- */
+        
 
     }
 

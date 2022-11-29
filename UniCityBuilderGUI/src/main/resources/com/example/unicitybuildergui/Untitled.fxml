@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
 <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.unicitybuildergui.HelloController">
@@ -27,7 +28,7 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <center>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            <ImageView fx:id="imageView1_1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
       <Button fx:id="button01" mnemonicParsing="false" onMouseClicked="#selectTile1" opacity="0.2" prefHeight="333.0" prefWidth="546.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -131,5 +132,18 @@
          </center>
       </BorderPane>
       <Button fx:id="buttonRight1" mnemonicParsing="false" onMouseClicked="#moveRight1" opacity="0.2" prefHeight="340.0" prefWidth="420.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="houseButton" mnemonicParsing="false" onMouseClicked="#placeHouse" prefHeight="250.0" prefWidth="130.0" text="House" />
+            <Button fx:id="moneyButton" mnemonicParsing="false" onMouseClicked="#placeMoney" prefHeight="250.0" prefWidth="130.0" text="Money" />
+            <Button fx:id="scienceButton" mnemonicParsing="false" onMouseClicked="#placeScience" prefHeight="250.0" prefWidth="130.0" text="Science" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="energyButton" mnemonicParsing="false" onMouseClicked="#placeEnergy" prefHeight="250.0" prefWidth="130.0" text="Energy" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancelMenu" prefHeight="250.0" prefWidth="130.0" text="Cancel" />
+         </children>
+      </HBox>
    </children>
 </GridPane>

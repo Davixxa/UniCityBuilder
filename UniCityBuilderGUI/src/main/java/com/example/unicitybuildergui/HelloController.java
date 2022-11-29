@@ -3,6 +3,7 @@ package com.example.unicitybuildergui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.ImageInput;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -293,6 +294,30 @@ public class HelloController {
     private Button buttonRight1;
 
     @FXML
+    private ImageView imageView1_1;
+
+    @FXML
+    private Button button1_1;
+
+    @FXML
+    private Button moneyButton;
+
+    @FXML
+    private Button scienceButton;
+
+    @FXML
+    private Button cancelButton;
+
+    @FXML
+    private Button energyButton;
+
+    @FXML
+    private Button houseButton;
+
+
+
+
+    @FXML
     void moveRight1(MouseEvent event) {
 
     }
@@ -300,6 +325,18 @@ public class HelloController {
     @FXML
     void selectTile1(MouseEvent event) {
         selectTile(1);
+        showBuildMenu();
+        /*
+        if (building.isDestroyed()) {
+            //Show repair menu
+        } else if (buildingManager.map.containsKey(1)) {
+            //Show upgrade menu
+        } else {
+
+            //Show build menu
+        }
+
+         */
 
     }
 
@@ -307,6 +344,9 @@ public class HelloController {
     void selectTile2(MouseEvent event) {
         selectTile(2);
     }
+
+
+
 
     @FXML
     void selectTile3(MouseEvent event) {
@@ -344,6 +384,43 @@ public class HelloController {
     }
 
 
+    @FXML
+    void placeEnergy(MouseEvent event) {
+
+    }
+
+    @FXML
+    void placeHouse(MouseEvent event) {
+
+
+    }
+
+    @FXML
+    void placeMoney(MouseEvent event) {
+
+    }
+
+    @FXML
+    void placeScience(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cancelMenu(MouseEvent event) {
+
+    }
+
+
+    public void showBuildMenu(){
+        houseButton.setOpacity(1.0);
+        moneyButton.setOpacity(1.0);
+        scienceButton.setOpacity(1.0);
+        energyButton.setOpacity(1.0);
+        cancelButton.setOpacity(1.0);
+    }
+
+
+
 
     @FXML
     public void initialize() {
@@ -362,6 +439,11 @@ public class HelloController {
 
 
 
+        houseButton.setOpacity(0.0);
+        moneyButton.setOpacity(0.0);
+        scienceButton.setOpacity(0.0);
+        energyButton.setOpacity(0.0);
+        cancelButton.setOpacity(0.0);
     }
 
 }

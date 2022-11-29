@@ -348,6 +348,9 @@ public class HelloController {
             goToBuildingOptionsMenu();
         }
 
+        if(HelloApplication.gm.getBuilding(selectedTile) == null)
+            return;
+
         //Check if buildings are destroyed
         if(HelloApplication.gm.getBuilding(selectedTile).isDestroyed()){
             buildingLabel.setText("Fucking destroyed");

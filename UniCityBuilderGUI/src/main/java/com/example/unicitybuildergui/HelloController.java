@@ -21,9 +21,9 @@ public class HelloController {
     GameMangaer gameMangaer;
 
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
-    Image backgroundImage = new Image("file:src/resources/com.example.unicitybuildergui/Backgroung.png");
-    Image factory1 = new Image("file:src/resources/com.example.unicitybuildergui/Factory.png");
-    Image factory2 = new Image("file:src/resources/com.example.unicitybuildergui/Factory2.png");
+    Image backgroundImage = new Image("Backgroung.png");
+    Image factory1 = new Image("Factory.png");
+    Image factory2 = new Image("Factory2.png");
     Image energy1;
     Image energy2;
     Image science1;
@@ -228,6 +228,38 @@ public class HelloController {
         }
     }
 
+    @FXML
+    void endTurn(MouseEvent event) {
+
+        //Running EndTurn method in TurnManager
+        TurnManager tempEndTurn = HelloApplication.gm.turnManager;
+        tempEndTurn.endTurn(HelloApplication.gm.polutionManager,
+                HelloApplication.gm.scienceManager,
+                HelloApplication.gm.energyManager,
+                HelloApplication.gm.moneyManager,
+                HelloApplication.gm.infastructureManager,
+                HelloApplication.gm.disasterManager,
+                HelloApplication.gm.buildingManager,
+                HelloApplication.gm);
+
+
+        // Updating currency labels
+        MoneyManager tempMoney = HelloApplication.gm.moneyManager;
+        ScienceManager tempScience = HelloApplication.gm.scienceManager;
+        EnergyManager tempEnergy = HelloApplication.gm.energyManager;
+
+        tempMoney.calcMoneyGain();
+        moneyLabel.setText(String.valueOf(tempMoney.getCurrentMoney()));
+
+        tempScience.calcScienceGain();
+        scienceLabel.setText(String.valueOf(tempScience.getCurrentScience()));
+
+        tempEnergy.calcEnergyGain();
+        energyLabel.setText(String.valueOf(tempEnergy.getCurrentEnergy()));
+
+
+    }
+
 
     void selectTile(int num) {
         selectedTile = num;
@@ -402,10 +434,10 @@ public class HelloController {
         buildingOptionsMenu.setDisable(true);
         buildingOptionsMenu.setOpacity(0);
 
-        moneyLabel.setText("Money: " + HelloApplication.gm.moneyManager.getCurrentMoney());
-        scienceLabel.setText("Science: " + HelloApplication.gm.scienceManager.getCurrentScience());
-        energyLabel.setText("Energy: " + HelloApplication.gm.energyManager.getCurrentEnergy());
-        
+        moneyLabel.setText(""+HelloApplication.gm.moneyManager.getCurrentMoney());
+        scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());
+        energyLabel.setText(""+HelloApplication.gm.energyManager.getCurrentEnergy());
+
 
     }
 

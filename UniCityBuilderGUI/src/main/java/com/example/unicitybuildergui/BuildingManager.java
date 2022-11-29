@@ -137,4 +137,7 @@ class BuildingManager {
 
 		//kris er grim
 	}
+	private void remove(int tile){
+		map.remove(tile);
+	}
 }

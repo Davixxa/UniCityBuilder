@@ -315,14 +315,15 @@ public class HelloController {
         ScienceManager tempScience = HelloApplication.gm.scienceManager;
         EnergyManager tempEnergy = HelloApplication.gm.energyManager;
 
-        tempMoney.calcMoneyGain();
+        //tempMoney.calcMoneyGain();
         moneyLabel.setText(String.valueOf(tempMoney.getCurrentMoney()));
 
-        tempScience.calcScienceGain();
+        //tempScience.calcScienceGain();
         scienceLabel.setText(String.valueOf(tempScience.getCurrentScience()));
 
-        tempEnergy.calcEnergyGain();
+        //tempEnergy.calcEnergyGain();
         energyLabel.setText(String.valueOf(tempEnergy.getCurrentEnergy()));
+
 
 
     }
@@ -336,12 +337,22 @@ public class HelloController {
         // background.setImage();`
 
 
+
+
+
         //Update menu
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         if (tempBuilding == null) {
             goToBuildMenu();
         } else {
             goToBuildingOptionsMenu();
+        }
+
+        //Check if buildings are destroyed
+        if(HelloApplication.gm.getBuilding(selectedTile).isDestroyed()){
+            buildingLabel.setText("Fucking destroyed");
+            goToBuildingOptionsMenu();
+
         }
 
     }
@@ -359,8 +370,11 @@ public class HelloController {
 
     @FXML
     void destroyBuilding(MouseEvent event) {
+        /*
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         tempBuilding.setDestroyed(true);
+
+         */
 
         HelloApplication.gm.buildingManager.remove(selectedTile);
 

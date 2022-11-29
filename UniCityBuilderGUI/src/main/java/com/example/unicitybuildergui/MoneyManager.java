@@ -37,9 +37,11 @@ public class MoneyManager {
 
     public void calcMoneyGain() {
         this.moneyGain = 0;
+        this.moneyUpkeep = 0;
         for (Building i : buildingManager.map.values()) {
-            this.moneyUpkeep += i.moneyUpKeepCost;
-
+            if(i.isDestroyed()==false){
+                this.moneyUpkeep += i.moneyUpKeepCost;
+            }
             if (i.getBuildingType() == BuildingTypes.MONEY) {
                 if (i.isDestroyed() == false) {
                     this.moneyGain += i.getYield();

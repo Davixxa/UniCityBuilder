@@ -12,7 +12,7 @@ public class TurnManager {
         moneyManager.calcMoneyGain();
         disasterManager.runDisaster(polutionManager);
         polutionManager.setCurrentPolution(polutionManager.getCurrentPolution()+polutionManager.getPolutionYield());
-        gameMangaer.displayMainMenu();
+        //gameMangaer.displayMainMenu();
     }
 
     public int getCurrentTurn() {

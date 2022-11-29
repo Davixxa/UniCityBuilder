@@ -48,45 +48,13 @@ public class EnergyManager {
 
     public void calcEnergyGain() {
         this.energyGain = 0;
+        this.energyUpkeep = 0;
         for (Building i : buildingManager.map.values()) {
             this.energyUpkeep += i.energyUpKeepCost;
 
-            /*
-            switch (i.getBuildingType()) {
-
-                case BuildingTypes.MONEY:
-                    // code block
-                    // Hvor meget det koster at holde en bygning up. 10.
-                    this.energyUpkeep += 10;
-
-                    break;
-
-                case BuildingTypes.ENERGY:
-                    // code block
-                    // Hvor meget det koster at holde en bygning up. 10.
-                    this.energyUpkeep += 10;
-
-                    break;
-
-                case BuildingTypes.HOUSE:
-                    // code block
-                    // Hvor meget det koster at holde en bygning up. 10.
-                    this.energyUpkeep += 10;
-
-                    break;
-
-                case BuildingTypes.SCIENCE:
-                    // code block
-                    // Hvor meget det koster at holde en bygning up. 10.
-                    this.energyUpkeep += 10;
-
-                    break;
-
-                default:
-                    // code block
+            if(i.isDestroyed()==false){
+                this.energyUpkeep += i.energyUpKeepCost;
             }
-
-             */
 
             if (i.getBuildingType() == BuildingTypes.ENERGY) {
                 if (i.isDestroyed() == false) {

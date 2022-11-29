@@ -11,11 +11,11 @@ import java.util.Map.Entry;
 class BuildingManager {
 
 
-	int size = 3;
+	int size = 9;
 	int count = 0;
 
 
-	public Map<Integer, Building> map = new HashMap<Integer, Building>(9);
+	public Map<Integer, Building> map = new HashMap<Integer, Building>(size);
 
 
 

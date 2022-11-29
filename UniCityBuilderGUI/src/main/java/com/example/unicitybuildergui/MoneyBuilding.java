@@ -4,7 +4,7 @@ public class MoneyBuilding extends Building {
 
     // The placeholder names in this class may or may not have various commie jokes in it.
 
-    private int pollution;
+    public int pollution;
 
     public MoneyBuilding(int coordinate) {
         this.buildingCost = 50;
@@ -14,7 +14,7 @@ public class MoneyBuilding extends Building {
         this.yield = 150;
         this.destroyed = false;
         this.displayName = "Why don't we seize the memes of production already? :^)";
-        this.pollution = 50;
+        this.pollution = 2000;
         this.buildingType = BuildingTypes.MONEY;
         this.moneyUpKeepCost = 100;
 

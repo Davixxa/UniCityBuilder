@@ -11,12 +11,14 @@ abstract class Building {
     int coordinate;
     int currentLevel;
     int yield;
+    int pollution;
 
     int moneyUpKeepCost;
 
     int energyUpKeepCost;
 
     String displayName;
+
 
     public BuildingTypes getBuildingType() {
         return buildingType;

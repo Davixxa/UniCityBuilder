@@ -9,6 +9,7 @@ public class House extends Building {
         this.buildingType = BuildingTypes.HOUSE;
         this.coordinate = coordinate;
         this.currentLevel = 1;
+        this.pollution = 0;
     }
 
     @Override

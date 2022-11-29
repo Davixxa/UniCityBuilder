@@ -13,8 +13,8 @@ public class TurnManager {
         for (int i = 1; i<buildingManager.size+1; i++){
             if (buildingManager.map.get(i) == null)
                 continue;
-            System.out.println(i + ": " + buildingManager.map.get(i).pollution);
-            newPolutionYield += buildingManager.map.get(i).pollution;
+            System.out.println(i + ": " + buildingManager.map.get(i).getPollutionYield());
+            newPolutionYield += buildingManager.map.get(i).getPollutionYield();
         }
         System.out.println(polutionManager.getCurrentPolution());
         polutionManager.setPolutionYield(newPolutionYield);

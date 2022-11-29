@@ -12,6 +12,10 @@ public class House extends Building {
         this.pollution = 0;
     }
 
+    public int getPollutionYield() {
+        return pollution;
+    }
+
     @Override
     public void upgrade(MoneyManager manager) {
         // Houses can't be upgraded, dummy method

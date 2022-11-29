@@ -20,6 +20,9 @@ abstract class Building {
     String displayName;
 
 
+    public int getPollutionYield() {
+        return pollution;
+    }
     public BuildingTypes getBuildingType() {
         return buildingType;
     }

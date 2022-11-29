@@ -12,6 +12,7 @@ public class EnergyManager {
     BuildingManager buildingManager;
 
 
+
     public EnergyManager(BuildingManager buildingManager){
         this.energyGain = 0;
         this.currentEnergy = 100;

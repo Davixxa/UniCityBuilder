@@ -22,6 +22,9 @@ public class ScienceBuilding extends Building {
         this.range = range;
     }
 
+    public int getPollutionYield() {
+        return pollution;
+    }
     public int getRange() {
         return range;
     }

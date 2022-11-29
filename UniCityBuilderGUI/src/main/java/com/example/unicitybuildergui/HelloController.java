@@ -109,32 +109,73 @@ public class HelloController {
     public HelloController() throws FileNotFoundException {
     }
 
+    void updateUI() {
+        moneyLabel.setText(String.valueOf(HelloApplication.gm.moneyManager.getCurrentMoney()));
+        scienceLabel.setText(String.valueOf(HelloApplication.gm.scienceManager.getCurrentScience()));
+        energyLabel.setText(String.valueOf(HelloApplication.gm.energyManager.getCurrentEnergy()));
+        selectTile(selectedTile); // Redraws menu just in case.
+    }
+
     @FXML
     void buildEnergy(MouseEvent event) {
-        HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.ENERGY);
-        updateBackground();
-        goToBuildingOptionsMenu();
+        int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new EnergyBuilding(0).buildingCost;
+        if (newMoney < 0) {
+            System.out.println("Error: Insufficient funds");
+        }
+        else {
+            HelloApplication.gm.moneyManager.setCurrentMoney(newMoney);
+            HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.ENERGY);
+            goToBuildingOptionsMenu();
+        }
+        updateUI();
+
     }
 
     @FXML
     void buildHouse(MouseEvent event) {
-        HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.HOUSE);
-        updateBackground();
-        goToBuildingOptionsMenu();
+
+        int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new House(0).buildingCost;
+        if (newMoney < 0) {
+            System.out.println("Error: Insufficient funds");
+        }
+        else {
+            HelloApplication.gm.moneyManager.setCurrentMoney(newMoney);
+            HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.HOUSE);
+            goToBuildingOptionsMenu();
+        }
+        updateUI();
     }
 
     @FXML
     void buildMoney(MouseEvent event) {
         HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.MONEY);
         updateBackground();
-        goToBuildingOptionsMenu();
+
+        int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new MoneyBuilding(0).buildingCost;
+        if (newMoney < 0) {
+            System.out.println("Error: Insufficient funds");
+        }
+        else {
+            HelloApplication.gm.moneyManager.setCurrentMoney(newMoney);
+            HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.MONEY);
+            goToBuildingOptionsMenu();
+        }
+        updateUI();
+
     }
 
     @FXML
     void buildScience(MouseEvent event) {
-        HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.SCIENCE);
-        updateBackground();
-        goToBuildingOptionsMenu();
+        int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new ScienceBuilding(0).buildingCost;
+        if (newMoney < 0) {
+            System.out.println("Error: Insufficient funds");
+        }
+        else {
+            HelloApplication.gm.moneyManager.setCurrentMoney(newMoney);
+            HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.SCIENCE);
+            goToBuildingOptionsMenu();
+        }
+        updateUI();
     }
 
 

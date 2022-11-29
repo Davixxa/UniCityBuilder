@@ -362,8 +362,11 @@ public class HelloController {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         tempBuilding.setDestroyed(true);
 
+        HelloApplication.gm.buildingManager.remove(selectedTile);
+
         //Set image to a destroyed building
         updateBackground();
+        goToBuildMenu();
     }
 
     @FXML

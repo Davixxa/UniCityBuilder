@@ -21,9 +21,9 @@ public class HelloController {
     GameMangaer gameMangaer;
     //Oliver du er træls
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
-    Image backgroundImage = new Image("Backgroung.png");
-    Image factory1 = new Image("Factory.png");
-    Image factory2 = new Image("Factory2.png");
+    Image backgroundImage = new Image("file:Backgroung.png");
+    Image factory1 = new Image("file:Factory.png");
+    Image factory2 = new Image("file:Factory2.png");
     Image energy1;
     Image energy2;
     Image science1;
@@ -103,27 +103,38 @@ public class HelloController {
     @FXML
     private Button selectTile9;
 
+    @FXML
+    private Label buildingLabel;
+
     public HelloController() throws FileNotFoundException {
     }
 
     @FXML
     void buildEnergy(MouseEvent event) {
         HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.ENERGY);
+        updateBackground();
+        goToBuildingOptionsMenu();
     }
 
     @FXML
     void buildHouse(MouseEvent event) {
         HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.HOUSE);
+        updateBackground();
+        goToBuildingOptionsMenu();
     }
 
     @FXML
     void buildMoney(MouseEvent event) {
         HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.MONEY);
+        updateBackground();
+        goToBuildingOptionsMenu();
     }
 
     @FXML
     void buildScience(MouseEvent event) {
         HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.SCIENCE);
+        updateBackground();
+        goToBuildingOptionsMenu();
     }
 
 
@@ -182,11 +193,14 @@ public class HelloController {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         if (tempBuilding==null) {
             background.setImage(backgroundImage);
+            buildingLabel.setText("FUCKING TOMT!!!");
             return;
         }
         else if (tempBuilding != null) {
             if (tempBuilding.buildingType == BuildingTypes.HOUSE) {
                 background.setImage(backgroundImage);
+                //Temp building
+                buildingLabel.setText("HOUSEBUILDING !!!!!");
                 return;
             }
         }
@@ -197,9 +211,13 @@ public class HelloController {
                 switch (tempBuilding.getCurrentLevel()) {
                     case 1:
                         background.setImage(factory1);
+                        //Temp building
+                        buildingLabel.setText("MONEYBUILDING LVL1 !!!!!");
                         break;
                     case 2:
                         background.setImage(factory2);
+                        //Temp building
+                        buildingLabel.setText("MONEYBUILDING LVL2 !!!!!");
                         break;
                 }
                 break;
@@ -208,10 +226,14 @@ public class HelloController {
                     case 1:
                         //setImage energy1
                         background.setImage(energy1);
+                        //Temp building
+                        buildingLabel.setText("ENERGYBUILDING LVL1 !!!!!");
                         break;
                     case 2:
                         //setImage energy2
                         background.setImage(energy2);
+                        //Temp building
+                        buildingLabel.setText("ENERGYBUILDING LVL2 !!!!!");
                         break;
                 }
                 break;
@@ -219,9 +241,13 @@ public class HelloController {
                 switch (tempBuilding.getCurrentLevel()) {
                     case 1:
                         background.setImage(science1);
+                        //Temp building
+                        buildingLabel.setText("SCIENCEBUILDING LVL1 !!!!!");
                         break;
                     case 2:
                         background.setImage(science2);
+                        //Temp building
+                        buildingLabel.setText("SCIENCEBUILDING LVL2 !!!!!");
                         break;
                 }
                 break;
@@ -340,6 +366,7 @@ public class HelloController {
     @FXML
     void selectTile1(MouseEvent event) {
         selectTile(1);
+
         /*
         if (building.isDestroyed()) {
             //Show repair menu
@@ -437,7 +464,6 @@ public class HelloController {
         moneyLabel.setText(""+HelloApplication.gm.moneyManager.getCurrentMoney());
         scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());
         energyLabel.setText(""+HelloApplication.gm.energyManager.getCurrentEnergy());
-
 
     }
 

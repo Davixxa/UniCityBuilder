@@ -46,12 +46,14 @@ public class ScienceManager {
         return scienceLevel;
     }
 
-    public void calcScienceGain() {
+    public void calcScienceGain(EnergyManager energyManager) {
         this.scienceGain = 0;
         for (Building i : buildingManager.map.values()) {
             if (i.getBuildingType() == BuildingTypes.SCIENCE) {
                 if (i.isDestroyed()==false) {
-                    this.scienceGain += i.getYield();
+                    if(energyManager.getCurrentEnergy()>0) {
+                        this.scienceGain += i.getYield();
+                    }
                 }
             }
         }

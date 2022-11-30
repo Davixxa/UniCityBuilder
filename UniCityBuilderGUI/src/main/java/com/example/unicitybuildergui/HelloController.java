@@ -124,14 +124,105 @@ public class HelloController {
     @FXML
     void showInfoTxt(MouseEvent event) {
         // do stuff
+        showTxtBtns();
+
+        Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
+        if (tempBuilding==null) {
+            //When there is no building txt
+            infoTxt.setText("");
+
+            return;
+        }
+
+
+        switch (tempBuilding.buildingType) {
+            case MONEY:
+                switch (tempBuilding.getCurrentLevel()) {
+                    case 1:
+                        infoTxt.setText("");
+                        break;
+                    case 2:
+                        infoTxt.setText("");
+                        break;
+                }
+                break;
+            case ENERGY:
+                switch (tempBuilding.getCurrentLevel()) {
+                    case 1:
+                        infoTxt.setText("In the late 18th century, we see the first coal factories located in England. Coal was the \n basis of the industrial revolution and the mechanization of the world. Coal generated 37% of global electricity in \n 2022 but it is also the leading source in CO2 emissions producing 15.1 billion metric tons not cool :(");
+                        break;
+                    case 2:
+                        infoTxt.setText("Today (2022) fossil fuels amount to 60% of total global electricity generation but it also emits 36.6 \n billion tons of CO2. That is bad for the environment, and it is the cause of climate change and the\n warming of our planet to > 2*C");
+                        break;
+
+                    case 3:
+                        infoTxt.setText("Renewable energy amounts to 28,1% of global electricity generation (2022), they emit little to no emission and therefore combat the warming of our planets. Renewables include solar, wind, thermal and hydro");
+                        break;
+                }
+                break;
+            case SCIENCE:
+                switch (tempBuilding.getCurrentLevel()) {
+                    case 1:
+                        infoTxt.setText("primary schools are for children between the age of 5-15, these schools contribute to fundamental learning in math, science, arts, culture, and language. ");
+                        break;
+                    case 2:
+                        infoTxt.setText("Collage is for teens between the age of 15-18, these schools contribute to more advanced topics and extending the learnings from primary schools");
+                        break;
+                    case 3:
+                        infoTxt.setText("University is a specialized school for a subject you choose, here you are taught by industry leaders to understand your chosen subject to its fullest extend and gives you the full knowledge of the chosen field");
+                        break;
+                }
+                break;
+            case HOUSE:
+                //When a house
+                infoTxt.setText("Home is where the uvidenhed are");
+                break;
+
+        }
+
+        infoTxt.setText("In the late 18th century, we see the first coal factories located in England. Coal was the \n basis of the industrial revolution and the mechanization of the world. Coal generated 37% of global electricity in \n 2022 but it is also the leading source in CO2 emissions producing 15.1 billion metric tons not cool :( ");
+
+    }
+
+    private void showTxtBtns() {
         infoTxt.setVisible(true);
         infoTxt.setOpacity(1);
+        infoTxt.setDisable(false);
         infoButton.setOpacity(0);
+        infoButton.setDisable(true);
         continueButton.setOpacity(1);
+        continueButton.setDisable(false);
         endTurnButton.setOpacity(0);
+        endTurnButton.setDisable(true);
+
+
+        //Hide alle building buttons
+        hideAllBuildButtons();
 
 
     }
+
+    @FXML
+    void hideInfoTxt(MouseEvent event) {
+        hideTxtBtns();
+
+    }
+
+    private void hideTxtBtns() {
+        //When continue is pressed
+        infoTxt.setVisible(false);
+        infoTxt.setOpacity(0);
+        infoTxt.setDisable(true);
+        infoButton.setOpacity(1);
+        infoButton.setDisable(false);
+        continueButton.setOpacity(0);
+        continueButton.setDisable(true);
+        endTurnButton.setOpacity(1);
+        endTurnButton.setDisable(false);
+
+        selectTile(selectedTile);
+    }
+
     void updateUI() {
         moneyLabel.setText(String.valueOf(HelloApplication.gm.moneyManager.getCurrentMoney()));
         scienceLabel.setText(String.valueOf(HelloApplication.gm.scienceManager.getCurrentScience()));
@@ -252,6 +343,15 @@ public class HelloController {
 
     }
 
+    private void hideAllBuildButtons() {
+        buildMenu.setDisable(true);
+        buildMenu.setOpacity(0);
+
+        buildingOptionsMenu.setDisable(true);
+        buildingOptionsMenu.setOpacity(0);
+
+    }
+
 
     void updateBackground() {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
@@ -323,12 +423,12 @@ public class HelloController {
 
         //Running EndTurn method in TurnManager
         TurnManager tempEndTurn = HelloApplication.gm.turnManager;
-        tempEndTurn.endTurn(HelloApplication.gm.polutionManager,
-                HelloApplication.gm.scienceManager,
-                HelloApplication.gm.energyManager,
+        tempEndTurn.endTurn(HelloApplication.gm.energyManager,
+                HelloApplication.gm.polutionManager,
+                HelloApplication.gm.disasterManager,
                 HelloApplication.gm.moneyManager,
                 HelloApplication.gm.infastructureManager,
-                HelloApplication.gm.disasterManager,
+                HelloApplication.gm.scienceManager,
                 HelloApplication.gm.buildingManager,
                 HelloApplication.gm);
 
@@ -347,7 +447,7 @@ public class HelloController {
         //tempEnergy.calcEnergyGain();
         energyLabel.setText(String.valueOf(tempEnergy.getCurrentEnergy()));
 
-
+        showTxtBtns();
 
     }
 
@@ -559,9 +659,11 @@ public class HelloController {
 
         selectTile(1);
 
-        infoTxt.setVisible(true);
+        infoTxt.setVisible(false);
         continueButton.setOpacity(0);
+        continueButton.setDisable(true);
         infoTxt.setOpacity(0);
+        infoTxt.setDisable(true);
 
 
     }

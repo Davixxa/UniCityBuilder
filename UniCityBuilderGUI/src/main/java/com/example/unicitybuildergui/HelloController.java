@@ -108,6 +108,11 @@ public class HelloController {
     public HelloController() throws FileNotFoundException {
     }
 
+    // Oliver, please fix this with the arguments and code you need.
+    @FXML
+    void showInfoTxt(MouseEvent event) {
+        // do stuff
+    }
     void updateUI() {
         moneyLabel.setText(String.valueOf(HelloApplication.gm.moneyManager.getCurrentMoney()));
         scienceLabel.setText(String.valueOf(HelloApplication.gm.scienceManager.getCurrentScience()));

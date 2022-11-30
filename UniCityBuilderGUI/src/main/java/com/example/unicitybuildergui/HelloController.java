@@ -152,8 +152,7 @@ public class HelloController {
 
     @FXML
     void buildMoney(MouseEvent event) {
-        HelloApplication.gm.buildingManager.buildBuilding(HelloApplication.gm.buildingManager.map, HelloApplication.gm, selectedTile, BuildingTypes.MONEY);
-        updateBackground();
+
 
         int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new MoneyBuilding(0).buildingCost;
         if (newMoney < 0) {
@@ -165,6 +164,7 @@ public class HelloController {
             goToBuildingOptionsMenu();
         }
         updateUI();
+        updateBackground();
 
     }
 

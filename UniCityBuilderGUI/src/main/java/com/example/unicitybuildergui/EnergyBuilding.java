@@ -16,6 +16,7 @@ public class EnergyBuilding extends Building {
         this.displayName = "Global warming is a myth, obviously.";
         this.buildingType = BuildingTypes.ENERGY;
         this.moneyUpKeepCost = 100;
+        energyUpKeepCost = 5 * currentLevel;
 
     }
 

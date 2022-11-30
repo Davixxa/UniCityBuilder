@@ -47,18 +47,15 @@ public class EnergyManager {
 
 
 
-    public void calcEnergyGain() {
+    public void calcEnergyGain(MoneyManager moneyManager) {
         this.energyGain = 0;
         this.energyUpkeep = 0;
         for (Building i : buildingManager.map.values()) {
-
-            if(i.isDestroyed()==false){
-                this.energyUpkeep += i.energyUpKeepCost;
-            }
-
             if (i.getBuildingType() == BuildingTypes.ENERGY) {
                 if (i.isDestroyed() == false) {
+                    currentEnergy=currentEnergy-i.energyUpKeepCost;
                     this.energyGain += i.getYield();
+                    moneyManager.setCurrentMoney(moneyManager.getCurrentMoney()-i.moneyUpKeepCost);
                 }
             }
         }

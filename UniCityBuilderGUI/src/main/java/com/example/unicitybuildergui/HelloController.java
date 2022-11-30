@@ -124,14 +124,47 @@ public class HelloController {
     @FXML
     void showInfoTxt(MouseEvent event) {
         // do stuff
-        infoTxt.setVisible(true);
-        infoTxt.setOpacity(1);
-        infoButton.setOpacity(0);
-        continueButton.setOpacity(1);
-        endTurnButton.setOpacity(0);
-
+        showTxtBtns();
 
     }
+
+    private void showTxtBtns() {
+        infoTxt.setVisible(true);
+        infoTxt.setOpacity(1);
+        infoTxt.setDisable(false);
+        infoButton.setOpacity(0);
+        infoButton.setDisable(true);
+        continueButton.setOpacity(1);
+        continueButton.setDisable(false);
+        endTurnButton.setOpacity(0);
+        endTurnButton.setDisable(true);
+
+
+        //Hide alle building buttons
+        hideAllBuildButtons();
+    }
+
+    @FXML
+    void hideInfoTxt(MouseEvent event) {
+        hideTxtBtns();
+
+    }
+
+    private void hideTxtBtns() {
+        //When continue is pressed
+        infoTxt.setVisible(false);
+        infoTxt.setOpacity(0);
+        infoTxt.setDisable(true);
+        infoButton.setOpacity(1);
+        infoButton.setDisable(false);
+        continueButton.setOpacity(0);
+        continueButton.setDisable(true);
+        endTurnButton.setOpacity(1);
+        endTurnButton.setDisable(false);
+
+        selectTile(selectedTile);
+    }
+
     void updateUI() {
         moneyLabel.setText(String.valueOf(HelloApplication.gm.moneyManager.getCurrentMoney()));
         scienceLabel.setText(String.valueOf(HelloApplication.gm.scienceManager.getCurrentScience()));
@@ -252,6 +285,15 @@ public class HelloController {
 
     }
 
+    private void hideAllBuildButtons() {
+        buildMenu.setDisable(true);
+        buildMenu.setOpacity(0);
+
+        buildingOptionsMenu.setDisable(true);
+        buildingOptionsMenu.setOpacity(0);
+
+    }
+
 
     void updateBackground() {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
@@ -347,7 +389,7 @@ public class HelloController {
         //tempEnergy.calcEnergyGain();
         energyLabel.setText(String.valueOf(tempEnergy.getCurrentEnergy()));
 
-
+        showTxtBtns();
 
     }
 
@@ -559,9 +601,11 @@ public class HelloController {
 
         selectTile(1);
 
-        infoTxt.setVisible(true);
+        infoTxt.setVisible(false);
         continueButton.setOpacity(0);
+        continueButton.setDisable(true);
         infoTxt.setOpacity(0);
+        infoTxt.setDisable(true);
 
 
     }

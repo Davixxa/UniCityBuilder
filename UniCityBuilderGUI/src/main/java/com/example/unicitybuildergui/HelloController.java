@@ -111,6 +111,12 @@ public class HelloController {
     @FXML
     private Button infoButton;
 
+    @FXML
+    private Button continueButton;
+
+    @FXML
+    private Button endTurnButton;
+
     public HelloController() throws FileNotFoundException {
     }
 
@@ -119,8 +125,11 @@ public class HelloController {
     void showInfoTxt(MouseEvent event) {
         // do stuff
         infoTxt.setVisible(true);
+        infoTxt.setOpacity(1);
         infoButton.setOpacity(0);
-        
+        continueButton.setOpacity(1);
+        endTurnButton.setOpacity(0);
+
 
     }
     void updateUI() {
@@ -551,6 +560,8 @@ public class HelloController {
         selectTile(1);
 
         infoTxt.setVisible(true);
+        continueButton.setOpacity(0);
+        infoTxt.setOpacity(0);
 
 
     }

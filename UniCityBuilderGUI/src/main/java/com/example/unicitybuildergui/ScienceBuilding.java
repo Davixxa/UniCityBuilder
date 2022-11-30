@@ -15,6 +15,7 @@ public class ScienceBuilding extends Building {
         this.displayName = "The earth is flat, right?";
         this.pollution = 0;
         this.buildingType = BuildingTypes.SCIENCE;
+        this.energyUpKeepCost = 5 * currentLevel;
 
     }
 

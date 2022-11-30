@@ -16,7 +16,7 @@ public class EnergyManager {
     public EnergyManager(BuildingManager buildingManager){
         this.energyGain = 0;
         this.currentEnergy = 100;
-        this.energyDecay = 0.9f;
+        this.energyDecay=1; // = 0.9f;
         this.energyUpkeep = 0;
         this.buildingManager = buildingManager;
     }

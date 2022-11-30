@@ -17,6 +17,7 @@ public class MoneyBuilding extends Building {
         this.pollution = 2000;
         this.buildingType = BuildingTypes.MONEY;
         this.moneyUpKeepCost = 100;
+        this.energyUpKeepCost = 5 * currentLevel;
 
     }
 

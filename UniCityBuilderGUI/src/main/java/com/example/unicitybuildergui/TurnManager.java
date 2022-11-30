@@ -4,12 +4,12 @@ public class TurnManager {
     private int currentTurn;
 
     //Runs all methods that needs to be run at the end of the turn.
-    public void endTurn(PolutionManager polutionManager, ScienceManager scienceManager, EnergyManager energyManager, MoneyManager moneyManager, InfastructureManager infastructureManager, DisasterManager disasterManager, BuildingManager buildingManager, GameMangaer gameMangaer){
+    public void endTurn(EnergyManager energyManager, PolutionManager polutionManager, DisasterManager disasterManager, MoneyManager moneyManager, InfastructureManager infastructureManager, ScienceManager scienceManager, BuildingManager buildingManager, GameMangaer gameMangaer){
         currentTurn++;
         int newPolutionYield = 0;
-        scienceManager.calcScienceGain();
-        energyManager.calcEnergyGain();
-        moneyManager.calcMoneyGain();
+        scienceManager.calcScienceGain(energyManager);
+        energyManager.calcEnergyGain(moneyManager);
+        moneyManager.calcMoneyGain(energyManager);
         for (int i = 1; i<buildingManager.size+1; i++){
             if (buildingManager.map.get(i) == null)
                 continue;

@@ -423,12 +423,12 @@ public class HelloController {
 
         //Running EndTurn method in TurnManager
         TurnManager tempEndTurn = HelloApplication.gm.turnManager;
-        tempEndTurn.endTurn(HelloApplication.gm.polutionManager,
-                HelloApplication.gm.scienceManager,
-                HelloApplication.gm.energyManager,
+        tempEndTurn.endTurn(HelloApplication.gm.energyManager,
+                HelloApplication.gm.polutionManager,
+                HelloApplication.gm.disasterManager,
                 HelloApplication.gm.moneyManager,
                 HelloApplication.gm.infastructureManager,
-                HelloApplication.gm.disasterManager,
+                HelloApplication.gm.scienceManager,
                 HelloApplication.gm.buildingManager,
                 HelloApplication.gm);
 

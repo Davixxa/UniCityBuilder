@@ -35,16 +35,17 @@ public class MoneyManager {
 
 
 
-    public void calcMoneyGain() {
+    public void calcMoneyGain(EnergyManager energyManager) {
         this.moneyGain = 0;
         this.moneyUpkeep = 0;
         for (Building i : buildingManager.map.values()) {
-            if(i.isDestroyed()==false){
-                this.moneyUpkeep += i.moneyUpKeepCost;
-            }
             if (i.getBuildingType() == BuildingTypes.MONEY) {
                 if (i.isDestroyed() == false) {
-                    this.moneyGain += i.getYield();
+                    if(energyManager.getCurrentEnergy()>0){
+                        energyManager.setCurrentEnergy(energyManager.getCurrentEnergy()-i.getEnergyUpKeepCost());
+                        currentMoney=currentMoney-i.moneyUpKeepCost;
+                        this.moneyGain += i.getYield();
+                    }
                 }
             }
         }

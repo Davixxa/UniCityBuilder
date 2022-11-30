@@ -105,6 +105,12 @@ public class HelloController {
     @FXML
     private Label buildingLabel;
 
+    @FXML
+    private Label infoTxt;
+
+    @FXML
+    private Button infoButton;
+
     public HelloController() throws FileNotFoundException {
     }
 
@@ -112,6 +118,10 @@ public class HelloController {
     @FXML
     void showInfoTxt(MouseEvent event) {
         // do stuff
+        infoTxt.setVisible(true);
+        infoButton.setOpacity(0);
+        
+
     }
     void updateUI() {
         moneyLabel.setText(String.valueOf(HelloApplication.gm.moneyManager.getCurrentMoney()));
@@ -539,6 +549,8 @@ public class HelloController {
 
 
         selectTile(1);
+
+        infoTxt.setVisible(true);
 
 
     }

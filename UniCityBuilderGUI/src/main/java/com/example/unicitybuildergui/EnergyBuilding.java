@@ -16,7 +16,7 @@ public class EnergyBuilding extends Building {
         this.displayName = "Global warming is a myth, obviously.";
         this.buildingType = BuildingTypes.ENERGY;
         this.moneyUpKeepCost = 100;
-        energyUpKeepCost = 5 * currentLevel;
+        this.energyUpKeepCost = 5 * currentLevel;
 
     }
 
@@ -39,6 +39,11 @@ public class EnergyBuilding extends Building {
             this.yield += 5; // Placeholder
             this.displayName = "So what it isn't a myth? Doesn't matter. A few degrees warmer summer never hurt anyone!";
             this.upgradeCost += 5; // Another placeholder.
+
+            if(this.currentLevel < 3){
+                this.energyUpKeepCost += 5;
+            }
+
         }
 
 

@@ -17,7 +17,7 @@ public class MoneyBuilding extends Building {
         this.pollution = 2000;
         this.buildingType = BuildingTypes.MONEY;
         this.moneyUpKeepCost = 100;
-        this.energyUpKeepCost = 5 * currentLevel;
+        this.energyUpKeepCost = 5;
 
     }
 
@@ -42,6 +42,7 @@ public class MoneyBuilding extends Building {
             this.yield += 5; // Placeholder
             this.displayName = "Karl Marx is disappointed in you. Overthrow the bourgeois!";
             this.upgradeCost += 5; // Another placeholder.
+            this.energyUpKeepCost += 5;
         }
     }
 

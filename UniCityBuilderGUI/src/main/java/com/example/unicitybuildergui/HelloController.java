@@ -369,7 +369,10 @@ public class HelloController {
     void upgradeBuilding(MouseEvent event) {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         MoneyManager tempMoney = HelloApplication.gm.moneyManager;
-        tempBuilding.upgrade(tempMoney);
+        if (HelloApplication.gm.scienceManager.getScienceLevel() >= tempBuilding.getCurrentLevel()+1){
+            tempBuilding.upgrade(tempMoney);
+        }
+
 
         //Set image to a higher upgrade building
         updateBackground();

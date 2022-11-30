@@ -4,15 +4,16 @@ public class ScienceManager {
     private int scienceGain;
     private int currentScience;
     private int scienceToLevel;
+    private int scienceLevel;
 
     BuildingManager buildingManager;
 
     public ScienceManager(BuildingManager buildingManager){
         this.scienceGain = 0;
-        this.currentScience = 100;
+        this.currentScience = 0;
         this.scienceToLevel = 10;
         this.buildingManager = buildingManager;
-
+        this.scienceLevel = 1;
     }
 
     public int getCurrentScience() {
@@ -41,6 +42,9 @@ public class ScienceManager {
         this.scienceToLevel = scienceToLevel;
     }
 
+    public int getScienceLevel() {
+        return scienceLevel;
+    }
 
     public void calcScienceGain() {
         this.scienceGain = 0;
@@ -52,6 +56,11 @@ public class ScienceManager {
             }
         }
         this.currentScience += this.scienceGain;
+        if (currentScience >= scienceToLevel){
+            currentScience = 0;
+            scienceLevel++;
+            scienceToLevel += 100;
+        }
 
 
     }

@@ -129,7 +129,7 @@ public class HelloController {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         if (tempBuilding==null) {
             //When there is no building txt
-            infoTxt.setText("");
+            infoTxt.setText("There is no building here");
 
             return;
         }
@@ -179,8 +179,6 @@ public class HelloController {
                 break;
 
         }
-
-        infoTxt.setText("In the late 18th century, we see the first coal factories located in England. Coal was the \n basis of the industrial revolution and the mechanization of the world. Coal generated 37% of global electricity in \n 2022 but it is also the leading source in CO2 emissions producing 15.1 billion metric tons not cool :( ");
 
     }
 

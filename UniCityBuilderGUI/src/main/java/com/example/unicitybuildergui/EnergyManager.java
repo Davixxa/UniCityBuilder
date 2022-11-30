@@ -51,7 +51,6 @@ public class EnergyManager {
         this.energyGain = 0;
         this.energyUpkeep = 0;
         for (Building i : buildingManager.map.values()) {
-            this.energyUpkeep += i.energyUpKeepCost;
 
             if(i.isDestroyed()==false){
                 this.energyUpkeep += i.energyUpKeepCost;

@@ -3,13 +3,11 @@ package com.example.unicitybuildergui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.effect.ImageInput;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -21,9 +19,10 @@ public class HelloController {
     GameMangaer gameMangaer;
     //Oliver du er træls
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
-    Image backgroundImage = new Image("file:Backgroung.png");
-    Image factory1 = new Image("file:Factory.png");
-    Image factory2 = new Image("file:Factory2.png");
+    //Image backgroundImage = new Image(this.getClass().getResource("src/main/java/com/example/unicitybuildergui/Backgroung.png").toString());
+    Image backgroundImage = new Image("https://github.com/Davixxa/UniCityBuilder/blob/1651ee5ecbfce5a318660b8f889b2d7bd9c0e61b/UniCityBuilderGUI/src/main/java/com/example/unicitybuildergui/Backgroung.png");
+    Image factory1 = new Image("https://github.com/Davixxa/UniCityBuilder/blob/1651ee5ecbfce5a318660b8f889b2d7bd9c0e61b/UniCityBuilderGUI/src/main/java/com/example/unicitybuildergui/Factory.png");
+    Image factory2 = new Image("https://github.com/Davixxa/UniCityBuilder/blob/1651ee5ecbfce5a318660b8f889b2d7bd9c0e61b/UniCityBuilderGUI/src/main/java/com/example/unicitybuildergui/Factory2.png");
     Image energy1;
     Image energy2;
     Image science1;

@@ -20,9 +20,9 @@ public class HelloController {
     //Oliver du er træls
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
     //Image backgroundImage = new Image(this.getClass().getResource("src/main/java/com/example/unicitybuildergui/Backgroung.png").toString());
-    Image backgroundImage = new Image("https://github.com/Davixxa/UniCityBuilder/blob/1651ee5ecbfce5a318660b8f889b2d7bd9c0e61b/UniCityBuilderGUI/src/main/java/com/example/unicitybuildergui/Backgroung.png");
-    Image factory1 = new Image("https://github.com/Davixxa/UniCityBuilder/blob/1651ee5ecbfce5a318660b8f889b2d7bd9c0e61b/UniCityBuilderGUI/src/main/java/com/example/unicitybuildergui/Factory.png");
-    Image factory2 = new Image("https://github.com/Davixxa/UniCityBuilder/blob/1651ee5ecbfce5a318660b8f889b2d7bd9c0e61b/UniCityBuilderGUI/src/main/java/com/example/unicitybuildergui/Factory2.png");
+    Image backgroundImage;
+    Image factory1;
+    Image factory2;
     Image energy1;
     Image energy2;
     Image science1;
@@ -525,6 +525,10 @@ public class HelloController {
 
         buildingOptionsMenu.setDisable(true);
         buildingOptionsMenu.setOpacity(0);
+
+        backgroundImage = new Image("file:src/main/java/com/example/unicitybuildergui/Backgroung.png");
+        factory1 = new Image("file:src/main/java/com/example/unicitybuildergui/Factory.png");
+        factory2 = new Image("file:src/main/java/com/example/unicitybuildergui/Factory2.png");
 
         moneyLabel.setText(""+HelloApplication.gm.moneyManager.getCurrentMoney());
         scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());

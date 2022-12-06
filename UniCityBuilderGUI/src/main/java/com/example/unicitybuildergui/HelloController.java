@@ -373,76 +373,106 @@ public class HelloController {
         updateIcons();
     }
     public void updateIcons(){
-        for (int i = 0;i<9; i++) {
-            if (HelloApplication.gm.getBuilding(i+1) == null) {
+        tile7Image.setImage(scienceIcon);
+        tile8Image.setImage(energyIcon);
+        tile9Image.setImage(moneyIcon);
+        for (int i = 1;i<=9; i++) {
+            if (HelloApplication.gm.getBuilding(i) == null) {
                 continue;
             }
-            Building tempBuilding = HelloApplication.gm.getBuilding(i+1);
+            Building tempBuilding = HelloApplication.gm.getBuilding(i);
             switch (tempBuilding.buildingType) {
                 case SCIENCE:
                     switch (i) {
-                        case 0:
-                            tile1Image.setImage(scienceIcon);
                         case 1:
-                            tile2Image.setImage(scienceIcon);
+                            tile1Image.setImage(scienceIcon);
+                            break;
                         case 2:
-                            tile3Image.setImage(scienceIcon);
+                            tile2Image.setImage(scienceIcon);
+                            break;
                         case 3:
-                            tile4Image.setImage(scienceIcon);
+                            tile3Image.setImage(scienceIcon);
+                            break;
                         case 4:
-                            tile5Image.setImage(scienceIcon);
+                            tile4Image.setImage(scienceIcon);
+                            break;
                         case 5:
-                            tile6Image.setImage(scienceIcon);
+                            tile5Image.setImage(scienceIcon);
+                            break;
                         case 6:
-                            tile7Image.setImage(scienceIcon);
+                            tile6Image.setImage(scienceIcon);
+                            break;
                         case 7:
-                            tile8Image.setImage(scienceIcon);
+                            tile7Image.setImage(scienceIcon);
+                            break;
                         case 8:
+                            tile8Image.setImage(scienceIcon);
+                            break;
+                        case 9:
                             tile9Image.setImage(scienceIcon);
+                            break;
 
                     }
                 case ENERGY:
                     switch (i) {
-                        case 0:
-                            tile1Image.setImage(energyIcon);
                         case 1:
-                            tile2Image.setImage(energyIcon);
+                            tile1Image.setImage(energyIcon);
+                            break;
                         case 2:
-                            tile3Image.setImage(energyIcon);
+                            tile2Image.setImage(energyIcon);
+                            break;
                         case 3:
-                            tile4Image.setImage(energyIcon);
+                            tile3Image.setImage(energyIcon);
+                            break;
                         case 4:
-                            tile5Image.setImage(energyIcon);
+                            tile4Image.setImage(energyIcon);
+                            break;
                         case 5:
-                            tile6Image.setImage(energyIcon);
+                            tile5Image.setImage(energyIcon);
+                            break;
                         case 6:
-                            tile7Image.setImage(energyIcon);
+                            tile6Image.setImage(energyIcon);
+                            break;
                         case 7:
-                            tile8Image.setImage(energyIcon);
+                            tile7Image.setImage(energyIcon);
+                            break;
                         case 8:
+                            tile8Image.setImage(energyIcon);
+                            break;
+                        case 9:
                             tile9Image.setImage(energyIcon);
+                            break;
 
                     }
                 case MONEY:
                     switch (i) {
-                        case 0:
-                            tile1Image.setImage(moneyIcon);
                         case 1:
-                            tile2Image.setImage(moneyIcon);
+                            tile1Image.setImage(moneyIcon);
+                            break;
                         case 2:
-                            tile3Image.setImage(moneyIcon);
+                            tile2Image.setImage(moneyIcon);
+                            break;
                         case 3:
-                            tile4Image.setImage(moneyIcon);
+                            tile3Image.setImage(moneyIcon);
+                            break;
                         case 4:
-                            tile5Image.setImage(moneyIcon);
+                            tile4Image.setImage(moneyIcon);
+                            break;
                         case 5:
-                            tile6Image.setImage(moneyIcon);
+                            tile5Image.setImage(moneyIcon);
+                            break;
                         case 6:
-                            tile7Image.setImage(moneyIcon);
+                            tile6Image.setImage(moneyIcon);
+                            break;
                         case 7:
-                            tile8Image.setImage(moneyIcon);
+                            tile7Image.setImage(moneyIcon);
+                            break;
                         case 8:
+                            tile8Image.setImage(moneyIcon);
+                            break;
+                        case 9:
                             tile9Image.setImage(moneyIcon);
+                            break;
 
                     }
             }

@@ -69,14 +69,15 @@ abstract class Building {
     public void repair(MoneyManager moneyManager) {
         int newMoney = moneyManager.getCurrentMoney() - (upgradeCost/2);
         //checks for if you have enough money to repair a destroyed building
-        
-        if (newMoney < 0) {
-            System.out.println("Error: Insufficient funds");
+
+        if(this.isDestroyed() == true){
+            if (newMoney < 0) {
+                System.out.println("Error: Insufficient funds");
         } else {
             moneyManager.setCurrentMoney(newMoney);
             this.destroyed = false;
         }
-
+        }
     }
 
     public int getMoneyUpKeepCost() {

@@ -42,7 +42,7 @@ public class ScienceBuilding extends Building {
         else {
             moneyManager.setCurrentMoney(newMoney);
             this.currentLevel++;
-            this.yield += 5;
+            this.yield += 8;
             // High School, University
             this.upgradeCost += 200; // Another placeholder.
             this.energyUpKeepCost += 10;

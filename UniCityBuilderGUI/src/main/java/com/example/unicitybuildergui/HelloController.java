@@ -129,6 +129,15 @@ public class HelloController {
     @FXML
     private ImageView redXImage;
 
+    @FXML
+    private Label infrastructurLvl;
+
+    @FXML
+    private Label infraCost;
+
+    @FXML
+    private Label scienceLvlLabel;
+
 
     public HelloController() throws FileNotFoundException {
     }
@@ -152,7 +161,7 @@ public class HelloController {
 
         switch (tempBuilding.buildingType) {
             case MONEY:
-                statTxt.setText("Lvl is" + tempBuilding.getCurrentLevel() + "\n" + "Upgrade cost: " + tempBuilding.getUpgradeCost() + "\n" + "Yield is: " + tempBuilding.getYield() + "\n" + "Money upkeep cost: " + tempBuilding.getMoneyUpKeepCost() + "\n" + "Energy upkeep cost: " + tempBuilding.getEnergyUpKeepCost());
+                statTxt.setText("Lvl is" + tempBuilding.getCurrentLevel() + "\n" + "Upgrade cost: " + tempBuilding.getUpgradeCost() + "\n" + "Yield is: " + tempBuilding.getYield() + "\n" + "\n" + "Energy upkeep cost: " + tempBuilding.getEnergyUpKeepCost());
                 switch (tempBuilding.getCurrentLevel()) {
                     case 1:
                         //Info text
@@ -282,8 +291,8 @@ public class HelloController {
     @FXML
     void upgradeInfra(MouseEvent event) {
         InfastructureManager tempInfra = HelloApplication.gm.infastructureManager;
-        tempInfra.upgrade();
-
+        tempInfra.upgrade(HelloApplication.gm.moneyManager);
+        updateUI();
     }
 
 
@@ -292,6 +301,10 @@ public class HelloController {
         scienceLabel.setText(String.valueOf(HelloApplication.gm.scienceManager.getCurrentScience()));
         energyLabel.setText(String.valueOf(HelloApplication.gm.energyManager.getCurrentEnergy()));
         selectTile(selectedTile); // Redraws menu just in case.
+        infrastructurLvl.setText("InfraStructur level:"+ HelloApplication.gm.infastructureManager.getLevel());
+        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
+        scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
+
     }
 
     @FXML
@@ -399,6 +412,8 @@ public class HelloController {
         upgradeInfraBtn.setDisable(false);
         upgradeInfraBtn.setOpacity(1);
 
+        infraCost.setOpacity(1);
+
     }
 
     private void goToBuildMenu() {
@@ -410,6 +425,8 @@ public class HelloController {
 
         upgradeInfraBtn.setDisable(false);
         upgradeInfraBtn.setOpacity(1);
+
+        infraCost.setOpacity(1);
 
     }
 
@@ -423,6 +440,7 @@ public class HelloController {
         upgradeInfraBtn.setDisable(true);
         upgradeInfraBtn.setOpacity(0);
 
+        infraCost.setOpacity(0);
 
 
     }
@@ -528,8 +546,18 @@ public class HelloController {
         //tempEnergy.calcEnergyGain();
         energyLabel.setText(String.valueOf(tempEnergy.getCurrentEnergy()));
 
-        showTxtBtns();
-        count = 1;
+        if (HelloApplication.gm.disasterManager.getStatusMessage().length() == 0)
+            return;
+        else {
+            infoTxt.setText(HelloApplication.gm.disasterManager.getStatusMessage());
+            showTxtBtns();
+        }
+            count = 1;
+
+        scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
+
+
+        System.out.println(HelloApplication.gm.scienceManager.getScienceLevel());
 
     }
 
@@ -561,6 +589,8 @@ public class HelloController {
             buildingLabel.setText("Fucking destroyed");
             redXImage.setOpacity(1);
             goToBuildingOptionsMenu();
+        }else{
+            redXImage.setOpacity(0);
         }
 
     }
@@ -746,7 +776,9 @@ public class HelloController {
         moneyLabel.setText(""+HelloApplication.gm.moneyManager.getCurrentMoney());
         scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());
         energyLabel.setText(""+HelloApplication.gm.energyManager.getCurrentEnergy());
-
+        infrastructurLvl.setText("InfraStructur level:"+ HelloApplication.gm.infastructureManager.getLevel());
+        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
+        scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
         selectTile(1);
 

@@ -75,6 +75,7 @@
                   <Button fx:id="infoButton" layoutX="237.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#showInfoTxt" text="Info" />
                   <Button fx:id="continueButton" layoutX="211.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#hideInfoTxt" text="Continue" />
                   <Button fx:id="upgradeInfraBtn" layoutX="71.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#upgradeInfra" text="Upgrade Infrastructur" />
+                  <Label fx:id="infraCost" layoutX="206.0" layoutY="6.0" text="Cost" />
                </children>
             </AnchorPane>
         </items>
@@ -103,6 +104,7 @@
                      </image>
                   </ImageView>
                </graphic></Label>
+            <Label fx:id="scienceLvlLabel" prefHeight="19.0" prefWidth="103.0" text="ScienceLvl" />
             <Label fx:id="energyLabel" text="Energy: ">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
@@ -118,7 +120,8 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="redXImage" fitHeight="257.0" fitWidth="258.0" layoutX="72.0" layoutY="91.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <Label fx:id="infrastructurLvl" layoutX="254.0" layoutY="14.0" text="InfraStructurLvl" />
+      <ImageView fx:id="redXImage" fitHeight="229.0" fitWidth="222.0" layoutX="89.0" layoutY="108.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@RedX.png" />
          </image>

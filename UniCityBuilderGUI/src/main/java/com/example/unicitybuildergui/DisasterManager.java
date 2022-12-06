@@ -54,59 +54,59 @@ public class DisasterManager{
         //It is not supposed to show the same message on consecutive turns. This is a known shippable.
         else{
             if(polutionManager.getCurrentPolution()>=10000){
-                if(veryHazardousShowable) {
+                if(this.veryHazardousShowable) {
                     this.statusMessage = "The pollution level is very hazardous.\nIt is almost impossible to breathe.";
                     System.out.println(this.statusMessage);
                 }
-                moderateShowable = true;
-                unhealthyShowable = true;
-                veryUnhealthyShowable = true;
-                hazardousShowable = true;
-                veryHazardousShowable = false;
+                this.moderateShowable = true;
+                this.unhealthyShowable = true;
+                this.veryUnhealthyShowable = true;
+                this.hazardousShowable = true;
+                this.veryHazardousShowable = false;
             }
             else if(polutionManager.getCurrentPolution()>=8000){
-                if(hazardousShowable) {
+                if(this.hazardousShowable) {
                     this.statusMessage = "The pollution level is hazardous.";
                     System.out.println(this.statusMessage);
                 }
-                moderateShowable = true;
-                unhealthyShowable = true;
-                veryUnhealthyShowable = true;
-                hazardousShowable = false;
-                veryHazardousShowable = true;
+                this.moderateShowable = true;
+                this.unhealthyShowable = true;
+                this.veryUnhealthyShowable = true;
+                this.hazardousShowable = false;
+                this.veryHazardousShowable = true;
             }
             else if(polutionManager.getCurrentPolution()>=6000){
-                if(veryUnhealthyShowable) {
+                if(this.veryUnhealthyShowable) {
                     this.statusMessage = "The pollution level is very unhealthy.";
                     System.out.println(this.statusMessage);
                 }
-                moderateShowable = true;
-                unhealthyShowable = true;
-                veryUnhealthyShowable = false;
-                hazardousShowable = true;
-                veryHazardousShowable = true;
+                this.moderateShowable = true;
+                this.unhealthyShowable = true;
+                this.veryUnhealthyShowable = false;
+                this.hazardousShowable = true;
+                this.veryHazardousShowable = true;
             }
             else if(polutionManager.getCurrentPolution()>=4000){
-                if(unhealthyShowable) {
+                if(this.unhealthyShowable) {
                     this.statusMessage = "The pollution level is unhealthy.";
                     System.out.println(this.statusMessage);
                 }
-                moderateShowable = true;
-                unhealthyShowable = false;
-                veryUnhealthyShowable = true;
-                hazardousShowable = true;
-                veryHazardousShowable = true;
+                this.moderateShowable = true;
+                this.unhealthyShowable = false;
+                this.veryUnhealthyShowable = true;
+                this.hazardousShowable = true;
+                this.veryHazardousShowable = true;
             }
             else if(polutionManager.getCurrentPolution()>=2000){
-                if(moderateShowable) {
+                if(this.moderateShowable) {
                     this.statusMessage = "The pollution level is moderate";
                     System.out.println(this.statusMessage);
                 }
-                moderateShowable = false;
-                unhealthyShowable = true;
-                veryUnhealthyShowable = true;
-                hazardousShowable = true;
-                veryHazardousShowable = true;
+                this.moderateShowable = false;
+                this.unhealthyShowable = true;
+                this.veryUnhealthyShowable = true;
+                this.hazardousShowable = true;
+                this.veryHazardousShowable = true;
             }
             else{
                 this.statusMessage = "";

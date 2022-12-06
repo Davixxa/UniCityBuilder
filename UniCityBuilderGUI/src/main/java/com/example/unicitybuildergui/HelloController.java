@@ -269,6 +269,9 @@ public class HelloController {
         statTxt.setOpacity(0);
         statTxt.setDisable(true);
 
+        // Reset the status message, otherwise the message will show up on every turn.
+        HelloApplication.gm.disasterManager.setStatusMessage("");
+
         infoButton.setOpacity(1);
         infoButton.setDisable(false);
         continueButton.setOpacity(0);

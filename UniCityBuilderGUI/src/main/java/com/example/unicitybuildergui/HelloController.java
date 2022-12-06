@@ -488,7 +488,7 @@ public class HelloController {
                     }
                     break;
             }
-        }*/
+        }
     }
 
     @FXML

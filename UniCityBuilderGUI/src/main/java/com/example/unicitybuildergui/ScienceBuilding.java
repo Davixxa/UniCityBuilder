@@ -9,7 +9,7 @@ public class ScienceBuilding extends Building {
         this.currentLevel = 1;
         this.upgradeCost = 200;
         this.coordinate = coordinate;
-        this.yield = 10;
+        this.yield = 50;
         this.range = 10;
         this.destroyed = false;
         this.displayName = "Public School";

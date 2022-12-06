@@ -174,6 +174,18 @@ public class HelloController {
     @FXML
     private ImageView tile9Image;
 
+    @FXML
+    private Label costEnergy;
+
+    @FXML
+    private Label costHouse;
+
+    @FXML
+    private Label costMoney;
+
+    @FXML
+    private Label costScience;
+
 
     public HelloController() throws FileNotFoundException {
     }
@@ -367,7 +379,7 @@ public class HelloController {
         if (reselectTile)
             selectTile(selectedTile); // Redraws menu just in case.
         infrastructurLvl.setText("Infrastructure level:"+ HelloApplication.gm.infastructureManager.getLevel());
-        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
+        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*200);
         scienceLvlLabel.setText("Science Level: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
         updateIcons();

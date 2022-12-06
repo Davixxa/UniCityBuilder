@@ -6,12 +6,12 @@ public class EnergyBuilding extends Building {
     private int pollution;
     //Constructor
     public EnergyBuilding(int coordinate) {
-        this.buildingCost = 200;
+        this.buildingCost = 150;
         this.currentLevel = 1;
-        this.upgradeCost = 200;
+        this.upgradeCost = 150;
         this.coordinate = coordinate;
         this.yield = 5;
-        this.pollution = 60;
+        this.pollution = 50;
         this.destroyed = false;
         this.displayName = "Coal Power Facility";
         this.buildingType = BuildingTypes.ENERGY;

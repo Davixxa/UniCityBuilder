@@ -138,6 +138,9 @@ public class HelloController {
     @FXML
     private Label scienceLvlLabel;
 
+    @FXML
+    private ImageView gameOverScreen;
+
 
     public HelloController() throws FileNotFoundException {
     }
@@ -561,7 +564,10 @@ public class HelloController {
         scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
 
-        System.out.println(HelloApplication.gm.scienceManager.getScienceLevel());
+        if(HelloApplication.gm.energyManager.getCurrentEnergy() <= 0 || HelloApplication.gm.moneyManager.getCurrentMoney() <= 0){
+            gameOverScreen.setOpacity(1);
+            gameOverScreen.setDisable(false);
+        }
 
     }
 

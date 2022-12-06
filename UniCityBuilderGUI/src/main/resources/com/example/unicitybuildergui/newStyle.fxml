@@ -126,5 +126,10 @@
             <Image url="@RedX.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="gameOverScreen" disable="true" fitHeight="550.0" fitWidth="518.0" layoutX="-77.0" layoutY="-1.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@GameOver.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

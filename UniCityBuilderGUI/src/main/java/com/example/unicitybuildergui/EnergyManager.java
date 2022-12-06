@@ -4,6 +4,7 @@ import java.lang.Math;
 
 
 public class EnergyManager {
+    //Variables
     private int energyGain;
     private int currentEnergy;
     private float energyDecay;
@@ -12,7 +13,7 @@ public class EnergyManager {
     BuildingManager buildingManager;
 
 
-
+    //Constructor
     public EnergyManager(BuildingManager buildingManager){
         this.energyGain = 0;
         this.currentEnergy = 100;
@@ -46,7 +47,7 @@ public class EnergyManager {
     }
 
 
-
+    //A function that calculates our energy gain
     public void calcEnergyGain(MoneyManager moneyManager) {
         this.energyGain = 0;
         this.energyUpkeep = 0;

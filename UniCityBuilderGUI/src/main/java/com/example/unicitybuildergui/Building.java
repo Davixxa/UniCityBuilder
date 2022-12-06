@@ -2,7 +2,7 @@ package com.example.unicitybuildergui;
 
 abstract class Building {
 
-
+    //Variables
     BuildingTypes buildingType;
 
     int buildingCost;
@@ -19,18 +19,16 @@ abstract class Building {
 
     String displayName;
 
-
+    //Get and Set methods
     public int getPollutionYield() {
         return pollution;
     }
     public BuildingTypes getBuildingType() {
         return buildingType;
     }
-
     public void setBuildingType(BuildingTypes buildingType) {
         this.buildingType = buildingType;
     }
-
     public String getDisplayName() {
         return displayName;
     }
@@ -38,7 +36,6 @@ abstract class Building {
     public void setDisplayName(String name) {
         this.displayName = name;
     }
-
     public int getYield() {
         return yield;
     }
@@ -46,19 +43,15 @@ abstract class Building {
     public void setCoordinate(int coordinate) {
         this.coordinate = coordinate;
     }
-
     public void setDestroyed(boolean destroyed) {
         this.destroyed = destroyed;
     }
-
     public int getUpgradeCost() {
         return upgradeCost;
     }
-
     public int getBuildingCost() {
         return buildingCost;
     }
-
     public int getCoordinate() {
         return coordinate;
     }
@@ -67,13 +60,14 @@ abstract class Building {
         return currentLevel;
     }
 
-    // Concrete
+    //if something is destroyed it returns a destroyed
     public boolean isDestroyed() {
         return destroyed;
     }
-
+    // A function for our repair function
     public void repair(MoneyManager moneyManager) {
         int newMoney = moneyManager.getCurrentMoney() - upgradeCost;
+        //checks for if you have enough money to repair a destroyed building
         if (newMoney < 0) {
             System.out.println("Error: Insufficient funds");
         } else {
@@ -97,10 +91,8 @@ abstract class Building {
 
     // Make upgrade cost more expensive, increase yield, level++
     public abstract void upgrade(MoneyManager moneyManager);
-    // Upgrade gør også at den koster mere i upKeepCost. (Oliver Larsen)
+    // Upgrade makes it so it costs 1 more in upKeepCost
 
-    // Concrete - Doesn't immediately make sense to have
-    //public abstract void remove();
 
 
 }

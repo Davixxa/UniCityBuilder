@@ -10,6 +10,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     public static GameMangaer gm;
     @Override
+    //Starts our stage
     public void start(Stage stage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("newStyle.fxml"));
@@ -19,6 +20,7 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    //our main method
     public static void main(String[] args) {
         GameMangaer gameMangaer = new GameMangaer();
         gm = gameMangaer;

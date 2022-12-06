@@ -3,7 +3,7 @@ package com.example.unicitybuildergui;
 public class ScienceBuilding extends Building {
 
     int range;
-
+    //Constructor and base stats for the science buildings
     public ScienceBuilding(int coordinate) {
         this.buildingCost = 300;
         this.currentLevel = 1;
@@ -30,10 +30,10 @@ public class ScienceBuilding extends Building {
         return range;
     }
 
-
+    //Our upgrade Function for the money building
     @Override
     public void upgrade(MoneyManager moneyManager) {
-
+        //Set your new money value and checks if you have enough money to upgrade
         int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
         if (newMoney < 0) {
             System.out.println("Error: Insufficient funds");

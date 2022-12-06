@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GameMangaer {
 
-
+    //Game manager makes an object of all the classes
     InfastructureManager infastructureManager = new InfastructureManager();
     BuildingManager buildingManager = new BuildingManager();
     MoneyManager moneyManager = new MoneyManager(buildingManager);
@@ -27,6 +27,7 @@ public class GameMangaer {
     public  void setupGame(){
         displayMainMenu();
     }
+    //Displays the game in the Terminal
     public void displayMainMenu(){
         Scanner scan = new Scanner(System.in);
 

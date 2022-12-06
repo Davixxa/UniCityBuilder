@@ -17,7 +17,6 @@ public class HelloController {
     // Value from 1-9
     int selectedTile;
     GameMangaer gameMangaer;
-    //Oliver du er træls
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
     //Image backgroundImage = new Image(this.getClass().getResource("src/main/java/com/example/unicitybuildergui/Backgroung.png").toString());
     Image backgroundImage;
@@ -31,6 +30,7 @@ public class HelloController {
     Image science2;
     Image science3;
 
+    //References to our FXML tags
     @FXML
     private Label energyLabel;
 
@@ -39,7 +39,6 @@ public class HelloController {
 
     @FXML
     private Label scienceLabel;
-
 
     @FXML
     private ImageView background;
@@ -183,7 +182,7 @@ public class HelloController {
         }
 
     }
-
+    //Our text buttons
     private void showTxtBtns() {
         infoTxt.setVisible(true);
         infoTxt.setOpacity(1);

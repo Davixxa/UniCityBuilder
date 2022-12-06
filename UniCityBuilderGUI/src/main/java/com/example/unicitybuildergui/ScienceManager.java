@@ -1,13 +1,14 @@
 package com.example.unicitybuildergui;
 
 public class ScienceManager {
+    //Variables
     private int scienceGain;
     private int currentScience;
     private int scienceToLevel;
     private int scienceLevel;
 
     BuildingManager buildingManager;
-
+    //Constructor with base stats at the start of game and the requirements for a level up
     public ScienceManager(BuildingManager buildingManager){
         this.scienceGain = 0;
         this.currentScience = 0;
@@ -23,8 +24,6 @@ public class ScienceManager {
     public void setCurrentScience(int currentScience) {
         this.currentScience = currentScience;
     }
-
-
     
     public int getScienceGain() {
         return scienceGain;
@@ -45,7 +44,7 @@ public class ScienceManager {
     public int getScienceLevel() {
         return scienceLevel;
     }
-
+    //Calculates our science gain per turn.
     public void calcScienceGain(EnergyManager energyManager) {
         this.scienceGain = 0;
         for (Building i : buildingManager.map.values()) {

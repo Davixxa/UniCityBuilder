@@ -29,6 +29,10 @@ public class HelloController {
     Image science1;
     Image science2;
     Image science3;
+    Image house;
+    Image scienceIcon;
+    Image moneyIcon;
+    Image energyIcon;
 
     //References to our FXML tags
     @FXML
@@ -345,6 +349,7 @@ public class HelloController {
         infrastructurLvl.setText("Infrastructure level:"+ HelloApplication.gm.infastructureManager.getLevel());
         infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
         scienceLvlLabel.setText("Science Level: " + HelloApplication.gm.scienceManager.getScienceLevel());
+        updateIcons();
     }
 
     // Method overloading of updateUI so we don't break existing functionality.
@@ -358,13 +363,83 @@ public class HelloController {
         infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
         scienceLvlLabel.setText("Science Level: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
+        updateIcons();
+    }
+    public void updateIcons(){
+        for (int i = 0;i<9; i++) {
+            if (HelloApplication.gm.getBuilding(i+1) == null) {
+                continue;
+            }
+            Building tempBuilding = HelloApplication.gm.getBuilding(i+1);
+            switch (tempBuilding.buildingType) {
+                case SCIENCE:
+                    switch (i) {
+                        case 0:
+                            tile1Image.setImage(scienceIcon);
+                        case 1:
+                            tile2Image.setImage(scienceIcon);
+                        case 2:
+                            tile3Image.setImage(scienceIcon);
+                        case 3:
+                            tile4Image.setImage(scienceIcon);
+                        case 4:
+                            tile5Image.setImage(scienceIcon);
+                        case 5:
+                            tile6Image.setImage(scienceIcon);
+                        case 6:
+                            tile7Image.setImage(scienceIcon);
+                        case 7:
+                            tile8Image.setImage(scienceIcon);
+                        case 8:
+                            tile9Image.setImage(scienceIcon);
 
-        for(int i=0; i<HelloApplication.gm.buildingManager.size; i++){
-            
+                    }
+                case ENERGY:
+                    switch (i) {
+                        case 0:
+                            tile1Image.setImage(energyIcon);
+                        case 1:
+                            tile2Image.setImage(energyIcon);
+                        case 2:
+                            tile3Image.setImage(energyIcon);
+                        case 3:
+                            tile4Image.setImage(energyIcon);
+                        case 4:
+                            tile5Image.setImage(energyIcon);
+                        case 5:
+                            tile6Image.setImage(energyIcon);
+                        case 6:
+                            tile7Image.setImage(energyIcon);
+                        case 7:
+                            tile8Image.setImage(energyIcon);
+                        case 8:
+                            tile9Image.setImage(energyIcon);
 
+                    }
+                case MONEY:
+                    switch (i) {
+                        case 0:
+                            tile1Image.setImage(moneyIcon);
+                        case 1:
+                            tile2Image.setImage(moneyIcon);
+                        case 2:
+                            tile3Image.setImage(moneyIcon);
+                        case 3:
+                            tile4Image.setImage(moneyIcon);
+                        case 4:
+                            tile5Image.setImage(moneyIcon);
+                        case 5:
+                            tile6Image.setImage(moneyIcon);
+                        case 6:
+                            tile7Image.setImage(moneyIcon);
+                        case 7:
+                            tile8Image.setImage(moneyIcon);
+                        case 8:
+                            tile9Image.setImage(moneyIcon);
+
+                    }
+            }
         }
-
-
     }
 
     @FXML
@@ -586,6 +661,8 @@ public class HelloController {
                         background.setImage(science3);
                 }
                 break;
+            case HOUSE:
+                background.setImage(house);
         }
     }
 
@@ -862,6 +939,10 @@ public class HelloController {
         energy1 = new Image("file:src/main/java/com/example/unicitybuildergui/Factory.png");
         energy2 = new Image("file:src/main/java/com/example/unicitybuildergui/Factory2.png");
         energy3 = new Image("file:src/main/resources/com/example/unicitybuildergui/Energy3.png");
+        house = new Image("file:src/main/resources/com/example/unicitybuildergui/House.png");
+        energyIcon = new Image("file:src/main/resources/com/example/unicitybuildergui/EnergyIcon.png");
+        scienceIcon = new Image("file:src/main/resources/com/example/unicitybuildergui/ScienceIcon.png");
+        moneyIcon = new Image("file:src/main/resources/com/example/unicitybuildergui/MoneyIcon.png");
 
         moneyLabel.setText(""+HelloApplication.gm.moneyManager.getCurrentMoney());
         scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());

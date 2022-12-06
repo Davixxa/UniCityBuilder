@@ -8,7 +8,7 @@ public class MoneyManager {
     private int moneyUpkeep;
     BuildingManager buildingManager;
 
-
+    //Constructor and set our base stats for the start of the game
     public MoneyManager(BuildingManager buildingmanager) {
         this.moneyGain = 0;
         this.currentMoney = 100;
@@ -34,7 +34,7 @@ public class MoneyManager {
     }
 
 
-
+    //Calculates our money gain each turn
     public void calcMoneyGain(EnergyManager energyManager) {
         this.moneyGain = 0;
         this.moneyUpkeep = 0;

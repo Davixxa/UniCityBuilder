@@ -3,11 +3,13 @@ package com.example.unicitybuildergui;
 public class DisasterManager{
 
     BuildingManager buildingManager;
+    //Constructor
     public DisasterManager(BuildingManager buildingManager) {
         this.buildingManager = buildingManager;
     }
     
     Building building;
+    //default constructor
     public DisasterManager(Building building) {
         this.building = building;
     }

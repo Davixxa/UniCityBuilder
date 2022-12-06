@@ -5,7 +5,7 @@ public class MoneyBuilding extends Building {
     // The placeholder names in this class may or may not have various commie jokes in it.
 
     public int pollution;
-
+    //Constructor for money building and its basic stats
     public MoneyBuilding(int coordinate) {
         this.buildingCost = 50;
         this.currentLevel = 1;
@@ -30,9 +30,10 @@ public class MoneyBuilding extends Building {
         this.pollution = pollution;
     }
 
-
+    //Our upgrade Function for the money building
     @Override
     public void upgrade(MoneyManager moneyManager) {
+        //Set your new money value and checks if you have enough money to upgrade
         int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
         if (newMoney < 0) {
             System.out.println("Error: Insufficient funds");

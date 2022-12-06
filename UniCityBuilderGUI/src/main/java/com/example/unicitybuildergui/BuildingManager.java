@@ -10,28 +10,31 @@ import java.util.Map.Entry;
 // Main class
 class BuildingManager {
 
-
+	//Size of the map
 	int size = 9;
+	//Counter for the mao
 	int count = 0;
 
-
+	//Map to store buildings
 	public Map<Integer, Building> map = new HashMap<Integer, Building>(size);
 
 
 
-	// Main driver method
+	// Default constructor
 	public void BuildingManager() 
 	{
 		
 	}
 
 
-
+	//method to build a building on a given room
 	public void buildBuilding(Map<Integer, Building> map, GameMangaer gameMangaer, int tile, BuildingTypes buildingType)
 	{
+		//Checks if there is a building in a given room already
 		if (map.get(tile) != null) {
 			System.out.println("ERROR: There's already a building on this tile");
 		} else {
+			//Creates a new building based on its given building type
 			switch (buildingType) {
 				case ENERGY:
 					EnergyBuilding eBuilding = new EnergyBuilding(tile);
@@ -59,8 +62,6 @@ class BuildingManager {
 					break;
 			}
 		}
-		//gameMangaer.displayMainMenu();
-
 	}
 
 	public Building select(Map<Integer, Building> map)

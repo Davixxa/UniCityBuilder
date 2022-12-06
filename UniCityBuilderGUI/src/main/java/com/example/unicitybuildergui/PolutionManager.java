@@ -1,9 +1,10 @@
 package com.example.unicitybuildergui;
 
 public class PolutionManager {
+    //variables
     private int currentPolution;
     private  int polutionYield;
-
+    //Constructor
     public PolutionManager(){
         currentPolution = 0;
         polutionYield = 0;

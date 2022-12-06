@@ -2,9 +2,9 @@ package com.example.unicitybuildergui;
 
 public class EnergyBuilding extends Building {
 
-
+    //Variable
     private int pollution;
-
+    //Constructor
     public EnergyBuilding(int coordinate) {
         this.buildingCost = 50;
         this.currentLevel = 1;
@@ -29,8 +29,10 @@ public class EnergyBuilding extends Building {
     }
 
     @Override
+    //Upgrade function
     public void upgrade(MoneyManager moneyManager) {
-
+        //Sets a new value for your money
+        //gives you a message if you dont have enough money to upgrade, or else it upgrades
         int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
         if (newMoney < 0) {
             System.out.println("Error: Insufficient funds");

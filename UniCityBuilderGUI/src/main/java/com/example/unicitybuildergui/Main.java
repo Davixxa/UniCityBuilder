@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static GameMangaer gm;
+    //Our main method for text based game
     public static void main(String[] args) {
         GameMangaer gameMangaer = new GameMangaer();
         gameMangaer.setupGame();

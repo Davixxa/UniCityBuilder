@@ -1,7 +1,7 @@
 package com.example.unicitybuildergui;
 
 public class House extends Building {
-
+    //Constructor for our house building and its basic stats
     public House(int coordinate) {
         this.buildingCost = 100;
         this.moneyUpKeepCost = 5;

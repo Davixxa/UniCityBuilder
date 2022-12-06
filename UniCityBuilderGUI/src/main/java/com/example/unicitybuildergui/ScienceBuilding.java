@@ -5,11 +5,11 @@ public class ScienceBuilding extends Building {
     int range;
     //Constructor and base stats for the science buildings
     public ScienceBuilding(int coordinate) {
-        this.buildingCost = 500;
+        this.buildingCost = 200;
         this.currentLevel = 1;
         this.upgradeCost = 200;
         this.coordinate = coordinate;
-        this.yield = 10;
+        this.yield = 5;
         this.range = 10;
         this.destroyed = false;
         this.displayName = "Public School";

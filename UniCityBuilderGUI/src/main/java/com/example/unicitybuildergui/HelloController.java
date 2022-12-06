@@ -14,6 +14,8 @@ import java.nio.file.Paths;
 
 public class HelloController {
 
+    boolean textBtnsShown = false;
+
     // Value from 1-9
     int selectedTile;
     GameMangaer gameMangaer;
@@ -280,6 +282,8 @@ public class HelloController {
 
          */
 
+        textBtnsShown = true;
+
     }
 
     @FXML
@@ -297,6 +301,9 @@ public class HelloController {
             statTxt.setOpacity(1);
             statTxt.setDisable(false);
             count++;
+
+            textBtnsShown = false;
+
         }
 
 
@@ -722,6 +729,11 @@ public class HelloController {
         selectedTile = num;
         System.out.println(selectedTile);
         updateBackground();
+
+        if (textBtnsShown) {
+            textBtnsShown = false;
+            hideTxtBtns();
+        }
         // This is how you can change the background image in the imageview
         // background.setImage();`
 

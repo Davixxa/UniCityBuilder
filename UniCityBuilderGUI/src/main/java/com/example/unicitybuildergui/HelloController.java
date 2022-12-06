@@ -533,8 +533,13 @@ public class HelloController {
         //tempEnergy.calcEnergyGain();
         energyLabel.setText(String.valueOf(tempEnergy.getCurrentEnergy()));
 
-        showTxtBtns();
-        count = 1;
+        if (HelloApplication.gm.disasterManager.getStatusMessage().length() == 0)
+            return;
+        else {
+            infoTxt.setText(HelloApplication.gm.disasterManager.getStatusMessage());
+            showTxtBtns();
+        }
+            count = 1;
 
     }
 

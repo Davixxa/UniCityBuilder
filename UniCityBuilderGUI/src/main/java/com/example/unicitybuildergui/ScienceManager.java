@@ -45,13 +45,15 @@ public class ScienceManager {
         return scienceLevel;
     }
     //Calculates our science gain per turn.
-    public void calcScienceGain(EnergyManager energyManager) {
+    public void calcScienceGain(EnergyManager energyManager, MoneyManager moneyManager) {
         this.scienceGain = 0;
         for (Building i : buildingManager.map.values()) {
             if (i.getBuildingType() == BuildingTypes.SCIENCE) {
                 if (i.isDestroyed()==false) {
                     if(energyManager.getCurrentEnergy()>0) {
+                        moneyManager.setCurrentMoney(moneyManager.getCurrentMoney() - i.moneyUpKeepCost);
                         this.scienceGain += i.getYield();
+
                     }
                 }
             }

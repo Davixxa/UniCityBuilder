@@ -8,7 +8,7 @@ public class TurnManager {
         currentTurn++;
         int newPolutionYield = 0;
         //Calculates our gain of different resources
-        scienceManager.calcScienceGain(energyManager);
+        scienceManager.calcScienceGain(energyManager, moneyManager);
         energyManager.calcEnergyGain(moneyManager);
         //Adds pollution yield of all buildings
         moneyManager.calcMoneyGain(energyManager, infastructureManager);

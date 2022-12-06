@@ -388,6 +388,35 @@ public class HelloController {
     public void updateIcons(){
         for (int i = 1;i<=9; i++) {
             if (HelloApplication.gm.getBuilding(i) == null) {
+                switch (i) {
+                    case 1:
+                        tile1Image.setImage(questionIcon);
+                        break;
+                    case 2:
+                        tile2Image.setImage(questionIcon);
+                        break;
+                    case 3:
+                        tile3Image.setImage(questionIcon);
+                        break;
+                    case 4:
+                        tile4Image.setImage(questionIcon);
+                        break;
+                    case 5:
+                        tile5Image.setImage(questionIcon);
+                        break;
+                    case 6:
+                        tile6Image.setImage(questionIcon);
+                        break;
+                    case 7:
+                        tile7Image.setImage(questionIcon);
+                        break;
+                    case 8:
+                        tile8Image.setImage(questionIcon);
+                        break;
+                    case 9:
+                        tile9Image.setImage(questionIcon);
+                        break;
+                }
                 continue;
             }
             Building tempBuilding = HelloApplication.gm.getBuilding(i);
@@ -526,6 +555,7 @@ public class HelloController {
             goToBuildingOptionsMenu();
         }
         updateUI();
+        updateBackground();
     }
 
     @FXML
@@ -721,7 +751,7 @@ public class HelloController {
 
     @FXML
     void endTurn(MouseEvent event) {
-
+        updateIcons();
         //Running EndTurn method in TurnManager
         TurnManager tempEndTurn = HelloApplication.gm.turnManager;
         tempEndTurn.endTurn(HelloApplication.gm.energyManager,
@@ -841,6 +871,7 @@ public class HelloController {
         tempBuilding.setDestroyed(true);
 
          */
+        updateIcons();
 
         HelloApplication.gm.buildingManager.remove(selectedTile);
 

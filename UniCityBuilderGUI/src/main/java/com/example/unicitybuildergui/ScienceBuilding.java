@@ -16,6 +16,7 @@ public class ScienceBuilding extends Building {
         this.pollution = 0;
         this.buildingType = BuildingTypes.SCIENCE;
         this.energyUpKeepCost = 10;
+        this.moneyUpKeepCost = 30;
 
     }
 

@@ -14,7 +14,7 @@ public class InfastructureManager {
     //Constructor
     public InfastructureManager() {
         level = 1;
-        upgradeCost = 100;
+        upgradeCost = 150;
         repairCost = 50;
         isDamaged = false;
     }
@@ -22,7 +22,7 @@ public class InfastructureManager {
     //Upgrade method
     public void upgrade() {
         level++;
-        upgradeCost *= 2;
+        upgradeCost +=150;
         repairCost *= 2;
     }
     //our method for setting something to damaged = true

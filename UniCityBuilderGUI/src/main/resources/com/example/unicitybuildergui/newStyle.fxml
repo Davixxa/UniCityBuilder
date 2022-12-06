@@ -142,9 +142,9 @@
                </graphic></Label>
          </children>
       </VBox>
-      <Label fx:id="buildingLabel" layoutX="62.0" layoutY="182.0" text="FUCKING TOMT!!!!!!!!">
+      <Label fx:id="buildingLabel" alignment="CENTER" layoutX="2.0" layoutY="376.0" prefHeight="23.0" prefWidth="399.0" text="Empty">
          <font>
-            <Font size="30.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <Label fx:id="infrastructurLvl" layoutX="254.0" layoutY="14.0" text="InfraStructurLvl" />

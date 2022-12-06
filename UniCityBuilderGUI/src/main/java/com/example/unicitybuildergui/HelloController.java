@@ -491,14 +491,14 @@ public class HelloController {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         if (tempBuilding==null) {
             background.setImage(backgroundImage);
-            buildingLabel.setText("FUCKING TOMT!!!");
+            buildingLabel.setText("Empty");
             return;
         }
         else if (tempBuilding != null) {
             if (tempBuilding.buildingType == BuildingTypes.HOUSE) {
                 background.setImage(backgroundImage);
                 //Temp building
-                buildingLabel.setText("HOUSEBUILDING !!!!!");
+                buildingLabel.setText("House Building");
                 return;
             }
         }
@@ -510,12 +510,12 @@ public class HelloController {
                     case 1:
                         background.setImage(money1);
                         //Temp building
-                        buildingLabel.setText("MONEYBUILDING LVL1 !!!!!");
+                        buildingLabel.setText("Money Building lvl 1");
                         break;
                     case 2:
                         background.setImage(money2);
                         //Temp building
-                        buildingLabel.setText("MONEYBUILDING LVL2 !!!!!");
+                        buildingLabel.setText("Money Building lvl 2");
                         break;
                     case 3:
                         background.setImage(money3);
@@ -527,13 +527,13 @@ public class HelloController {
                         //setImage energy1
                         background.setImage(energy1);
                         //Temp building
-                        buildingLabel.setText("ENERGYBUILDING LVL1 !!!!!");
+                        buildingLabel.setText("Energy Building lvl 1");
                         break;
                     case 2:
                         //setImage energy2
                         background.setImage(energy2);
                         //Temp building
-                        buildingLabel.setText("ENERGYBUILDING LVL2 !!!!!");
+                        buildingLabel.setText("Energy Building lvl 2");
                         break;
                     case 3:
                         background.setImage(energy3);
@@ -544,12 +544,12 @@ public class HelloController {
                     case 1:
                         background.setImage(science1);
                         //Temp building
-                        buildingLabel.setText("SCIENCEBUILDING LVL1 !!!!!");
+                        buildingLabel.setText("Science Building lvl 1");
                         break;
                     case 2:
                         background.setImage(science2);
                         //Temp building
-                        buildingLabel.setText("SCIENCEBUILDING LVL2 !!!!!");
+                        buildingLabel.setText("Science Building lvl 2");
                         break;
                     case 3:
                         background.setImage(science3);

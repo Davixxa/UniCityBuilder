@@ -11,6 +11,7 @@ public class InfastructureManager {
     //Is for when something is damaged
     public boolean isDamaged;
 
+
     //Constructor
     public InfastructureManager() {
         level = 1;
@@ -20,10 +21,16 @@ public class InfastructureManager {
     }
 
     //Upgrade method
-    public void upgrade() {
-        level++;
-        upgradeCost +=150;
-        repairCost *= 2;
+    public void upgrade(MoneyManager moneyManager) {
+        int newMoney = moneyManager.getCurrentMoney() - upgradeCost;
+        if (newMoney < 0){
+            System.out.println("Error: Insufficient funds");
+        }else {
+            moneyManager.setCurrentMoney(newMoney);
+            this.level++;
+            upgradeCost +=150;
+            repairCost *= 2;
+        }
     }
     //our method for setting something to damaged = true
     public void damage() {

@@ -282,7 +282,7 @@ public class HelloController {
     @FXML
     void upgradeInfra(MouseEvent event) {
         InfastructureManager tempInfra = HelloApplication.gm.infastructureManager;
-        tempInfra.upgrade();
+        tempInfra.upgrade(HelloApplication.gm.moneyManager);
 
     }
 

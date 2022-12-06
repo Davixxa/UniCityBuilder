@@ -32,15 +32,42 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="selectTile1" mnemonicParsing="false" onMouseClicked="#selectTile1" />
-                        <Button fx:id="selectTile2" mnemonicParsing="false" onMouseClicked="#selectTile2" GridPane.columnIndex="1" />
-                        <Button fx:id="selectTile3" mnemonicParsing="false" onMouseClicked="#selectTile3" GridPane.columnIndex="2" />
-                        <Button fx:id="selectTile4" mnemonicParsing="false" onMouseClicked="#selectTile4" GridPane.rowIndex="1" />
-                        <Button fx:id="selectTile5" mnemonicParsing="false" onMouseClicked="#selectTile5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Button fx:id="selectTile6" mnemonicParsing="false" onMouseClicked="#selectTile6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Button fx:id="selectTile7" mnemonicParsing="false" onMouseClicked="#selectTile7" GridPane.rowIndex="2" />
-                        <Button fx:id="selectTile8" mnemonicParsing="false" onMouseClicked="#selectTile8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Button fx:id="selectTile9" mnemonicParsing="false" onMouseClicked="#selectTile9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Button fx:id="selectTile1" mnemonicParsing="false" onMouseClicked="#selectTile1">
+                           <graphic>
+                              <ImageView fx:id="tile1Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
+                        <Button fx:id="selectTile2" mnemonicParsing="false" onMouseClicked="#selectTile2" GridPane.columnIndex="1">
+                           <graphic>
+                              <ImageView fx:id="tile2Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
+                        <Button fx:id="selectTile3" mnemonicParsing="false" onMouseClicked="#selectTile3" GridPane.columnIndex="2">
+                           <graphic>
+                              <ImageView fx:id="tile3Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
+                        <Button fx:id="selectTile4" mnemonicParsing="false" onMouseClicked="#selectTile4" GridPane.rowIndex="1">
+                           <graphic>
+                              <ImageView fx:id="tile4Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
+                        <Button fx:id="selectTile5" mnemonicParsing="false" onMouseClicked="#selectTile5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <graphic>
+                              <ImageView fx:id="tile5Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
+                        <Button fx:id="selectTile6" mnemonicParsing="false" onMouseClicked="#selectTile6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <graphic>
+                              <ImageView fx:id="tile6Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
+                        <Button fx:id="selectTile7" mnemonicParsing="false" onMouseClicked="#selectTile7" GridPane.rowIndex="2">
+                           <graphic>
+                              <ImageView fx:id="tile7Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
+                        <Button fx:id="selectTile8" mnemonicParsing="false" onMouseClicked="#selectTile8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <graphic>
+                              <ImageView fx:id="tile8Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
+                        <Button fx:id="selectTile9" mnemonicParsing="false" onMouseClicked="#selectTile9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <graphic>
+                              <ImageView fx:id="tile9Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic></Button>
                      </children>
                   </GridPane>
                </children>
@@ -90,7 +117,7 @@
          <children>
             <Label fx:id="moneyLabel" text="Money: ">
                <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="43.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@MoneyIcon.png" />
                      </image>
@@ -98,7 +125,7 @@
                </graphic></Label>
             <Label fx:id="scienceLabel" text="Science: ">
                <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@ScienceIcon.png" />
                      </image>
@@ -107,7 +134,7 @@
             <Label fx:id="scienceLvlLabel" prefHeight="19.0" prefWidth="103.0" text="ScienceLvl" />
             <Label fx:id="energyLabel" text="Energy: ">
                <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@EnergyIcon.png" />
                      </image>

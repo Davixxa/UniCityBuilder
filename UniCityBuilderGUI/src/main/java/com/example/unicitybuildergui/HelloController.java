@@ -141,6 +141,33 @@ public class HelloController {
     @FXML
     private ImageView gameOverScreen;
 
+    @FXML
+    private ImageView tile1Image;
+
+    @FXML
+    private ImageView tile2Image;
+
+    @FXML
+    private ImageView tile3Image;
+
+    @FXML
+    private ImageView tile4Image;
+
+    @FXML
+    private ImageView tile5Image;
+
+    @FXML
+    private ImageView tile6Image;
+
+    @FXML
+    private ImageView tile7Image;
+
+    @FXML
+    private ImageView tile8Image;
+
+    @FXML
+    private ImageView tile9Image;
+
 
     public HelloController() throws FileNotFoundException {
     }
@@ -309,8 +336,15 @@ public class HelloController {
         energyLabel.setText(String.valueOf(HelloApplication.gm.energyManager.getCurrentEnergy()));
         selectTile(selectedTile); // Redraws menu just in case.
         infrastructurLvl.setText("InfraStructur level:"+ HelloApplication.gm.infastructureManager.getLevel());
-        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
+        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*200);
         scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
+
+
+        for(int i=0; i<HelloApplication.gm.buildingManager.size; i++){
+            
+
+        }
+
 
     }
 

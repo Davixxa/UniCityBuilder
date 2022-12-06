@@ -132,6 +132,12 @@ public class HelloController {
     @FXML
     private Label infrastructurLvl;
 
+    @FXML
+    private Label infraCost;
+
+    @FXML
+    private Label scienceLvlLabel;
+
 
     public HelloController() throws FileNotFoundException {
     }
@@ -286,7 +292,7 @@ public class HelloController {
     void upgradeInfra(MouseEvent event) {
         InfastructureManager tempInfra = HelloApplication.gm.infastructureManager;
         tempInfra.upgrade(HelloApplication.gm.moneyManager);
-
+        updateUI();
     }
 
 
@@ -296,6 +302,8 @@ public class HelloController {
         energyLabel.setText(String.valueOf(HelloApplication.gm.energyManager.getCurrentEnergy()));
         selectTile(selectedTile); // Redraws menu just in case.
         infrastructurLvl.setText("InfraStructur level:"+ HelloApplication.gm.infastructureManager.getLevel());
+        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
+        scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
     }
 
@@ -404,6 +412,8 @@ public class HelloController {
         upgradeInfraBtn.setDisable(false);
         upgradeInfraBtn.setOpacity(1);
 
+        infraCost.setOpacity(1);
+
     }
 
     private void goToBuildMenu() {
@@ -415,6 +425,8 @@ public class HelloController {
 
         upgradeInfraBtn.setDisable(false);
         upgradeInfraBtn.setOpacity(1);
+
+        infraCost.setOpacity(1);
 
     }
 
@@ -428,6 +440,7 @@ public class HelloController {
         upgradeInfraBtn.setDisable(true);
         upgradeInfraBtn.setOpacity(0);
 
+        infraCost.setOpacity(0);
 
 
     }
@@ -540,6 +553,11 @@ public class HelloController {
             showTxtBtns();
         }
             count = 1;
+
+        scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
+
+
+        System.out.println(HelloApplication.gm.scienceManager.getScienceLevel());
 
     }
 
@@ -759,7 +777,8 @@ public class HelloController {
         scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());
         energyLabel.setText(""+HelloApplication.gm.energyManager.getCurrentEnergy());
         infrastructurLvl.setText("InfraStructur level:"+ HelloApplication.gm.infastructureManager.getLevel());
-
+        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
+        scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
         selectTile(1);
 

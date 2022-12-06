@@ -75,6 +75,7 @@
                   <Button fx:id="infoButton" layoutX="237.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#showInfoTxt" text="Info" />
                   <Button fx:id="continueButton" layoutX="211.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#hideInfoTxt" text="Continue" />
                   <Button fx:id="upgradeInfraBtn" layoutX="71.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#upgradeInfra" text="Upgrade Infrastructur" />
+                  <Label fx:id="infraCost" layoutX="206.0" layoutY="6.0" text="Cost" />
                </children>
             </AnchorPane>
         </items>
@@ -103,6 +104,7 @@
                      </image>
                   </ImageView>
                </graphic></Label>
+            <Label fx:id="scienceLvlLabel" prefHeight="19.0" prefWidth="103.0" text="ScienceLvl" />
             <Label fx:id="energyLabel" text="Energy: ">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">

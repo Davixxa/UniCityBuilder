@@ -1,7 +1,7 @@
 package com.example.unicitybuildergui;
 
 public class PolutionManager {
-    private int currentPolution;
+    private double currentPolution;
     private  int polutionYield;
 
     public PolutionManager(){
@@ -13,12 +13,12 @@ public class PolutionManager {
         this.polutionYield = polutionYield;
     }
 
-    public int getCurrentPolution() {
+    public double getCurrentPolution() {
         return currentPolution;
     }
 
-    public void setCurrentPolution(int currentPolution) {
-        this.currentPolution = currentPolution;
+    public void setCurrentPolution(double currentPolution) {
+        this.currentPolution = currentPolution * 0.9;
     }
 
     public int getPolutionYield() {

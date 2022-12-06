@@ -23,11 +23,13 @@ public class HelloController {
     Image backgroundImage;
     Image factory1;
     Image factory2;
+    Image money3;
     Image energy1;
     Image energy2;
+    Image energy3;
     Image science1;
     Image science2;
-
+    Image science3;
 
     @FXML
     private Label energyLabel;
@@ -647,8 +649,15 @@ public class HelloController {
         buildingOptionsMenu.setOpacity(0);
 
         backgroundImage = new Image("file:src/main/java/com/example/unicitybuildergui/Backgroung.png");
-        factory1 = new Image("file:src/main/java/com/example/unicitybuildergui/Factory.png");
-        factory2 = new Image("file:src/main/java/com/example/unicitybuildergui/Factory2.png");
+        factory1 = new Image("file:src/main/resources/com/example/unicitybuildergui/Money1.png");
+        factory2 = new Image("file:src/main/resources/com/example/unicitybuildergui/Money2.png");
+        money3 = new Image("file:src/main/resources/com/example/unicitybuildergui/Money3.png");
+        science1 = new Image("file:src/main/resources/com/example/unicitybuildergui/Science1.png");
+        science2 = new Image("file:src/main/resources/com/example/unicitybuildergui/Science2.png");
+        science3 = new Image("file:src/main/resources/com/example/unicitybuildergui/Science3.png");
+        energy1 = new Image("file:src/main/java/com/example/unicitybuildergui/Factory.png");
+        energy2 = new Image("file:src/main/java/com/example/unicitybuildergui/Factory2.png");
+        energy3 = new Image("file:src/main/resources/com/example/unicitybuildergui/Energy3.png");
 
         moneyLabel.setText(""+HelloApplication.gm.moneyManager.getCurrentMoney());
         scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());

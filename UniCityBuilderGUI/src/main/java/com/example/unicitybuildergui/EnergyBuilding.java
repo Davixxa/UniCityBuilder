@@ -16,7 +16,7 @@ public class EnergyBuilding extends Building {
         this.displayName = "Coal Power Facility";
         this.buildingType = BuildingTypes.ENERGY;
         this.moneyUpKeepCost = 100;
-        this.energyUpKeepCost = 5 * currentLevel;
+        this.energyUpKeepCost = 5;
 
     }
 

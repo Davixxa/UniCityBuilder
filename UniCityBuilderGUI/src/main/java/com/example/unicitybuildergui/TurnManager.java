@@ -9,7 +9,7 @@ public class TurnManager {
         int newPolutionYield = 0;
         scienceManager.calcScienceGain(energyManager);
         energyManager.calcEnergyGain(moneyManager);
-        moneyManager.calcMoneyGain(energyManager);
+        moneyManager.calcMoneyGain(energyManager, infastructureManager);
         for (int i = 1; i<buildingManager.size+1; i++){
             if (buildingManager.map.get(i) == null)
                 continue;

@@ -9,7 +9,7 @@ public class InfastructureManager {
 
     //Constructor
     public InfastructureManager() {
-        level = 1;
+        level = 2;
         upgradeCost = 100;
         repairCost = 50;
         isDamaged = false;

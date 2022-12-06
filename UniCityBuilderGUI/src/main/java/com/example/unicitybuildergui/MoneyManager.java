@@ -35,7 +35,7 @@ public class MoneyManager {
 
 
 
-    public void calcMoneyGain(EnergyManager energyManager) {
+    public void calcMoneyGain(EnergyManager energyManager, InfastructureManager infastructureManager) {
         this.moneyGain = 0;
         this.moneyUpkeep = 0;
         for (Building i : buildingManager.map.values()) {
@@ -49,6 +49,7 @@ public class MoneyManager {
                 }
             }
         }
+        this.moneyGain *= (1+infastructureManager.getLevel()*0.1);
         this.moneyGain -= this.moneyUpkeep;
         this.currentMoney += this.moneyGain;
     }

@@ -258,7 +258,7 @@ public class HelloController {
                 statTxt.setText("Money upkeep cost: " + tempBuilding.getMoneyUpKeepCost() + "\n" + "Energy upkeep cost: " + tempBuilding.getEnergyUpKeepCost());
 
                 //When a house
-                infoTxt.setText("Home is where the uvidenhed are");
+                infoTxt.setText("A house where people live");
                 break;
 
         }

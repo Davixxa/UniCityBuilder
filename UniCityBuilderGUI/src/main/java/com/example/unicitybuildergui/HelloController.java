@@ -553,13 +553,7 @@ public class HelloController {
         //tempEnergy.calcEnergyGain();
         energyLabel.setText(String.valueOf(tempEnergy.getCurrentEnergy()));
 
-        if (HelloApplication.gm.disasterManager.getStatusMessage().length() == 0)
-            return;
-        else {
-            infoTxt.setText(HelloApplication.gm.disasterManager.getStatusMessage());
-            showTxtBtns();
-        }
-            count = 1;
+        count = 1;
 
         scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
@@ -568,6 +562,15 @@ public class HelloController {
             gameOverScreen.setOpacity(1);
             gameOverScreen.setDisable(false);
         }
+
+
+        if (HelloApplication.gm.disasterManager.getStatusMessage().length() == 0)
+            return;
+        else {
+            infoTxt.setText(HelloApplication.gm.disasterManager.getStatusMessage());
+            showTxtBtns();
+        }
+
 
     }
 

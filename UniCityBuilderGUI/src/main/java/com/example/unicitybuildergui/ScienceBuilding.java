@@ -9,7 +9,7 @@ public class ScienceBuilding extends Building {
         this.currentLevel = 1;
         this.upgradeCost = 200;
         this.coordinate = coordinate;
-        this.yield = 5;
+        this.yield = 7;
         this.range = 10;
         this.destroyed = false;
         this.displayName = "Public School";
@@ -42,7 +42,7 @@ public class ScienceBuilding extends Building {
         else {
             moneyManager.setCurrentMoney(newMoney);
             this.currentLevel++;
-            this.yield += 8;
+            this.yield += 5;
             // High School, University
             this.upgradeCost += 200; // Another placeholder.
             this.energyUpKeepCost += 10;

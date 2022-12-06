@@ -326,8 +326,14 @@ public class HelloController {
         InfastructureManager tempInfra = HelloApplication.gm.infastructureManager;
         String res = tempInfra.upgrade(HelloApplication.gm.moneyManager);
 
-        updateUI();
+        if(res != null) {
             infoTxt.setText(res);
+            statTxt.setText(""); // Set it to an empty string to skip.
+            hideAllBuildButtons();
+            showTxtBtns();
+        }
+
+        updateUI(false);
     }
 
 
@@ -336,7 +342,6 @@ public class HelloController {
         scienceLabel.setText(String.valueOf(HelloApplication.gm.scienceManager.getCurrentScience()));
         energyLabel.setText(String.valueOf(HelloApplication.gm.energyManager.getCurrentEnergy()));
         selectTile(selectedTile); // Redraws menu just in case.
-        infrastructurLvl.setText("InfraStructur level:"+ HelloApplication.gm.infastructureManager.getLevel());
         infrastructurLvl.setText("Infrastructure level:"+ HelloApplication.gm.infastructureManager.getLevel());
         infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
         scienceLvlLabel.setText("Science Level: " + HelloApplication.gm.scienceManager.getScienceLevel());

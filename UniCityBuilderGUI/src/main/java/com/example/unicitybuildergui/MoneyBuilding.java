@@ -11,12 +11,12 @@ public class MoneyBuilding extends Building {
         this.currentLevel = 1;
         this.upgradeCost = 200;
         this.coordinate = coordinate;
-        this.yield = 50;
+        this.yield = 100;
         this.destroyed = false;
         this.displayName = "Street Market";
         this.pollution = 400;
         this.buildingType = BuildingTypes.MONEY;
-        this.moneyUpKeepCost = 0;
+        this.moneyUpKeepCost = 50;
         this.energyUpKeepCost = 10;
 
     }

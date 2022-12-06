@@ -5,9 +5,9 @@ public class ScienceBuilding extends Building {
     int range;
     //Constructor and base stats for the science buildings
     public ScienceBuilding(int coordinate) {
-        this.buildingCost = 300;
+        this.buildingCost = 500;
         this.currentLevel = 1;
-        this.upgradeCost = 300;
+        this.upgradeCost = 200;
         this.coordinate = coordinate;
         this.yield = 10;
         this.range = 10;
@@ -42,9 +42,9 @@ public class ScienceBuilding extends Building {
         else {
             moneyManager.setCurrentMoney(newMoney);
             this.currentLevel++;
-            this.yield += 0;
+            this.yield += 5;
             // High School, University
-            this.upgradeCost += 300; // Another placeholder.
+            this.upgradeCost += 200; // Another placeholder.
             this.energyUpKeepCost += 10;
             if (this.currentLevel == 2) {
                 this.displayName = "High School";

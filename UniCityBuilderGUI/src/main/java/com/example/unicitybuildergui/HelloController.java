@@ -682,7 +682,7 @@ public class HelloController {
         }
         else if (tempBuilding != null) {
             if (tempBuilding.buildingType == BuildingTypes.HOUSE) {
-                background.setImage(backgroundImage);
+                background.setImage(house);
                 //Temp building
                 buildingLabel.setText("House Building");
                 return;
@@ -746,6 +746,7 @@ public class HelloController {
                 break;
             case HOUSE:
                 background.setImage(house);
+                break;
         }
     }
 
@@ -871,12 +872,12 @@ public class HelloController {
         tempBuilding.setDestroyed(true);
 
          */
-        updateIcons();
 
         HelloApplication.gm.buildingManager.remove(selectedTile);
 
         //Set image to a destroyed building
         updateBackground();
+        updateIcons();
         goToBuildMenu();
     }
 

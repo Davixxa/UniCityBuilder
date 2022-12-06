@@ -7,17 +7,17 @@ public class MoneyBuilding extends Building {
     public int pollution;
 
     public MoneyBuilding(int coordinate) {
-        this.buildingCost = 50;
+        this.buildingCost = 200;
         this.currentLevel = 1;
-        this.upgradeCost = 62;
+        this.upgradeCost = 200;
         this.coordinate = coordinate;
-        this.yield = 150;
+        this.yield = 50;
         this.destroyed = false;
         this.displayName = "Street Market";
-        this.pollution = 2000;
+        this.pollution = 400;
         this.buildingType = BuildingTypes.MONEY;
-        this.moneyUpKeepCost = 100;
-        this.energyUpKeepCost = 5;
+        this.moneyUpKeepCost = 0;
+        this.energyUpKeepCost = 10;
 
     }
 
@@ -38,14 +38,19 @@ public class MoneyBuilding extends Building {
             System.out.println("Error: Insufficient funds");
         }
         else {
+            moneyManager.setCurrentMoney(newMoney);
             this.currentLevel++;
-            this.yield += 5; // Placeholder
-            if (this.currentLevel == 2)
+            this.yield += 50;
+            this.upgradeCost += 100;
+            this.energyUpKeepCost += 10;
+            if (this.currentLevel == 2){
                 this.displayName = "Convenience Store";
-            else if (this.currentLevel == 3)
+                this.pollution+=200;
+            }
+            else if (this.currentLevel == 3){
                 this.displayName = "Stock Market";
-            this.upgradeCost += 5; // Another placeholder.
-            this.energyUpKeepCost += 5;
+                this.pollution=0;
+            }
         }
     }
 

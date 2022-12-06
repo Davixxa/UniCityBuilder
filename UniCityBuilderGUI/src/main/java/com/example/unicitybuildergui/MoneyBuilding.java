@@ -11,7 +11,7 @@ public class MoneyBuilding extends Building {
         this.currentLevel = 1;
         this.upgradeCost = 200;
         this.coordinate = coordinate;
-        this.yield = 100;
+        this.yield = 500;
         this.destroyed = false;
         this.displayName = "Street Market";
         this.pollution = 400;

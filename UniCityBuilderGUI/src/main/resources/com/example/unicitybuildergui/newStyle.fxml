@@ -118,7 +118,8 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="redXImage" fitHeight="257.0" fitWidth="258.0" layoutX="72.0" layoutY="91.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <Label fx:id="infrastructurLvl" layoutX="254.0" layoutY="14.0" text="InfraStructurLvl" />
+      <ImageView fx:id="redXImage" fitHeight="229.0" fitWidth="222.0" layoutX="89.0" layoutY="108.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@RedX.png" />
          </image>

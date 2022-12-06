@@ -373,6 +373,11 @@ public class HelloController {
         updateIcons();
     }
     public void updateIcons(){
+        tile1Image.setImage(energyIcon);
+        tile2Image.setImage(moneyIcon);
+        tile3Image.setImage(energyIcon);
+        tile4Image.setImage(energyIcon);
+        /*
         for (int i = 0;i<9; i++) {
             if (HelloApplication.gm.getBuilding(i+1) == null) {
                 continue;
@@ -446,7 +451,7 @@ public class HelloController {
 
                     }
             }
-        }
+        }*/
     }
 
     @FXML

@@ -42,31 +42,31 @@
                            </graphic></Button>
                         <Button fx:id="selectTile3" mnemonicParsing="false" onMouseClicked="#selectTile3" GridPane.columnIndex="2">
                            <graphic>
-                              <ImageView fx:id="tile3Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="tile3Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic></Button>
                         <Button fx:id="selectTile4" mnemonicParsing="false" onMouseClicked="#selectTile4" GridPane.rowIndex="1">
                            <graphic>
-                              <ImageView fx:id="tile4Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="tile4Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic></Button>
                         <Button fx:id="selectTile5" mnemonicParsing="false" onMouseClicked="#selectTile5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <graphic>
-                              <ImageView fx:id="tile5Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="tile5Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic></Button>
                         <Button fx:id="selectTile6" mnemonicParsing="false" onMouseClicked="#selectTile6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <graphic>
-                              <ImageView fx:id="tile6Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="tile6Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic></Button>
                         <Button fx:id="selectTile7" mnemonicParsing="false" onMouseClicked="#selectTile7" GridPane.rowIndex="2">
                            <graphic>
-                              <ImageView fx:id="tile7Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="tile7Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic></Button>
                         <Button fx:id="selectTile8" mnemonicParsing="false" onMouseClicked="#selectTile8" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <graphic>
-                              <ImageView fx:id="tile8Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="tile8Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic></Button>
                         <Button fx:id="selectTile9" mnemonicParsing="false" onMouseClicked="#selectTile9" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <graphic>
-                              <ImageView fx:id="tile9Image" fitHeight="1.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="tile9Image" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic></Button>
                      </children>
                   </GridPane>

@@ -495,6 +495,7 @@ public class HelloController {
 
         //Set image to a higher upgrade building
         updateBackground();
+        updateUI();
     }
 
     @FXML

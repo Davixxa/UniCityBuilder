@@ -385,9 +385,6 @@ public class HelloController {
         updateIcons();
     }
     public void updateIcons(){
-        tile7Image.setImage(scienceIcon);
-        tile8Image.setImage(energyIcon);
-        tile9Image.setImage(moneyIcon);
         for (int i = 1;i<=9; i++) {
             if (HelloApplication.gm.getBuilding(i) == null) {
                 continue;
@@ -425,6 +422,7 @@ public class HelloController {
                             break;
 
                     }
+                    break;
                 case ENERGY:
                     switch (i) {
                         case 1:
@@ -456,6 +454,7 @@ public class HelloController {
                             break;
 
                     }
+                    break;
                 case MONEY:
                     switch (i) {
                         case 1:
@@ -487,6 +486,7 @@ public class HelloController {
                             break;
 
                     }
+                    break;
             }
         }
     }

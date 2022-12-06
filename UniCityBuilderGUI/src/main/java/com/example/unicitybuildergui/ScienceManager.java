@@ -60,7 +60,7 @@ public class ScienceManager {
         if (currentScience >= scienceToLevel){
             currentScience = 0;
             scienceLevel++;
-            scienceToLevel += 100;
+            scienceToLevel += 0 ;
         }
 
 

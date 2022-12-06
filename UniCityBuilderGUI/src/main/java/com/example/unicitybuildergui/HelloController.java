@@ -35,6 +35,7 @@ public class HelloController {
     Image scienceIcon;
     Image moneyIcon;
     Image energyIcon;
+    Image questionIcon;
 
     //References to our FXML tags
     @FXML
@@ -1000,6 +1001,7 @@ public class HelloController {
         energyIcon = new Image("file:src/main/resources/com/example/unicitybuildergui/EnergyIcon.png");
         scienceIcon = new Image("file:src/main/resources/com/example/unicitybuildergui/ScienceIcon.png");
         moneyIcon = new Image("file:src/main/resources/com/example/unicitybuildergui/MoneyIcon.png");
+        questionIcon = new Image("file:src/main/resources/com/example/unicitybuildergui/QuestionMark.png");
 
         moneyLabel.setText(""+HelloApplication.gm.moneyManager.getCurrentMoney());
         scienceLabel.setText(""+HelloApplication.gm.scienceManager.getCurrentScience());

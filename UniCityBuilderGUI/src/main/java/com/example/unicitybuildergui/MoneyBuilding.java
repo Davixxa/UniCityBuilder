@@ -14,7 +14,7 @@ public class MoneyBuilding extends Building {
         this.yield = 100;
         this.destroyed = false;
         this.displayName = "Street Market";
-        this.pollution = 100;
+        this.pollution = 70;
         this.buildingType = BuildingTypes.MONEY;
         this.moneyUpKeepCost = 50;
         this.energyUpKeepCost = 10;

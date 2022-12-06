@@ -34,27 +34,26 @@ public class MoneyBuilding extends Building {
     @Override
     public String upgrade(MoneyManager moneyManager) {
         //Set your new money value and checks if you have enough money to upgrade
-        int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
-        if (newMoney < 0) {
-            return "Error: Insufficient funds";
-        }
-        else {
-            moneyManager.setCurrentMoney(newMoney);
-            this.currentLevel++;
-            this.yield += 40;
-            this.upgradeCost += 100;
-            this.energyUpKeepCost += 10;
-            if (this.currentLevel == 2){
-                this.displayName = "Convenience Store";
-                this.pollution+=50;
+        if (this.getCurrentLevel() < 3) {
+            int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
+            if (newMoney < 0) {
+                return "Error: Insufficient funds";
+            } else {
+                moneyManager.setCurrentMoney(newMoney);
+                this.currentLevel++;
+                this.yield += 40;
+                this.upgradeCost += 100;
+                this.energyUpKeepCost += 10;
+                if (this.currentLevel == 2) {
+                    this.displayName = "Convenience Store";
+                    this.pollution += 50;
+                } else if (this.currentLevel == 3) {
+                    this.displayName = "Stock Market";
+                    this.pollution = 0;
+                }
             }
-            else if (this.currentLevel == 3){
-                this.displayName = "Stock Market";
-                this.pollution=0;
-            }
-            // Null means no error message.
-            return null;
         }
+        // Null means no error message.
+        return null;
     }
-
 }

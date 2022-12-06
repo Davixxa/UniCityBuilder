@@ -33,27 +33,26 @@ public class EnergyBuilding extends Building {
     public String upgrade(MoneyManager moneyManager) {
         //Sets a new value for your money
         //gives you a message if you dont have enough money to upgrade, or else it upgrades
-        int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
-        if (newMoney < 0) {
-            return "Error: Insufficient funds";
-        } else {
-            moneyManager.setCurrentMoney(newMoney);
-            this.currentLevel++;
-            this.yield += 5;
-            this.upgradeCost += 100;
-            this.pollution += 30;
-            if (this.currentLevel == 2) {
-                this.displayName = "Power Plant";
+        if(this.getCurrentLevel()<3) {
+            int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
+            if (newMoney < 0) {
+                return "Error: Insufficient funds";
+            } else {
+                moneyManager.setCurrentMoney(newMoney);
+                this.currentLevel++;
+                this.yield += 5;
+                this.upgradeCost += 100;
+                this.pollution += 30;
+                if (this.currentLevel == 2) {
+                    this.displayName = "Power Plant";
+                } else if (this.currentLevel == 3) {
+                    this.displayName = "Renewable Energy Facility";
+                    this.pollution = 0;
+                    this.yield = 20;
+                }
             }
-            else if (this.currentLevel == 3) {
-                this.displayName = "Renewable Energy Facility";
-                this.pollution = 0;
-                this.yield = 20;
-            }
-            // Return value is error message.
-            return null;
         }
-
-
+        // Null means no error message.
+        return null;
     }
 }

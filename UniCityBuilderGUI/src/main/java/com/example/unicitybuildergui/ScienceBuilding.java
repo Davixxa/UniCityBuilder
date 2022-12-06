@@ -12,7 +12,7 @@ public class ScienceBuilding extends Building {
         this.yield = 10;
         this.range = 10;
         this.destroyed = false;
-        this.displayName = "The earth is flat, right?";
+        this.displayName = "Public School";
         this.pollution = 0;
         this.buildingType = BuildingTypes.SCIENCE;
         this.energyUpKeepCost = 5;
@@ -41,7 +41,11 @@ public class ScienceBuilding extends Building {
         else {
             this.currentLevel++;
             this.yield += 5; // Placeholder
-            this.displayName = "ok maybe it isn't";
+            // High School, University
+            if (this.currentLevel == 2)
+                this.displayName = "High School";
+            else if (this.currentLevel == 3)
+                this.displayName = "University";
             this.upgradeCost += 5; // Another placeholder.
             this.energyUpKeepCost += 5;
         }

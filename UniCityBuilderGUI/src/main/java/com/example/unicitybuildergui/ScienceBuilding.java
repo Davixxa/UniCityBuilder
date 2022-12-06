@@ -13,7 +13,7 @@ public class ScienceBuilding extends Building {
         this.range = 10;
         this.destroyed = false;
         this.displayName = "Public School";
-        this.pollution = 0;
+        this.pollution = 2;
         this.buildingType = BuildingTypes.SCIENCE;
         this.energyUpKeepCost = 10;
         this.moneyUpKeepCost = 30;

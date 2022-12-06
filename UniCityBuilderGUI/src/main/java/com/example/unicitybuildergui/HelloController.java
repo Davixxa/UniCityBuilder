@@ -295,6 +295,7 @@ public class HelloController {
     void upgradeInfra(MouseEvent event) {
         InfastructureManager tempInfra = HelloApplication.gm.infastructureManager;
         tempInfra.upgrade(HelloApplication.gm.moneyManager);
+
         updateUI();
     }
 
@@ -637,6 +638,7 @@ public class HelloController {
         //Set image to a repaired building
         updateBackground();
         redXImage.setOpacity(0);
+        updateUI();
     }
 
 

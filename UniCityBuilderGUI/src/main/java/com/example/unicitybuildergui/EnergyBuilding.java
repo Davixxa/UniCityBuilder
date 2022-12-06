@@ -11,11 +11,11 @@ public class EnergyBuilding extends Building {
         this.upgradeCost = 200;
         this.coordinate = coordinate;
         this.yield = 5;
-        this.pollution = 500;
+        this.pollution = 100;
         this.destroyed = false;
         this.displayName = "Coal Power Facility";
         this.buildingType = BuildingTypes.ENERGY;
-        this.moneyUpKeepCost = 100;
+        this.moneyUpKeepCost = 20;
         this.energyUpKeepCost = 0;
 
     }
@@ -41,7 +41,7 @@ public class EnergyBuilding extends Building {
             this.currentLevel++;
             this.yield += 5;
             this.upgradeCost += 100;
-            this.pollution += 500;
+            this.pollution += 50;
             if (this.currentLevel == 2) {
                 this.displayName = "Power Plant";
             }

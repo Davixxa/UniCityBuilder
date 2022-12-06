@@ -20,8 +20,8 @@ public class HelloController {
     Path currentWorkingDir = Paths.get("").toAbsolutePath();
     //Image backgroundImage = new Image(this.getClass().getResource("src/main/java/com/example/unicitybuildergui/Backgroung.png").toString());
     Image backgroundImage;
-    Image factory1;
-    Image factory2;
+    Image money1;
+    Image money2;
     Image money3;
     Image energy1;
     Image energy2;
@@ -446,15 +446,17 @@ public class HelloController {
             case MONEY:
                 switch (tempBuilding.getCurrentLevel()) {
                     case 1:
-                        background.setImage(factory1);
+                        background.setImage(money1);
                         //Temp building
                         buildingLabel.setText("MONEYBUILDING LVL1 !!!!!");
                         break;
                     case 2:
-                        background.setImage(factory2);
+                        background.setImage(money2);
                         //Temp building
                         buildingLabel.setText("MONEYBUILDING LVL2 !!!!!");
                         break;
+                    case 3:
+                        background.setImage(money3);
                 }
                 break;
             case ENERGY:
@@ -471,6 +473,8 @@ public class HelloController {
                         //Temp building
                         buildingLabel.setText("ENERGYBUILDING LVL2 !!!!!");
                         break;
+                    case 3:
+                        background.setImage(energy3);
                 }
                 break;
             case SCIENCE:
@@ -485,6 +489,8 @@ public class HelloController {
                         //Temp building
                         buildingLabel.setText("SCIENCEBUILDING LVL2 !!!!!");
                         break;
+                    case 3:
+                        background.setImage(science3);
                 }
                 break;
         }
@@ -723,8 +729,8 @@ public class HelloController {
         buildingOptionsMenu.setOpacity(0);
 
         backgroundImage = new Image("file:src/main/java/com/example/unicitybuildergui/Backgroung.png");
-        factory1 = new Image("file:src/main/resources/com/example/unicitybuildergui/Money1.png");
-        factory2 = new Image("file:src/main/resources/com/example/unicitybuildergui/Money2.png");
+        money1 = new Image("file:src/main/resources/com/example/unicitybuildergui/Money1.png");
+        money2 = new Image("file:src/main/resources/com/example/unicitybuildergui/Money2.png");
         money3 = new Image("file:src/main/resources/com/example/unicitybuildergui/Money3.png");
         science1 = new Image("file:src/main/resources/com/example/unicitybuildergui/Science1.png");
         science2 = new Image("file:src/main/resources/com/example/unicitybuildergui/Science2.png");

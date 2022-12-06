@@ -12,7 +12,7 @@ public class ScienceManager {
     public ScienceManager(BuildingManager buildingManager){
         this.scienceGain = 0;
         this.currentScience = 0;
-        this.scienceToLevel = 10;
+        this.scienceToLevel = 100;
         this.buildingManager = buildingManager;
         this.scienceLevel = 1;
     }

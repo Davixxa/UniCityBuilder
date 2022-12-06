@@ -10,6 +10,7 @@ public class House extends Building {
         this.coordinate = coordinate;
         this.currentLevel = 1;
         this.pollution = 0;
+        this.displayName = "House";
     }
 
     public int getPollutionYield() {

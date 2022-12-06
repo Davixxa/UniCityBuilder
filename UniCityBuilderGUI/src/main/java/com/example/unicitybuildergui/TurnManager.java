@@ -10,8 +10,8 @@ public class TurnManager {
         //Calculates our gain of different resources
         scienceManager.calcScienceGain(energyManager);
         energyManager.calcEnergyGain(moneyManager);
-        moneyManager.calcMoneyGain(energyManager);
         //Adds pollution yield of all buildings
+        moneyManager.calcMoneyGain(energyManager, infastructureManager);
         for (int i = 1; i<buildingManager.size+1; i++){
             if (buildingManager.map.get(i) == null)
                 continue;

@@ -6,17 +6,17 @@ public class EnergyBuilding extends Building {
     private int pollution;
     //Constructor
     public EnergyBuilding(int coordinate) {
-        this.buildingCost = 50;
+        this.buildingCost = 200;
         this.currentLevel = 1;
-        this.upgradeCost = 62;
+        this.upgradeCost = 200;
         this.coordinate = coordinate;
         this.yield = 5;
-        this.pollution = 10;
+        this.pollution = 500;
         this.destroyed = false;
-        this.displayName = "Global warming is a myth, obviously.";
+        this.displayName = "Coal Power Facility";
         this.buildingType = BuildingTypes.ENERGY;
         this.moneyUpKeepCost = 100;
-        this.energyUpKeepCost = 5 * currentLevel;
+        this.energyUpKeepCost = 0;
 
     }
 
@@ -37,15 +37,19 @@ public class EnergyBuilding extends Building {
         if (newMoney < 0) {
             System.out.println("Error: Insufficient funds");
         } else {
+            moneyManager.setCurrentMoney(newMoney);
             this.currentLevel++;
-            this.yield += 5; // Placeholder
-            this.displayName = "So what it isn't a myth? Doesn't matter. A few degrees warmer summer never hurt anyone!";
-            this.upgradeCost += 5; // Another placeholder.
-
-            if(this.currentLevel < 3){
-                this.energyUpKeepCost += 5;
+            this.yield += 5;
+            this.upgradeCost += 100;
+            this.pollution += 500;
+            if (this.currentLevel == 2) {
+                this.displayName = "Power Plant";
             }
-
+            else if (this.currentLevel == 3) {
+                this.displayName = "Renewable Energy Facility";
+                this.pollution = 0;
+                this.yield = 20;
+            }
         }
 
 

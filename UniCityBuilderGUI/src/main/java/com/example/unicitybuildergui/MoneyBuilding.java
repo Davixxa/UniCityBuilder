@@ -41,7 +41,7 @@ public class MoneyBuilding extends Building {
         else {
             moneyManager.setCurrentMoney(newMoney);
             this.currentLevel++;
-            this.yield += 50;
+            this.yield += 40;
             this.upgradeCost += 100;
             this.energyUpKeepCost += 10;
             if (this.currentLevel == 2){

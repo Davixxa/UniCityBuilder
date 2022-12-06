@@ -15,7 +15,7 @@ public class InfastructureManager {
     //Constructor
     public InfastructureManager() {
         level = 1;
-        upgradeCost = 150;
+        upgradeCost = 200;
         repairCost = 50;
         isDamaged = false;
     }

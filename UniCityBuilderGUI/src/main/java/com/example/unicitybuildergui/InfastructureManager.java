@@ -25,11 +25,14 @@ public class InfastructureManager {
         int newMoney = moneyManager.getCurrentMoney() - upgradeCost;
         if (newMoney < 0){
             System.out.println("Error: Insufficient funds");
-        }else {
+        }else if(getLevel()<5){
             moneyManager.setCurrentMoney(newMoney);
             this.level++;
-            upgradeCost +=150;
+            upgradeCost +=200;
             repairCost *= 2;
+        }
+        else{
+            System.out.println("Error: Max level    ");
         }
     }
     //our method for setting something to damaged = true

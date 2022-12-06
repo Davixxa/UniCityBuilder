@@ -11,7 +11,7 @@ public class MoneyManager {
     //Constructor and set our base stats for the start of the game
     public MoneyManager(BuildingManager buildingmanager) {
         this.moneyGain = 0;
-        this.currentMoney = 100;
+        this.currentMoney = 1000;
         this.moneyUpkeep = 0;
         this.buildingManager = buildingmanager;
     }

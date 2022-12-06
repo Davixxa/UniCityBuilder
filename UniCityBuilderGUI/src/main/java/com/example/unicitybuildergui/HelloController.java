@@ -674,6 +674,7 @@ public class HelloController {
                         break;
                     case 3:
                         background.setImage(money3);
+                        buildingLabel.setText("Money Building lvl 3");
                 }
                 break;
             case ENERGY:
@@ -692,6 +693,7 @@ public class HelloController {
                         break;
                     case 3:
                         background.setImage(energy3);
+                        buildingLabel.setText("Energy Building lvl 3");
                 }
                 break;
             case SCIENCE:
@@ -708,6 +710,7 @@ public class HelloController {
                         break;
                     case 3:
                         background.setImage(science3);
+                        buildingLabel.setText("Science Building lvl 3");
                 }
                 break;
             case HOUSE:

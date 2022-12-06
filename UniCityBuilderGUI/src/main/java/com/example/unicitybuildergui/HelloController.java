@@ -1006,7 +1006,7 @@ public class HelloController {
         energyLabel.setText(""+HelloApplication.gm.energyManager.getCurrentEnergy());
         infrastructurLvl.setText("InfraStructur level:"+ HelloApplication.gm.infastructureManager.getLevel());
         infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
-        scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
+        scienceLvlLabel.setText("Science Level: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
         selectTile(1);
 

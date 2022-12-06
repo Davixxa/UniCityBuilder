@@ -45,6 +45,7 @@ abstract class Building {
     }
     public void setDestroyed(boolean destroyed) {
         this.destroyed = destroyed;
+
     }
     public int getUpgradeCost() {
         return upgradeCost;

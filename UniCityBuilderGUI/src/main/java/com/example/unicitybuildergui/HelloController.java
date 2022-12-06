@@ -126,6 +126,9 @@ public class HelloController {
     @FXML
     private Button upgradeInfraBtn;
 
+    @FXML
+    private ImageView redXImage;
+
 
     public HelloController() throws FileNotFoundException {
     }
@@ -556,8 +559,8 @@ public class HelloController {
         //Check if buildings are destroyed
         if(HelloApplication.gm.getBuilding(selectedTile).isDestroyed()){
             buildingLabel.setText("Fucking destroyed");
+            redXImage.setOpacity(1);
             goToBuildingOptionsMenu();
-
         }
 
     }
@@ -600,6 +603,7 @@ public class HelloController {
 
         //Set image to a repaired building
         updateBackground();
+        redXImage.setOpacity(0);
     }
 
 

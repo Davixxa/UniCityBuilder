@@ -118,5 +118,10 @@
             <Font size="30.0" />
          </font>
       </Label>
+      <ImageView fx:id="redXImage" fitHeight="257.0" fitWidth="258.0" layoutX="72.0" layoutY="91.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@RedX.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

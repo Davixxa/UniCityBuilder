@@ -799,7 +799,7 @@ public class HelloController {
 
         //Check if buildings are destroyed
         if(HelloApplication.gm.getBuilding(selectedTile).isDestroyed()){
-            buildingLabel.setText("Fucking destroyed");
+            buildingLabel.setText("Destroyed");
             redXImage.setOpacity(1);
             goToBuildingOptionsMenu();
         }else{

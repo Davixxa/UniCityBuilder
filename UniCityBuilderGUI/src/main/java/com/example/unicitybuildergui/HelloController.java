@@ -176,13 +176,11 @@ public class HelloController {
     @FXML
     void showInfoTxt(MouseEvent event) {
         // do stuff
-        showTxtBtns();
-
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         if (tempBuilding==null) {
             //When there is no building txt
             infoTxt.setText("There is no building here");
-
+            statTxt.setText("");
             return;
         }
 
@@ -247,6 +245,8 @@ public class HelloController {
 
         }
 
+        showTxtBtns();
+
     }
     //Our text buttons
     private void showTxtBtns() {
@@ -281,7 +281,7 @@ public class HelloController {
     @FXML
     void hideInfoTxt(MouseEvent event) {
 
-        if(count == 1){
+        if(count == 1 || statTxt.getText().length() == 0){
             hideTxtBtns();
             count = 0;
 
@@ -324,9 +324,10 @@ public class HelloController {
     @FXML
     void upgradeInfra(MouseEvent event) {
         InfastructureManager tempInfra = HelloApplication.gm.infastructureManager;
-        tempInfra.upgrade(HelloApplication.gm.moneyManager);
+        String res = tempInfra.upgrade(HelloApplication.gm.moneyManager);
 
         updateUI();
+            infoTxt.setText(res);
     }
 
 
@@ -336,8 +337,21 @@ public class HelloController {
         energyLabel.setText(String.valueOf(HelloApplication.gm.energyManager.getCurrentEnergy()));
         selectTile(selectedTile); // Redraws menu just in case.
         infrastructurLvl.setText("InfraStructur level:"+ HelloApplication.gm.infastructureManager.getLevel());
-        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*200);
-        scienceLvlLabel.setText("Science Lvl: " + HelloApplication.gm.scienceManager.getScienceLevel());
+        infrastructurLvl.setText("Infrastructure level:"+ HelloApplication.gm.infastructureManager.getLevel());
+        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
+        scienceLvlLabel.setText("Science Level: " + HelloApplication.gm.scienceManager.getScienceLevel());
+    }
+
+    // Method overloading of updateUI so we don't break existing functionality.
+    void updateUI(boolean reselectTile) {
+        moneyLabel.setText(String.valueOf(HelloApplication.gm.moneyManager.getCurrentMoney()));
+        scienceLabel.setText(String.valueOf(HelloApplication.gm.scienceManager.getCurrentScience()));
+        energyLabel.setText(String.valueOf(HelloApplication.gm.energyManager.getCurrentEnergy()));
+        if (reselectTile)
+            selectTile(selectedTile); // Redraws menu just in case.
+        infrastructurLvl.setText("Infrastructure level:"+ HelloApplication.gm.infastructureManager.getLevel());
+        infraCost.setText("" + HelloApplication.gm.infastructureManager.getLevel()*150);
+        scienceLvlLabel.setText("Science Level: " + HelloApplication.gm.scienceManager.getScienceLevel());
 
 
         for(int i=0; i<HelloApplication.gm.buildingManager.size; i++){
@@ -352,7 +366,10 @@ public class HelloController {
     void buildEnergy(MouseEvent event) {
         int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new EnergyBuilding(0).buildingCost;
         if (newMoney < 0) {
-            System.out.println("Error: Insufficient funds");
+            infoTxt.setText("Error: Insufficient funds.");
+            statTxt.setText(""); // Set it to an empty string to skip.
+            hideAllBuildButtons();
+            showTxtBtns();
         }
         else {
             HelloApplication.gm.moneyManager.setCurrentMoney(newMoney);
@@ -368,7 +385,10 @@ public class HelloController {
 
         int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new House(0).buildingCost;
         if (newMoney < 0) {
-            System.out.println("Error: Insufficient funds");
+            infoTxt.setText("Error: Insufficient funds.");
+            statTxt.setText(""); // Set it to an empty string to skip.
+            hideAllBuildButtons();
+            showTxtBtns();
         }
         else {
             HelloApplication.gm.moneyManager.setCurrentMoney(newMoney);
@@ -384,7 +404,10 @@ public class HelloController {
 
         int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new MoneyBuilding(0).buildingCost;
         if (newMoney < 0) {
-            System.out.println("Error: Insufficient funds");
+            infoTxt.setText("Error: Insufficient funds.");
+            statTxt.setText(""); // Set it to an empty string to skip.
+            hideAllBuildButtons();
+            showTxtBtns();
         }
         else {
             HelloApplication.gm.moneyManager.setCurrentMoney(newMoney);
@@ -400,7 +423,10 @@ public class HelloController {
     void buildScience(MouseEvent event) {
         int newMoney = HelloApplication.gm.moneyManager.getCurrentMoney() - new ScienceBuilding(0).buildingCost;
         if (newMoney < 0) {
-            System.out.println("Error: Insufficient funds");
+            infoTxt.setText("Error: Insufficient funds.");
+            statTxt.setText(""); // Set it to an empty string to skip.
+            hideAllBuildButtons();
+            showTxtBtns();
         }
         else {
             HelloApplication.gm.moneyManager.setCurrentMoney(newMoney);
@@ -602,6 +628,7 @@ public class HelloController {
             return;
         else {
             infoTxt.setText(HelloApplication.gm.disasterManager.getStatusMessage());
+            statTxt.setText(""); // Set it to an empty string to skip.
             showTxtBtns();
         }
 
@@ -648,13 +675,23 @@ public class HelloController {
         Building tempBuilding = HelloApplication.gm.getBuilding(selectedTile);
         MoneyManager tempMoney = HelloApplication.gm.moneyManager;
         if (HelloApplication.gm.scienceManager.getScienceLevel() >= tempBuilding.getCurrentLevel()+1){
-            tempBuilding.upgrade(tempMoney);
+            String res = tempBuilding.upgrade(tempMoney);
+            if(res != null) {
+                infoTxt.setText(res);
+                statTxt.setText(""); // Set it to an empty string to skip.
+                showTxtBtns();
+            }
+        }
+        else {
+            infoTxt.setText("Error: Insufficient Science Level");
+            statTxt.setText(""); // Set it to an empty string to skip.
+            showTxtBtns();
         }
 
 
         //Set image to a higher upgrade building
         updateBackground();
-        updateUI();
+        updateUI(false);
     }
 
     @FXML

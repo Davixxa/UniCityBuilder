@@ -33,11 +33,11 @@ public class ScienceBuilding extends Building {
 
     //Our upgrade Function for the money building
     @Override
-    public void upgrade(MoneyManager moneyManager) {
+    public String upgrade(MoneyManager moneyManager) {
         //Set your new money value and checks if you have enough money to upgrade
         int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
         if (newMoney < 0) {
-            System.out.println("Error: Insufficient funds");
+            return "Error: Insufficient funds";
         }
         else {
             moneyManager.setCurrentMoney(newMoney);
@@ -52,6 +52,7 @@ public class ScienceBuilding extends Building {
             else if (this.currentLevel == 3) {
                 this.displayName = "University";
             }
+            return null;
         }
     }
 }

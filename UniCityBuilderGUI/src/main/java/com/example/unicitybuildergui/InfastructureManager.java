@@ -21,18 +21,20 @@ public class InfastructureManager {
     }
 
     //Upgrade method
-    public void upgrade(MoneyManager moneyManager) {
+    public String upgrade(MoneyManager moneyManager) {
         int newMoney = moneyManager.getCurrentMoney() - upgradeCost;
         if (newMoney < 0){
-            System.out.println("Error: Insufficient funds");
+            return "Error: Insufficient funds";
         }else if(getLevel()<5){
             moneyManager.setCurrentMoney(newMoney);
             this.level++;
             upgradeCost +=200;
             repairCost *= 2;
+            // Return value is the error message.
+            return null;
         }
         else{
-            System.out.println("Error: Max level    ");
+            return "Error: Max level";
         }
     }
     //our method for setting something to damaged = true
@@ -47,9 +49,9 @@ public class InfastructureManager {
     }
 
     //Get methods
-    public int getLevel() {
-        return level;
-    }
+        public int getLevel() {
+            return level;
+        }
 
     public boolean getIsDamaged() {
         return false;

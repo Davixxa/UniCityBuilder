@@ -18,7 +18,7 @@ public class House extends Building {
     }
 
     @Override
-    public void upgrade(MoneyManager manager) {
-        // Houses can't be upgraded, dummy method
+    public String upgrade(MoneyManager manager) {
+        return "Houses cannot be upgraded."; // Houses can't be upgraded, dummy method
     }
 }

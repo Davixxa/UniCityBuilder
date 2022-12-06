@@ -30,12 +30,12 @@ public class EnergyBuilding extends Building {
 
     @Override
     //Upgrade function
-    public void upgrade(MoneyManager moneyManager) {
+    public String upgrade(MoneyManager moneyManager) {
         //Sets a new value for your money
         //gives you a message if you dont have enough money to upgrade, or else it upgrades
         int newMoney = moneyManager.getCurrentMoney() - this.upgradeCost;
         if (newMoney < 0) {
-            System.out.println("Error: Insufficient funds");
+            return "Error: Insufficient funds";
         } else {
             moneyManager.setCurrentMoney(newMoney);
             this.currentLevel++;
@@ -50,6 +50,8 @@ public class EnergyBuilding extends Building {
                 this.pollution = 0;
                 this.yield = 20;
             }
+            // Return value is error message.
+            return null;
         }
 
 

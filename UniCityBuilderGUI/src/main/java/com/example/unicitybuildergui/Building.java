@@ -91,7 +91,7 @@ abstract class Building {
     }
 
     // Make upgrade cost more expensive, increase yield, level++
-    public abstract void upgrade(MoneyManager moneyManager);
+    public abstract String upgrade(MoneyManager moneyManager);
     // Upgrade makes it so it costs 1 more in upKeepCost
 
 

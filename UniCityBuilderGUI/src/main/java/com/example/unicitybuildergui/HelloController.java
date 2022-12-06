@@ -118,6 +118,15 @@ public class HelloController {
     @FXML
     private Button endTurnButton;
 
+    @FXML
+    private Label statTxt;
+
+    private int count;
+
+    @FXML
+    private Button upgradeInfraBtn;
+
+
     public HelloController() throws FileNotFoundException {
     }
 
@@ -136,45 +145,60 @@ public class HelloController {
         }
 
 
+
+
         switch (tempBuilding.buildingType) {
             case MONEY:
+                statTxt.setText("Lvl is" + tempBuilding.getCurrentLevel() + "\n" + "Upgrade cost: " + tempBuilding.getUpgradeCost() + "\n" + "Yield is: " + tempBuilding.getYield() + "\n" + "Money upkeep cost: " + tempBuilding.getMoneyUpKeepCost() + "\n" + "Energy upkeep cost: " + tempBuilding.getEnergyUpKeepCost());
                 switch (tempBuilding.getCurrentLevel()) {
                     case 1:
-                        infoTxt.setText("");
+                        //Info text
+                        infoTxt.setText("The market stand is an early attempt at creating a business, \n you display your products, and the buyer can barter \n for the item they want it was very efficient and \n anyone can do It, it Is still used today in \n low-income countries and farmers markets. ");
                         break;
                     case 2:
-                        infoTxt.setText("");
+                        //Info text
+                        infoTxt.setText("The early supermarket became a way to store, refrigerate \n and expand on the idea of the market stand it became \n popular in the 1950’s and gave rise to supermarket \n giants Walmart, Target & Cosco ");
+
                         break;
                 }
                 break;
             case ENERGY:
+                statTxt.setText("Lvl is" + tempBuilding.getCurrentLevel() + "\n" + "Upgrade cost: " + tempBuilding.getUpgradeCost() + "\n" + "Yield is: " + tempBuilding.getYield() + "\n" + "Money upkeep cost: " + tempBuilding.getMoneyUpKeepCost() + "\n" + "Energy upkeep cost: " + tempBuilding.getEnergyUpKeepCost());
                 switch (tempBuilding.getCurrentLevel()) {
                     case 1:
-                        infoTxt.setText("In the late 18th century, we see the first coal factories located in England. Coal was the \n basis of the industrial revolution and the mechanization of the world. Coal generated 37% of global electricity in \n 2022 but it is also the leading source in CO2 emissions producing 15.1 billion metric tons not cool :(");
+                        infoTxt.setText("In the late 18th century, we see the first coal factories \n located in England. Coal was the basis of the industrial \n revolution and the mechanization of the world. \n Coal generated 37% of global electricity in 2022 \n but it is also  the leading source in CO2 emissions producing \n 15.1 billion metric tons");
                         break;
                     case 2:
-                        infoTxt.setText("Today (2022) fossil fuels amount to 60% of total global electricity generation but it also emits 36.6 \n billion tons of CO2. That is bad for the environment, and it is the cause of climate change and the\n warming of our planet to > 2*C");
+                        infoTxt.setText("Today (2022) fossil fuels amount to 60% of total global \n electricity generation but it also emits 36.6 billion \n tons of CO2. That is bad for the environment, \n and it is the cause of climate change and the\n warming of our planet to > 2*C");
+
                         break;
 
                     case 3:
-                        infoTxt.setText("Renewable energy amounts to 28,1% of global electricity generation (2022), they emit little to no emission and therefore combat the warming of our planets. Renewables include solar, wind, thermal and hydro");
+                        infoTxt.setText("Renewable energy amounts to 28,1% of global electricity \n generation (2022), they emit little to no emission and \n therefore combat the warming of our planets. \n Renewables include solar, wind, thermal \n and hydro");
+
                         break;
                 }
                 break;
             case SCIENCE:
+                statTxt.setText("Lvl is" + tempBuilding.getCurrentLevel() + "\n" + "Upgrade cost: " + tempBuilding.getUpgradeCost() + "\n" + "Yield is: " + tempBuilding.getYield() + "\n" + "Money upkeep cost: " + tempBuilding.getMoneyUpKeepCost() + "\n" + "Energy upkeep cost: " + tempBuilding.getEnergyUpKeepCost());
                 switch (tempBuilding.getCurrentLevel()) {
                     case 1:
-                        infoTxt.setText("primary schools are for children between the age of 5-15, these schools contribute to fundamental learning in math, science, arts, culture, and language. ");
+                        infoTxt.setText("primary schools are for children between the age of 5-15, \n these schools contribute to fundamental learning in math, \n science, arts, culture, and language. ");
+
                         break;
                     case 2:
-                        infoTxt.setText("Collage is for teens between the age of 15-18, these schools contribute to more advanced topics and extending the learnings from primary schools");
+                        infoTxt.setText("Collage is for teens between the age of 15-18, \n these schools contribute to more advanced topics and \n extending the learnings from primary schools");
+
                         break;
                     case 3:
-                        infoTxt.setText("University is a specialized school for a subject you choose, here you are taught by industry leaders to understand your chosen subject to its fullest extend and gives you the full knowledge of the chosen field");
+                        infoTxt.setText("University is a specialized school for a subject \n you choose, here you are taught by industry leaders to \n understand your chosen subject to its fullest extend \n and gives you the full knowledge of the chosen \n field");
+
                         break;
                 }
                 break;
             case HOUSE:
+                statTxt.setText("Money upkeep cost: " + tempBuilding.getMoneyUpKeepCost() + "\n" + "Energy upkeep cost: " + tempBuilding.getEnergyUpKeepCost());
+
                 //When a house
                 infoTxt.setText("Home is where the uvidenhed are");
                 break;
@@ -187,6 +211,12 @@ public class HelloController {
         infoTxt.setVisible(true);
         infoTxt.setOpacity(1);
         infoTxt.setDisable(false);
+        /*
+        statTxt.setVisible(true);
+        statTxt.setOpacity(1);
+        statTxt.setDisable(false);
+
+         */
         infoButton.setOpacity(0);
         infoButton.setDisable(true);
         continueButton.setOpacity(1);
@@ -198,12 +228,32 @@ public class HelloController {
         //Hide alle building buttons
         hideAllBuildButtons();
 
+        /*
+        int count = 0;
+        System.out.println("count " + count);
+
+         */
 
     }
 
     @FXML
     void hideInfoTxt(MouseEvent event) {
-        hideTxtBtns();
+
+        if(count == 1){
+            hideTxtBtns();
+            count = 0;
+
+        }else{
+            infoTxt.setVisible(false);
+            infoTxt.setOpacity(0);
+            infoTxt.setDisable(true);
+            statTxt.setVisible(true);
+            statTxt.setOpacity(1);
+            statTxt.setDisable(false);
+            count++;
+        }
+
+
 
     }
 
@@ -212,6 +262,10 @@ public class HelloController {
         infoTxt.setVisible(false);
         infoTxt.setOpacity(0);
         infoTxt.setDisable(true);
+        statTxt.setVisible(false);
+        statTxt.setOpacity(0);
+        statTxt.setDisable(true);
+
         infoButton.setOpacity(1);
         infoButton.setDisable(false);
         continueButton.setOpacity(0);
@@ -221,6 +275,14 @@ public class HelloController {
 
         selectTile(selectedTile);
     }
+
+    @FXML
+    void upgradeInfra(MouseEvent event) {
+        InfastructureManager tempInfra = HelloApplication.gm.infastructureManager;
+        tempInfra.upgrade();
+
+    }
+
 
     void updateUI() {
         moneyLabel.setText(String.valueOf(HelloApplication.gm.moneyManager.getCurrentMoney()));
@@ -331,6 +393,9 @@ public class HelloController {
         buildingOptionsMenu.setDisable(false);
         buildingOptionsMenu.setOpacity(1);
 
+        upgradeInfraBtn.setDisable(false);
+        upgradeInfraBtn.setOpacity(1);
+
     }
 
     private void goToBuildMenu() {
@@ -340,6 +405,9 @@ public class HelloController {
         buildingOptionsMenu.setDisable(true);
         buildingOptionsMenu.setOpacity(0);
 
+        upgradeInfraBtn.setDisable(false);
+        upgradeInfraBtn.setOpacity(1);
+
     }
 
     private void hideAllBuildButtons() {
@@ -348,6 +416,11 @@ public class HelloController {
 
         buildingOptionsMenu.setDisable(true);
         buildingOptionsMenu.setOpacity(0);
+
+        upgradeInfraBtn.setDisable(true);
+        upgradeInfraBtn.setOpacity(0);
+
+
 
     }
 
@@ -447,6 +520,7 @@ public class HelloController {
         energyLabel.setText(String.valueOf(tempEnergy.getCurrentEnergy()));
 
         showTxtBtns();
+        count = 1;
 
     }
 
@@ -671,6 +745,9 @@ public class HelloController {
         continueButton.setDisable(true);
         infoTxt.setOpacity(0);
         infoTxt.setDisable(true);
+        statTxt.setVisible(false);
+        statTxt.setOpacity(0);
+        statTxt.setDisable(false);
 
 
     }

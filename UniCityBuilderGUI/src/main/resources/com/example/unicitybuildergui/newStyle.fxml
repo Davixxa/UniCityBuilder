@@ -47,7 +47,15 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="281.0">
                <children>
-                  <Label fx:id="infoTxt" alignment="CENTER" prefHeight="115.0" prefWidth="276.0" text="Her står noget fucking text" textAlignment="CENTER" visible="false" />
+                  <Label fx:id="infoTxt" alignment="CENTER" prefHeight="115.0" prefWidth="276.0" text="Her står noget fucking text" textAlignment="CENTER" visible="false">
+                     <font>
+                        <Font size="10.0" />
+                     </font></Label>
+                  <Label fx:id="statTxt" alignment="CENTER" contentDisplay="CENTER" layoutY="-2.0" prefHeight="117.0" prefWidth="276.0" text="Click continue again">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
                   <HBox fx:id="buildingOptionsMenu" alignment="CENTER" layoutY="45.0" opacity="0.0" prefHeight="27.0" prefWidth="276.0" spacing="15.0">
                      <children>
                         <Button fx:id="upgradeButton" mnemonicParsing="false" onMouseClicked="#upgradeBuilding" text="Upgrade" />
@@ -66,6 +74,7 @@
                   <Button fx:id="endTurnButton" layoutX="111.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#endTurn" text="End turn" />
                   <Button fx:id="infoButton" layoutX="237.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#showInfoTxt" text="Info" />
                   <Button fx:id="continueButton" layoutX="211.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#hideInfoTxt" text="Continue" />
+                  <Button fx:id="upgradeInfraBtn" layoutX="71.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#upgradeInfra" text="Upgrade Infrastructur" />
                </children>
             </AnchorPane>
         </items>
